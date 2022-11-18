@@ -1,9 +1,11 @@
 import Home from './components/Home/Home'
 import { Switch, Route } from 'react-router-dom'
+import Nav from './components/Nav/Nav'
 
 function App () {
   return (
-    <div clasName='container ms-0'>
+    <div className=' container-fluid ms-0 me-0 ps-0 pe-0 App '>
+      <Nav />
       <Switch>
         <Route exact path='/' component={Home} />
       </Switch>
