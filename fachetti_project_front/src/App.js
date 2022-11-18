@@ -1,11 +1,14 @@
+import Home from './components/Home/Home'
+import { Switch, Route } from 'react-router-dom'
 
-
-function App() {
+function App () {
   return (
-    <div className="App">
-      Projecto Fachetti Front
+    <div clasName='container ms-0'>
+      <Switch>
+        <Route exact path='/' component={Home} />
+      </Switch>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
