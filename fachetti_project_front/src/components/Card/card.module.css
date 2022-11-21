@@ -1,0 +1,55 @@
+.card{
+    background-color: #04293A;
+    border-radius: 0.2rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.767);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: auto;
+    width: 350px;
+    height: 400px;
+    margin: 0 15px 50px 15px;
+    padding-left: 20px;
+    font-family: 'poppins' sans-serif;
+    border-radius: 20px;
+}
+.name{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.card:hover{
+    background-color: #04293a87;
+    transition: .3s;
+}
+
+.image{
+    height: 180px;
+    width: 330px;
+    object-fit: cover;
+    margin-right: 20px;
+    vertical-align: middle;
+    padding: 0;
+}
+
+.button{
+    padding: 10px;
+    border: none;
+    text-decoration: none;
+}
+
+.button:hover{
+    background-color: hsl(207, 90%, 72%);
+    color: aliceblue;
+    transition: .3s;
+}
+
+.iconContainer{
+    display: flex;
+    text-align: left;
+    margin-bottom: 16px;
+    height: 20px;
+    width: 20px;
+}
+
