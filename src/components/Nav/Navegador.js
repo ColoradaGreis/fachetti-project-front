@@ -10,7 +10,7 @@ function Navegador (props) {
     <>
       <NavLink
         to={link}
-        className={`${location.pathname === link && style.navlinkActive} ${style.navlink}`}
+        className={`${location.pathname === link && style.navlinkActive} ${style.navlink} nav-link`}
       >
         <span className={style.span}>{span}</span>
         {children}
