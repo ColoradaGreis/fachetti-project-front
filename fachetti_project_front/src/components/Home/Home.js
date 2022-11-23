@@ -1,9 +1,10 @@
 import React from 'react'
+import Card from '../Card/Card'
 
-export default function Landing () {
+export default function Home () {
   return (
     <div className='d-flex justify-content-center'>
-      <p>landing</p>
+      <Card />
     </div>
   )
 }
