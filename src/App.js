@@ -1,5 +1,5 @@
 import Home from './components/Home/Home'
-import { Switch, Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Nav from './components/Nav/Nav'
 import Admin from './components/Admin/Admin'
 

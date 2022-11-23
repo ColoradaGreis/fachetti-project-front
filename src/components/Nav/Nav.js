@@ -8,7 +8,7 @@ export default function Nav () {
     <nav className={`navbar navbar-expand-lg navbar-light ${style.nav}`}>
       <div className='container-fluid d-flex align-items-center'>
         <Navegador link='/'>
-          <img src={logo} alt='logo' className={`navbar-brand${style.img}`} />
+          <img src={logo} alt='logo' className={`${style.imgLogo}`} />
         </Navegador>
         <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon' />
