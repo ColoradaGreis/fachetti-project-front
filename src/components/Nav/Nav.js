@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './Logo.png'
+import logo from '../../assets/Logo.png'
 import style from './nav.module.css'
 import Navegador from './Navegador'
 
@@ -16,22 +16,22 @@ export default function Nav () {
         <div className='collapse navbar-collapse justify-content-lg-end' id='navbarNav'>
           <ul className='navbar-nav'>
             <li className='nav-item'>
-              <Navegador className='nav-link' link='/home'>INICIO</Navegador>
+              <Navegador link='/home'>INICIO</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador className='nav-link' link='/home'>NOTICIAS</Navegador>
+              <Navegador link='/home'>NOTICIAS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador className='nav-link' link='/home'>PRODUCTOS</Navegador>
+              <Navegador link='/home'>PRODUCTOS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador className='nav-link' link='/home'>CLIENTES</Navegador>
+              <Navegador link='/home'>CLIENTES</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador className='nav-link' link='/home'>OBRAS</Navegador>
+              <Navegador link='/home'>OBRAS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador className='nav-link' link='/'>CONTACTO</Navegador>
+              <Navegador link='/'>CONTACTO</Navegador>
             </li>
           </ul>
         </div>

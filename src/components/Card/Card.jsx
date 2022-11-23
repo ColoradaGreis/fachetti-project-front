@@ -1,5 +1,5 @@
 import s from './card.module.css'
-import image from '../../images/product1.png'
+import image from '../../assets/images/product1.png'
 
 export default function Card () {
   return (
