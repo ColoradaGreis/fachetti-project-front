@@ -2,6 +2,7 @@ import Home from './components/Home/Home'
 import { Route, Switch } from 'react-router-dom'
 import Nav from './components/Nav/Nav'
 import Admin from './components/Admin/Admin'
+import Clients from './components/Clients/Clients'
 
 function App () {
   return (
@@ -10,6 +11,7 @@ function App () {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/admin' component={Admin} />
+        <Route exact path='/client' component={Clients} />
       </Switch>
     </div>
   )

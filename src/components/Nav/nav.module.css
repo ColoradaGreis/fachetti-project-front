@@ -5,8 +5,15 @@
 }
 .nav{
   padding: 0 20px;
-  height: 100px;
+  /* height: 100px; */
   background-color: var(--background-color-2);
+}
+.button{
+  background-color: var(--background-color-2);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 622px) {
