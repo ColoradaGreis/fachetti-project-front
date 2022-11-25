@@ -4,6 +4,8 @@ import Nav from './components/Nav/Nav'
 import Admin from './components/Admin/Admin'
 import Products from './components/Products/Products'
 import CategoryProduct from './components/Products/CategoryProducts'
+import Footer from './components/Footer/Footer'
+import News from './components/News/News'
 
 function App () {
   return (
@@ -14,8 +16,9 @@ function App () {
         <Route exact path='/admin' component={Admin} />
         <Route exact path='/products' component={Products} />
         <Route exact path='/products/:name' component={CategoryProduct} />
+        <Route exact path='/news' component={News} />
       </Switch>
-      <Route exact path={['/', '/home', '/about', '/contact', '/products', '/news', '/clients', '/works']} component={Nav} />
+      <Route exact path={['/', '/home', '/about', '/contact', '/products', '/news', '/clients', '/works']} component={Footer} />
     </div>
   )
 }
