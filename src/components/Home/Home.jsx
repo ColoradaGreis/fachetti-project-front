@@ -1,21 +1,18 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from '../../redux/products/productsActions'
-import { getPublications } from '../../redux/publications/publicationsActions'
+import { getImportantPubs } from '../../redux/publications/publicationsActions'
 import Card from '../Card/Card'
 
 export default function Home () {
   const dispatch = useDispatch()
-  // const publications = useSelector(state => state.publications)
-  const products = useSelector(state => state.products.allProducts)
+  const ImportantPublications = useSelector(state => state.ImportantPublications)
 
   useEffect(() => {
-    dispatch(getPublications())
-    dispatch(getProducts())
+    dispatch(getImportantPubs())
   }, [])
   return (
     <div className='d-flex justify-content-center'>
-      {Array.isArray(products) && products.map(p => (
+      {Array.isArray(ImportantPublications) && ImportantPublications.map(p => (
         <Card
           key={p.id}
           id={p.id}
