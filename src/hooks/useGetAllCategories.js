@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import urlApi from '../api/API'
+import { urlApi } from '../api/API'
 
 export default function useGetAllCategories () {
   const [state, setState] = useState({
@@ -29,7 +29,7 @@ export default function useGetAllCategories () {
   }
   useEffect(() => {
     getCategories()
-  }, []) //eslint-disable-line
+  }, []) // eslint-disable-line
 
   return {
     ...state

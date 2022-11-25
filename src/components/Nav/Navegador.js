@@ -12,8 +12,8 @@ function Navegador (props) {
         to={link}
         className={`${location.pathname === link && style.navlinkActive} ${style.navlink}  `}
       >
-        <span className={style.span}>{span}</span>
-        {children}
+        {span ? <span className={style.span}>{span}</span> : null}
+        {children || null}
       </NavLink>
     </>
   )

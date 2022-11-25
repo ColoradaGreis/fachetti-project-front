@@ -21,19 +21,19 @@ export default function Nav () {
               <Navegador link='/'>INICIO</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/noticias'>NOTICIAS</Navegador>
+              <Navegador link='/news'>NOTICIAS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/productos'>PRODUCTOS</Navegador>
+              <Navegador link='/products'>PRODUCTOS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/clientes'>CLIENTES</Navegador>
+              <Navegador link='/clients'>CLIENTES</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/obras'>OBRAS</Navegador>
+              <Navegador link='/works'>OBRAS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/contacto'>CONTACTO</Navegador>
+              <Navegador link='/contact'>CONTACTO</Navegador>
             </li>
 
           </ul>
