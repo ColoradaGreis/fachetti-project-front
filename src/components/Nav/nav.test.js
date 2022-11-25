@@ -43,5 +43,8 @@ describe('Nav Links', () => {
     expect(window.location.pathname).toBe('/obras')
     fireEvent.click(linkContacto)
     expect(window.location.pathname).toBe('/contacto')
+    window.history.back()
+    window.history.pushState({}, '', '/admin')
+    expect(window.location.pathname).toBe('/admin')
   })
 })
