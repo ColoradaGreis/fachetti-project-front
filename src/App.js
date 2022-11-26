@@ -7,6 +7,7 @@ import Products from './components/Products/Products'
 import CategoryProduct from './components/Products/CategoryProducts'
 import Footer from './components/Footer/Footer'
 import News from './components/News/News'
+import Contact from './components/Contact/Contact'
 
 function App () {
   return (
@@ -19,6 +20,7 @@ function App () {
         <Route exact path='/products' component={Products} />
         <Route exact path='/products/:name' component={CategoryProduct} />
         <Route exact path='/news' component={News} />
+        <Route exact path='/contact' component={Contact} />
       </Switch>
       <Route exact path={['/', '/home', '/about', '/contact', '/products', '/news', '/clients', '/works']} component={Footer} />
     </div>

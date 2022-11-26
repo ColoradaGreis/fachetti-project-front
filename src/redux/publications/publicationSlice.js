@@ -9,7 +9,7 @@ export const publicationsSlice = createSlice({
   },
   reducers: {
     getAllPublications: (state, action) => {
-      state.allPublications = action.payload.sort((a, b) => a.createdAt - b.createdAt)
+      state.allPublications = action.payload
     },
     getPublicationById: (state, action) => {
       state.publicationDetail = action.payload
