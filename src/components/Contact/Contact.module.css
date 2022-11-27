@@ -1,0 +1,8 @@
+.btn[disabled]{
+    opacity:.3;
+    pointer-events: none;
+}
+
+.btn:hover{
+    background-color: antiquewhite;
+}
