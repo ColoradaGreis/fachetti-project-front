@@ -5,22 +5,21 @@ import phone from '../../assets/PhoneContact.png'
 import instagram from '../../assets/Instagram.png'
 import facebook from '../../assets/Facebook.png'
 import logo from '../../assets/LogoFooter.png'
-import GoogleMap from '../GoogleMap/GoogleMap'
 
 export default function Footer () {
   return (
     <div className={s.footerContainer}>
-      <div className='row d-flex align-items-center justify-content-between w-100'>
+      <div className={s.footer}>
         <div className={`col ${s.contactoSection}`}>
           <h3>CONTACTO</h3>
           <div className='row'>
-            <div className='d-flex flex-row justify-content-center align-items-center gap-3'>
+            <div className='d-flex flex-row justify-content-center align-items-center gap-3 fs-5'>
               <img width='30px' height='30px' src={mail} alt='mail' />
               michelle.rivera@example.com
             </div>
           </div>
           <div className='row'>
-            <div className='d-flex justify-content-center align-items-center flex-row gap-3'>
+            <div className='d-flex justify-content-center align-items-center flex-row gap-3 fs-5'>
               <img width='30px' height='30px' src={phone} alt='phone' />
               (480) 555-0103
             </div>
@@ -36,8 +35,8 @@ export default function Footer () {
         <div className='col d-flex flex-column justify-content-center align-items-center'>
           <img className={s.logoFooter} src={logo} alt='Fachetti' />
         </div>
-        <div className={`col ${s.map}`}>
-          <GoogleMap />
+        <div className={`col d-flex justify-content-center align-items-center ${s.map}`}>
+          <iframe width='330' height='270' src='https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Casta%C3%B1on%202952%2C%20C1437%20CABA+(Title)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' />
         </div>
       </div>
     </div>
