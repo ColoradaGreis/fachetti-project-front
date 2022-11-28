@@ -19,8 +19,11 @@ input::-webkit-inner-spin-button {
 :root{
   --background-color: #FFF;
   --background-color-2: #E8E9E8;
+  --background-color-body: #F9F9F9;
+  --background-color-blue: #16213E;
   --font-family-1: 'Gothan', sans-serif;
   --font-family-2: 'Montserrat', sans-serif;
   --font-color-1: #000000;
   --font-color-2: #124E78;
+  --font-color-3: #FFF;
 }

@@ -6,7 +6,7 @@
 .nav{
   padding: 0 20px;
   height: 100px;
-  background-color: var(--background-color-2);
+  background-color: var(--background-color-blue);
 }
 
 @media (max-width: 622px) {

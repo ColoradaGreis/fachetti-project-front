@@ -1,0 +1,45 @@
+import React from 'react'
+import s from './footer.module.css'
+import mail from '../../assets/EmailContact.png'
+import phone from '../../assets/PhoneContact.png'
+import instagram from '../../assets/Instagram.png'
+import facebook from '../../assets/Facebook.png'
+import logo from '../../assets/LogoFooter.png'
+import GoogleMap from '../GoogleMap/GoogleMap'
+
+export default function Footer () {
+  return (
+    <div className={s.footerContainer}>
+      <div className='row d-flex align-items-center justify-content-between w-100'>
+        <div className={`col ${s.contactoSection}`}>
+          <h3>CONTACTO</h3>
+          <div className='row'>
+            <div className='d-flex flex-row justify-content-center align-items-center gap-3'>
+              <img width='30px' height='30px' src={mail} alt='mail' />
+              michelle.rivera@example.com
+            </div>
+          </div>
+          <div className='row'>
+            <div className='d-flex justify-content-center align-items-center flex-row gap-3'>
+              <img width='30px' height='30px' src={phone} alt='phone' />
+              (480) 555-0103
+            </div>
+          </div>
+          <div className='col mt-3'>
+            <h5>REDES SOCIALES</h5>
+            <div className='d-flex justify-content-center align-items-center flex-row gap-3'>
+              <img width='30px' height='30px' src={instagram} alt='instagram' />
+              <img width='30px' height='30px' src={facebook} alt='facebook' />
+            </div>
+          </div>
+        </div>
+        <div className='col d-flex flex-column justify-content-center align-items-center'>
+          <img className={s.logoFooter} src={logo} alt='Fachetti' />
+        </div>
+        <div className={`col ${s.map}`}>
+          <GoogleMap />
+        </div>
+      </div>
+    </div>
+  )
+}

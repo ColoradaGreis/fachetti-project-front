@@ -1,0 +1,25 @@
+.footerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color-blue);
+    color: var(--font-color-3);
+    font-family: var(--font-family-1);
+    height: 300px;
+    width: 100vw;
+}
+.contactoSection{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+.logoFooter{
+    object-fit: cover;
+    max-width: 100px;
+}
+.map{
+    width: 100px;
+    height: 100px;
+}
