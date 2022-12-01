@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/Logo.png'
+import logo from '../../assets/LogoBlanco.png'
 import style from './nav.module.css'
 import Navegador from './Navegador'
 import { AiOutlineMenu } from 'react-icons/ai' // eslint-disable-line
@@ -13,7 +13,7 @@ export default function Nav () {
         </Navegador>
         <button className={`${style.button} d-lg-none`} type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
           {/* <span className='navbar-toggler-icon' /> */}
-          <span><AiOutlineMenu /></span>
+          <span className={style.spanToggle}><AiOutlineMenu color='white' /></span>
         </button>
         <div className='collapse navbar-collapse justify-content-lg-end' id='navbarNav'>
           <ul className='navbar-nav align-items-center'>

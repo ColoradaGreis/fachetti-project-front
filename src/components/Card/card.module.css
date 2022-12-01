@@ -1,21 +1,24 @@
 .card{
     display: flex;
-    justify-content: space-between;
     background-color: #04293A;
-    color: #3C4048;
+    color: black;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
+    padding: 10px;
     justify-content: center;
     background-size: auto;
     width: 275px;
     height: 350px;
     margin: 50px 15px 0px 15px;
-    font-family: 'poppins' sans-serif;
+    box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
+    font-family: var(--font-family-1);
 }
 .name{
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .image{
@@ -24,7 +27,7 @@
     width: 275px;
     object-fit: cover;
     vertical-align: middle;
-    background-color: var(--background-color-2);
+    background-color: var(--background-color-1);
     padding: 0;
     cursor: pointer;
 }

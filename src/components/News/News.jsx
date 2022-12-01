@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllPublications } from '../../redux/publications/publicationSlice'
 import Card from '../Card/Card'
+import s from './News.module.css'
 
 export default function News () {
   const dispatch = useDispatch()
@@ -12,7 +13,7 @@ export default function News () {
   }, [])
   return (
     <div>
-      <h1>Novedades</h1>
+      <h1 className={s.h1News}>Novedades</h1>
       {
         Array.isArray(news) && news.map(n => (
           <Navigator key={n.id} link={n.name}>
