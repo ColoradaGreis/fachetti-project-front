@@ -63,7 +63,7 @@ export default function Contact () {
               </div>
               <Field className={s.input} name='email' placeholder='Ingrese su email' />
               <ErrorMessage name='email' component='small' />
-              <Field className={s.input} name='message' placeholder='Cuál es su consulta?' />
+              <Field className={`pb-5 ${s.input}`} name='message' placeholder='Cuál es su consulta?' />
               <ErrorMessage name='message' component='small' />
               <button className={s.btn} disabled={isSubmitting}>Enviar</button>
             </Form>)

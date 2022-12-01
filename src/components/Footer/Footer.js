@@ -11,7 +11,7 @@ export default function Footer () {
     <div className={s.footerContainer}>
       <div className={s.footer}>
         <div className={`col ${s.contactoSection}`}>
-          <h3>CONTACTO</h3>
+          <h3 className={s.titleContacto}>CONTACTO</h3>
           <div className='row'>
             <div className='d-flex flex-row justify-content-center align-items-center gap-3 fs-5'>
               <img width='30px' height='30px' src={mail} alt='mail' />
@@ -25,7 +25,7 @@ export default function Footer () {
             </div>
           </div>
           <div className='col mt-3'>
-            <h5>REDES SOCIALES</h5>
+            <h5 className={s.titleContacto}>REDES SOCIALES</h5>
             <div className='d-flex justify-content-center align-items-center flex-row gap-3'>
               <img width='30px' height='30px' src={instagram} alt='instagram' />
               <img width='30px' height='30px' src={facebook} alt='facebook' />

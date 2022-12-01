@@ -1,5 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/gotham');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Roboto+Condensed&display=swap'); */
 
 .App{
   font-family: var(--font-family-1);
@@ -23,7 +23,9 @@ input::-webkit-inner-spin-button {
   --background-color-blue: #16213E;
   --font-family-1: 'Gothan', sans-serif;
   --font-family-2: 'Montserrat', sans-serif;
+  --font-family-3: italic2;
   --font-color-1: #000000;
   --font-color-2: #124E78;
   --font-color-3: #FFF;
+  --font-color-title: #16213E;
 }

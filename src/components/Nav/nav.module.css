@@ -9,13 +9,15 @@
   background-color: var(--background-color-blue);
 }
 .button{
-  background-color: var(--background-color-2);
+  background-color: var(--background-color-blue);
   border: none;
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
+.spanToggle{
+  background-color: var(--background-color-blue);
+}
 @media (max-width: 622px) {
   .imgLogo{
     width: 100%;

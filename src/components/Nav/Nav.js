@@ -13,7 +13,7 @@ export default function Nav () {
         </Navegador>
         <button className={`${style.button} d-lg-none`} type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
           {/* <span className='navbar-toggler-icon' /> */}
-          <span><AiOutlineMenu /></span>
+          <span className={style.spanToggle}><AiOutlineMenu color='white' /></span>
         </button>
         <div className='collapse navbar-collapse justify-content-lg-end' id='navbarNav'>
           <ul className='navbar-nav align-items-center'>
