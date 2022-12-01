@@ -3,6 +3,7 @@ import logo from '../../assets/Logo.png'
 import style from './nav.module.css'
 import Navegador from './Navegador'
 import { AiOutlineMenu } from 'react-icons/ai' // eslint-disable-line
+import { PublicNameRoutes } from '../../routes/routes.name'
 
 export default function Nav () {
   return (
@@ -18,22 +19,22 @@ export default function Nav () {
         <div className='collapse navbar-collapse justify-content-lg-end' id='navbarNav'>
           <ul className='navbar-nav align-items-center'>
             <li className='nav-item'>
-              <Navegador link='/'>INICIO</Navegador>
+              <Navegador link={PublicNameRoutes.HOME}>INICIO</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/news'>NOTICIAS</Navegador>
+              <Navegador link={PublicNameRoutes.NEWS}>NOTICIAS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/products'>PRODUCTOS</Navegador>
+              <Navegador link={PublicNameRoutes.PRODUCTS}>PRODUCTOS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/clients'>CLIENTES</Navegador>
+              <Navegador link={PublicNameRoutes.CLIENTS}>CLIENTES</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/works'>OBRAS</Navegador>
+              <Navegador link={PublicNameRoutes.WORKS}>OBRAS</Navegador>
             </li>
             <li className='nav-item'>
-              <Navegador link='/contact'>CONTACTO</Navegador>
+              <Navegador link={PublicNameRoutes.CONTACT}>CONTACTO</Navegador>
             </li>
 
           </ul>
