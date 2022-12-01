@@ -11,6 +11,7 @@ export default function AppRoutes () {
         <Route element={<Guard />}>
           <Route path='/private/*' element={<PrivateRoutes />} />
         </Route>
+
       </Routes>
 
     </BrowserRouter>
