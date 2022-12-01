@@ -1,10 +1,11 @@
-import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import Admin from '../components/Admin/Admin'
+import { PrivateNameRoutes } from './routes.name'
 
-const PrivateRoute = ({ children }) => {
-  const user = true
-
-  return user ? children : <Redirect to='/' />
+export default function PrivateRoutes () {
+  return (
+    <Routes>
+      <Route path={PrivateNameRoutes.ADMIN} element={<Admin />} />
+    </Routes>
+  )
 }
-
-export default PrivateRoute
