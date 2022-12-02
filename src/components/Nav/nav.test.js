@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import '@testing-library/jest-dom'
 // import userEvent from '@testing-library/user-event'
 import Nav from './Nav'
+import { PrivateNameRoutes, PublicNameRoutes } from '../../routes/routes.name' // eslint-disable-line
 
 const rend = () => render(<BrowserRouter><Nav /></BrowserRouter>)
 const getLinks = () => {
@@ -32,19 +33,19 @@ describe('Nav Links', () => {
     rend()
     const { linkClientes, linkContacto, linkInicio, linkNoticias, linkObras, linkProductos } = getLinks()
     fireEvent.click(linkInicio)
-    expect(window.location.pathname).toBe('/')
+    expect(window.location.pathname).toBe(PublicNameRoutes.HOME)
     fireEvent.click(linkNoticias)
-    expect(window.location.pathname).toBe('/noticias')
+    expect(window.location.pathname).toBe(PublicNameRoutes.NEWS)
     fireEvent.click(linkProductos)
-    expect(window.location.pathname).toBe('/productos')
+    expect(window.location.pathname).toBe(PublicNameRoutes.PRODUCTS)
     fireEvent.click(linkClientes)
-    expect(window.location.pathname).toBe('/clientes')
+    expect(window.location.pathname).toBe(PublicNameRoutes.CLIENTS)
     fireEvent.click(linkObras)
-    expect(window.location.pathname).toBe('/obras')
+    expect(window.location.pathname).toBe(PublicNameRoutes.WORKS)
     fireEvent.click(linkContacto)
-    expect(window.location.pathname).toBe('/contacto')
-    window.history.back()
-    window.history.pushState({}, '', '/admin')
-    expect(window.location.pathname).toBe('/admin')
+    expect(window.location.pathname).toBe(PublicNameRoutes.CONTACT)
+    // window.history.back()
+    // window.history.pushState({}, '', `/private${PrivateNameRoutes.ADMIN}`)
+    // expect(window.location.pathname).not.toBe(`/private${PrivateNameRoutes.ADMIN}`)
   })
 })

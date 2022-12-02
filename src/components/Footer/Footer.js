@@ -11,7 +11,7 @@ export default function Footer () {
     <div className={s.footerContainer}>
       <div className={s.footer}>
         <div className={`col ${s.contactoSection}`}>
-          <h3 className={s.titleContacto}>CONTACTO</h3>
+          <h3 className={s.titleContacto}>CONTACTO</h3>frameBorder
           <div className='row'>
             <div className='d-flex flex-row justify-content-center align-items-center gap-3 fs-5'>
               <img width='30px' height='30px' src={mail} alt='mail' />
@@ -36,7 +36,7 @@ export default function Footer () {
           <img className={s.logoFooter} src={logo} alt='Fachetti' />
         </div>
         <div className={`col d-flex justify-content-center align-items-center ${s.map}`}>
-          <iframe width='330' height='270' src='https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Casta%C3%B1on%202952%2C%20C1437%20CABA+(Title)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' />
+          <iframe title='map' width='330' height='270' src='https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Casta%C3%B1on%202952%2C%20C1437%20CABA+(Title)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed' frameBorder='0' scrolling='no' marginHeight='0' marginWidth='0' />
         </div>
       </div>
     </div>

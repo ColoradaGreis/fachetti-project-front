@@ -1,33 +1,22 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Admin from '../components/Admin/Admin'
-import Clients from '../components/Clients/Clients'
-import Contact from '../components/Contact/Contact'
-import Footer from '../components/Footer/Footer'
-import Home from '../components/Home/Home'
-import Nav from '../components/Nav/Nav'
-import News from '../components/News/News'
-import CategoryProduct from '../components/Products/CategoryProducts'
-import Products from '../components/Products/Products'
-import PrivateRoutes from './PrivateRoutes'
+import { lazy, Suspense } from 'react' // eslint-disable-line
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Guard from './Guard'
+import Loading from '../components/Loading/Loading'
 
-export default function Routes () {
+const PublicRoutesLazy = lazy(() => import('./PublicRoutes'))
+const PrivateRoutesLazy = lazy(() => import('./PrivateRoutes'))
+
+export default function AppRoutes () {
   return (
-    <BrowserRouter>
-      <Route exact path={['/', '/about', '/contact', '/products', '/news', '/clients', '/works']} component={Nav} />
-      <Switch>
-        <Route exact path={['/', '/home']} component={Home} />
-        <Route exact path='/client' component={Clients} />
-        <Route exact path='/products' component={Products} />
-        <Route exact path='/products/:name' component={CategoryProduct} />
-        <Route exact path='/news' component={News} />
-        <Route exact path='/contact' component={Contact} />
-        <Route exact path='/admin'>
-          <PrivateRoutes>
-            <Admin />
-          </PrivateRoutes>
-        </Route>
-      </Switch>
-      <Route exact path={['/', '/home', '/about', '/contact', '/products', '/news', '/clients', '/works']} component={Footer} />
-    </BrowserRouter>
+    <Suspense fallback={<Loading />}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/*' element={<PublicRoutesLazy />} />
+          <Route element={<Guard />}>
+            <Route path='/private/*' element={<PrivateRoutesLazy />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   )
 }
