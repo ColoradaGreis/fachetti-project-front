@@ -23,7 +23,6 @@ export default function PublicRoutes () {
         <Route path='/products/:name' element={<CategoryProduct />} />
         <Route path={PublicNameRoutes.NEWS} element={<News />} />
         <Route path={PublicNameRoutes.CONTACT} element={<Contact />} />
-        <Route path='*' element={<h1>404: Not Found</h1>} />
       </NotFoundRoute>
       <Footer />
     </>

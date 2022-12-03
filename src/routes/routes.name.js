@@ -8,5 +8,6 @@ export const PublicNameRoutes = {
 }
 
 export const PrivateNameRoutes = {
-  ADMIN: '/admin'
+  HOME: '/private/home',
+  EDIT: '/private/edit'
 }

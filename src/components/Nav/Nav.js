@@ -5,6 +5,16 @@ import Navegador from './Navegador'
 import { AiOutlineMenu } from 'react-icons/ai' // eslint-disable-line
 import { PublicNameRoutes } from '../../routes/routes.name'
 
+// Colocar aqui las nuevas rutas
+const routes = [
+  { name: 'INICIO', path: PublicNameRoutes.HOME },
+  { name: 'CLIENTES', path: PublicNameRoutes.CLIENTS },
+  { name: 'PRODUCTOS', path: PublicNameRoutes.PRODUCTS },
+  { name: 'NOTICIAS', path: PublicNameRoutes.NEWS },
+  { name: 'CONTACTO', path: PublicNameRoutes.CONTACT },
+  { name: 'OBRAS', path: PublicNameRoutes.WORKS }
+]
+
 export default function Nav () {
   return (
     <nav className={`navbar navbar-expand-lg navbar-light ${style.nav}`}>
@@ -13,29 +23,16 @@ export default function Nav () {
           <img src={logo} alt='logo' className={`${style.imgLogo}`} />
         </Navegador>
         <button className={`${style.button} d-lg-none`} type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
-          {/* <span className='navbar-toggler-icon' /> */}
           <span className={style.spanToggle}><AiOutlineMenu color='white' /></span>
         </button>
         <div className='collapse navbar-collapse justify-content-lg-end' id='navbarNav'>
           <ul className='navbar-nav align-items-center'>
-            <li className='nav-item'>
-              <Navegador link={PublicNameRoutes.HOME}>INICIO</Navegador>
-            </li>
-            <li className='nav-item'>
-              <Navegador link={PublicNameRoutes.NEWS}>NOTICIAS</Navegador>
-            </li>
-            <li className='nav-item'>
-              <Navegador link={PublicNameRoutes.PRODUCTS}>PRODUCTOS</Navegador>
-            </li>
-            <li className='nav-item'>
-              <Navegador link={PublicNameRoutes.CLIENTS}>CLIENTES</Navegador>
-            </li>
-            <li className='nav-item'>
-              <Navegador link={PublicNameRoutes.WORKS}>OBRAS</Navegador>
-            </li>
-            <li className='nav-item'>
-              <Navegador link={PublicNameRoutes.CONTACT}>CONTACTO</Navegador>
-            </li>
+
+            {routes.map((route, index) => (
+              <li className='nav-item' key={index}>
+                <Navegador key={index} link={route.path}>{route.name}</Navegador>
+              </li>
+            ))}
 
           </ul>
         </div>
