@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react' // eslint-disable-line
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Guard from './Guard'
 import Loading from '../components/Loading/Loading'
+import { PrivateNameRoutes } from './routes.name'
 
 const PublicRoutesLazy = lazy(() => import('./PublicRoutes'))
 const PrivateRoutesLazy = lazy(() => import('./PrivateRoutes'))
@@ -13,7 +14,7 @@ export default function AppRoutes () {
         <Routes>
           <Route path='/*' element={<PublicRoutesLazy />} />
           <Route element={<Guard />}>
-            <Route path='/private/*' element={<PrivateRoutesLazy />} />
+            <Route path={`${PrivateNameRoutes.PRIVATE}/*`} element={<PrivateRoutesLazy />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -5,6 +5,7 @@ import Loading from '../../../Loading/Loading'
 
 export default function FormCreateProduct () {
   const { data, error, loading } = useGetAllCategories()
+
   const { values, handleChange } = useFormik({
     initialValues: {
       name: '',
