@@ -5,6 +5,7 @@ import Navegador from './Navegador'
 import { AiOutlineMenu } from 'react-icons/ai' // eslint-disable-line
 import { PublicNameRoutes } from '../../routes/routes.name'
 
+// Colocar aqui las nuevas rutas
 const routes = [
   { name: 'INICIO', path: PublicNameRoutes.HOME },
   { name: 'CLIENTES', path: PublicNameRoutes.CLIENTS },
@@ -12,7 +13,6 @@ const routes = [
   { name: 'NOTICIAS', path: PublicNameRoutes.NEWS },
   { name: 'CONTACTO', path: PublicNameRoutes.CONTACT },
   { name: 'OBRAS', path: PublicNameRoutes.WORKS }
-
 ]
 
 export default function Nav () {
