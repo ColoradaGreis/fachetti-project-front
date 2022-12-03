@@ -21,7 +21,8 @@ input::-webkit-inner-spin-button {
   --background-color: #FFF;
   --background-color-2: #E8E9E8;
   --background-color-body: #F9F9F9;
-  --background-color-blue: #16213E;
+  --background-color-blue: #232851;
+  --background-color-gray: #EDEDED;
   --font-family-1: 'Gothan', sans-serif;
   --font-family-2: 'Montserrat', sans-serif;
   --font-family-3: italic2;
@@ -29,4 +30,19 @@ input::-webkit-inner-spin-button {
   --font-color-2: #124E78;
   --font-color-3: #FFF;
   --font-color-title: #16213E;
+}
+/* 
+GLOBALES
+ */
+.bkgGray{
+  background-color: var(--background-color-gray);
+}
+.bkgBlue{
+  background-color: var(--background-color-blue);
+}
+.pointer{
+  cursor: pointer;
+}
+.white{
+  color: var(--font-color-3);
 }
