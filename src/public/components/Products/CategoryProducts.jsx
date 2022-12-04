@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { getProductsByCategories } from '../../redux/products/productsActions'
+import { getProductsByCategories } from '../../../redux/products/productsActions'
 import Card from '../Card/Card'
 
 export default function CategoryProduct () {

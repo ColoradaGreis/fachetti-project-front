@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getImportantPubs } from '../../redux/publications/publicationsActions'
+import { getImportantPubs } from '../../../redux/publications/publicationsActions'
 import Card from '../Card/Card'
 
 export default function Home () {

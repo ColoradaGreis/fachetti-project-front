@@ -12,7 +12,7 @@ export default function NavAdmin () {
       {/* --------------------------------------NAV-------------------------------------------------------------- */}
 
       <div className='row mx-0'>
-        <nav className='col-2'>{/* La nav siempre ocupara la cantidad de col que aqui le digamos */}
+        <nav className='col-3'>{/* La nav siempre ocupara la cantidad de col que aqui le digamos */}
 
           <div className={`row  align-items-center bkgGray ${style.containerProfile}`}>
             <div className='col-12 text-center'>
@@ -38,7 +38,7 @@ export default function NavAdmin () {
         </nav>
 
         {/* ------------------------------------OTROS COMPONENTES------------------------------------------------- */}
-        <div className='col-10'> {/* Aqui se renderizaran las direrentes rutas dentro de NavAdmin */}
+        <div className='col-9'> {/* Aqui se renderizaran las direrentes rutas dentro de NavAdmin */}
           <Outlet />{/* Gracias a este componente, que deja un lugar para renderizar */}
         </div>
       </div>

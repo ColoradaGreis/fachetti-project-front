@@ -1,7 +1,5 @@
 import { Route } from 'react-router-dom'
-import NavAdmin from '../components/Admin/components/NavAdmin/NavAdmin'
-import Admin from '../components/Admin/components/Admin'
-import HeaderAdmin from '../components/Admin/components/HeaderAdmin/HeaderAdmin'
+import { NavAdmin, HeaderAdmin, Admin } from '../private'
 import NotFoundRoute from './NotFoundRoute'
 // import { PrivateNameRoutes } from './routes.name'
 

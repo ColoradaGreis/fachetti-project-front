@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllPublications } from '../../redux/publications/publicationSlice'
+import { getAllPublications } from '../../../redux/publications/publicationSlice'
 import Card from '../Card/Card'
 import s from './News.module.css'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import useGetAllCategories from '../../hooks/useGetAllCategories'
-import Loading from '../../../Loading/Loading'
+import { Loading } from '../../../public/components'
 
 export default function FormCreateProduct () {
   const { data, error, loading } = useGetAllCategories()

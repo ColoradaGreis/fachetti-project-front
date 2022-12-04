@@ -1,5 +1,5 @@
 import React from 'react'
-import FormCreateProduct from '../components/FormCreateProduct/FormCreateProduct'
+import { FormCreateProduct } from './FormCreateProduct'
 
 export default function Admin () {
   return (

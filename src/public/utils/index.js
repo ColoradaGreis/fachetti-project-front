@@ -1,4 +1,4 @@
-import { urlApi } from '../api/API'
+import { urlApi } from '../../api'
 
 export const register = (values) => {
   return urlApi.post('questions', {
