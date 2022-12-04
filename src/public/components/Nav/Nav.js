@@ -3,7 +3,7 @@ import logo from '../../assets/LogoBlanco.png'
 import style from './nav.module.css'
 import Navegador from './Navegador'
 import { AiOutlineMenu } from 'react-icons/ai' // eslint-disable-line
-import { PublicNameRoutes } from '../../../routes'
+import { PublicNameRoutes } from '../../../routes/routes.name'
 
 // Colocar aqui las nuevas rutas
 const routes = [

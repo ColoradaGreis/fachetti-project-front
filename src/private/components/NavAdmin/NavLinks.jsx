@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
-// import { PrivateNameRoutes } from '../../../../routes/routes.name'
-import { PrivateNameRoutes } from '../../../routes'
+import { PrivateNameRoutes } from '../../../routes/routes.name'
+// import { PrivateNameRoutes } from 'Routes/routes.name'
 import style from './navAdmin.module.css'
 
 export const activeStyle = {
