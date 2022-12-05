@@ -9,6 +9,7 @@ export const PublicNameRoutes = {
 
 export const PrivateNameRoutes = {
   PRIVATE: 'admin',
-  HOME: 'home',
-  EDIT: 'edit'
+  CONSULTS: 'consults',
+  PUBLICATIONS: 'publications',
+  PRODUCTS: 'products'
 }

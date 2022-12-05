@@ -34,6 +34,9 @@ input::-webkit-inner-spin-button {
 /* 
 GLOBALES
  */
+.bkgWhite{
+  background-color: var(--background-color);
+}
 .bkgGray{
   background-color: var(--background-color-gray);
 }
@@ -45,4 +48,11 @@ GLOBALES
 }
 .white{
   color: var(--font-color-3);
+}
+.bold{
+  font-weight: bold;
+}
+
+.underLineHover:hover{
+  text-decoration: underline;
 }
