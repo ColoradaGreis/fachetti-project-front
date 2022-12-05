@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllPublications } from '../../../redux/publications/publicationSlice'
-import Card from '../Card/Card'
+import { Navigate } from 'react-router-dom'
+import { getAllPublications } from '@/redux/publications/publicationSlice'
+import { Card } from '../Card'
 import s from './News.module.css'
 
 export default function News () {
@@ -16,7 +17,7 @@ export default function News () {
       <h1 className={s.h1News}>Novedades</h1>
       {
         Array.isArray(news) && news.map(n => (
-          <Navigator key={n.id} link={n.name}>
+          <Navigate key={n.id} link={n.id}>
             <Card
               key={n.id}
               id={n.id}
@@ -24,7 +25,7 @@ export default function News () {
               image={n.image}
               description={n.description}
             />
-          </Navigator>
+          </Navigate>
         ))
             }
     </div>

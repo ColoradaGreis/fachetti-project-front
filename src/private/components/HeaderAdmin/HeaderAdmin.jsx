@@ -1,5 +1,5 @@
 import style from './headerAdmin.module.css'
-import Exit from '../../assets/Exit.png'
+import Exit from '@/assets/Exit.png'
 
 export default function HeaderAdmin () {
   return (

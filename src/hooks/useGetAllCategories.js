@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { urlApi } from '../../api'
+import { urlApi } from '$Api'
 
 export default function useGetAllCategories () {
   const [state, setState] = useState({

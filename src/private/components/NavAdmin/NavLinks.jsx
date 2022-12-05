@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { PrivateNameRoutes } from '../../../routes/routes.name'
-// import { PrivateNameRoutes } from 'Routes/routes.name'
+import { PrivateNameRoutes } from '@/routes'
 import style from './navAdmin.module.css'
 
 export const activeStyle = {
@@ -10,8 +9,9 @@ export const activeStyle = {
 }
 // Agregar Rutas nuevas aqui en el array
 const routes = [
-  { name: 'TABLERO', path: PrivateNameRoutes.HOME },
-  { name: 'EDICIÓN', path: PrivateNameRoutes.EDIT }
+  { name: 'CONSULTAS', path: PrivateNameRoutes.CONSULTS },
+  { name: 'PRODUCTOS', path: PrivateNameRoutes.PRODUCTS },
+  { name: 'PUBLICACIONES', path: PrivateNameRoutes.PUBLICATIONS }
 ]
 // name es lo que ve el usuario
 // path es la ruta a la que se dirige

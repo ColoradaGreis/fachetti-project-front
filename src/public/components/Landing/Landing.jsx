@@ -1,7 +1,7 @@
 import React from 'react'
-import image1 from '../../assets/images/landing1.jpg'
-import image2 from '../../assets/images/landing2.jpg'
-import image3 from '../../assets/images/landing3.jpg'
+import image1 from '@/assets/images/landing1.jpg'
+import image2 from '@/assets/images/landing2.jpg'
+import image3 from '@/assets/images/landing3.jpg'
 import s from './landing.module.css'
 
 export default function Landing () {

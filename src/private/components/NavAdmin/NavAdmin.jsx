@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import style from './navAdmin.module.css'
-import userExample from '../../assets/userExample.png'
-import Engran from '../../assets/Engran.png'
-import Notificacion from '../../assets/Notificacion.png'
+import userExample from '@/assets/userExample.png'
+import Engran from '@/assets/Engran.png'
+import Notificacion from '@/assets/Notificacion.png'
 import NavLinks from './NavLinks'
 
 export default function NavAdmin () {
@@ -38,7 +38,7 @@ export default function NavAdmin () {
         </nav>
 
         {/* ------------------------------------OTROS COMPONENTES------------------------------------------------- */}
-        <div className='col-9'> {/* Aqui se renderizaran las direrentes rutas dentro de NavAdmin */}
+        <div className='col-9 px-5 py-5'> {/* Aqui se renderizaran las direrentes rutas dentro de NavAdmin */}
           <Outlet />{/* Gracias a este componente, que deja un lugar para renderizar */}
         </div>
       </div>

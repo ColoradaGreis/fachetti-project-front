@@ -1,7 +1,8 @@
 import React from 'react'
 import { useFormik } from 'formik'
-import useGetAllCategories from '../../hooks/useGetAllCategories'
-import { Loading } from '../../../public/components'
+import { useGetAllCategories } from '$Hooks'
+import { Loading } from '$Public/components'
+// import {Loading} from '$Public/components'
 
 export default function FormCreateProduct () {
   const { data, error, loading } = useGetAllCategories()
@@ -14,7 +15,7 @@ export default function FormCreateProduct () {
       image: ''
     },
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+      console.log(values)
     }
   })
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 import Card from '../Card/Card'
 import s from './Product.module.css'
 
@@ -11,14 +12,14 @@ export default function Products () {
       <h3 className={s.h3Products}>Nuestro productos</h3>
       {
         Array.isArray(categories) && categories.map(c => (
-          <Navigator key={c.id} link={c.name}>
+          <Navigate key={c.id} link={c.name}>
             <Card
               key={c.id}
               id={c.id}
               title={c.name}
               image={c.image}
             />
-          </Navigator>
+          </Navigate>
         ))
             }
     </div>

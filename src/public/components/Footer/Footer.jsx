@@ -1,10 +1,10 @@
 import React from 'react'
 import s from './footer.module.css'
-import mail from '../../assets/EmailContact.png'
-import phone from '../../assets/PhoneContact.png'
-import instagram from '../../assets/Instagram.png'
-import facebook from '../../assets/Facebook.png'
-import logo from '../../assets/LogoFooter.png'
+import mail from '@/assets/EmailContact.png'
+import phone from '@/assets/PhoneContact.png'
+import instagram from '@/assets/Instagram.png'
+import facebook from '@/assets/Facebook.png'
+import logo from '@/assets/LogoFooter.png'
 
 export default function Footer () {
   return (

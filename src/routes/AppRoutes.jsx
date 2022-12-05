@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react' // eslint-disable-line
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Guard from './Guard'
-import { Loading } from '../public/components'
+import { Loading } from '$Public/components'
 import { PrivateNameRoutes } from './routes.name'
 
 const PublicRoutesLazy = lazy(() => import('./PublicRoutes'))
