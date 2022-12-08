@@ -44,7 +44,7 @@ export default function Contact () {
       </div>
       <div className={s.titleContact}>
         <h1 className='fw-bold'>Contáctanos</h1>
-        <h4 className='fw-semibold'>Ecríbenos y en breve nos pondremos en contacto contigo</h4>
+        <h4 className='fw-semibold'>Escríbenos y en breve nos pondremos en contacto contigo</h4>
       </div>
       <Formik
         initialValues={initialValues}
