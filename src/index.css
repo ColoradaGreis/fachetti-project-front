@@ -17,6 +17,22 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
+select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: var(--background-color-blue);
+  color: var(--font-color-3);
+  background-image: url("assets/arrowsSelect.svg") ;
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  border: 1px solid #dfdfdf;
+  border-radius: 23px;
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
 :root{
   --background-color: #FFF;
   --background-color-2: #E8E9E8;
@@ -55,4 +71,14 @@ GLOBALES
 
 .underLineHover:hover{
   text-decoration: underline;
+}
+
+.textArea{
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.2rem;
 }

@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import style from './style.module.css'
-import add from '@/assets/add.png'
+import { FormCreateProduct } from '../../components'
+import HeaderProducts from './HeaderProducts'
 
 export default function Products () {
+  const [urlImage, setUrlImage] = useState({
+    secureUrl: undefined,
+    publicId: undefined
+  }) // eslint-disable-line
   const [editing, setEditing] = useState(false) // eslint-disable-line
   const text = editing ? 'Editar' : 'Crear'
   const [creating, setCreating] = useState({
@@ -10,37 +15,24 @@ export default function Products () {
     product: 'Producto',
     category: 'Categoría'
   })
-  const handleChange = () => {
-    setCreating({
-      ...creating,
-      status: !creating.status
-    })
-  }
+
   return (
-    <section className='container-fluid user-select-none '>
+    <section className='container-xl user-select-none '>
+
+      {/* -----------------Title------------------------------------ */}
       <div className='row bkgWhite w-100'>
         <h2 className='col-12  text-uppercase'>{`${text} ${creating.status ? creating.product : creating.category}`}</h2>
       </div>
-
-      {/* -----------------HEADER------------------------------------ */}
-      <div className={`container-fluid bkgGray px-5 py-5 ${style.container}`}>
-
-        <div className={`row ${style.borderBottom}`}>
-          <div className='col-12 px-0'>
-            <h3 className='bold'>
-              {`${text} ${creating.status ? creating.product : creating.category}s`}
-            </h3>
-          </div>
-          <div className='col offset-1 '>
-            <h5 className='pointer bold pointer underLineHover' onClick={handleChange}>
-              <img src={add} alt='more' className={style.add} />
-              {`${text} ${creating.status ? creating.category : creating.product}s`}
-            </h5>
-          </div>
-        </div>
+      {/* -----------------Fin-Title------------------------------------ */}
+      <div className={`container bkgGray px-5 py-5 ${style.container}`}> {/* Container padre */}
+        {/* -----------------HEADER------------------------------------ */}
+        <HeaderProducts creating={creating} setCreating={setCreating} editing={editing} text={text} />
         {/* -----------------FIN-HEADER------------------------------------ */}
-        {/* -----------------FORM------------------------------------ */}
 
+        {/* -----------------FORM------------------------------------ */}
+        <div className={`container-fluid mt-5 ${style.containerBody}`}>
+          <FormCreateProduct setUrlImage={setUrlImage} urlImage={urlImage} />
+        </div>
       </div>
     </section>
   )

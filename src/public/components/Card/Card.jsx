@@ -1,6 +1,6 @@
 import s from './card.module.css'
 
-export default function Card ({ id, title, description, isBanned, isImportant, image }) {
+export default function Card ({ id, title, description, isBanned, isImportant, image = '...' }) {
   return (
     <div className={`${s.card}`}>
       <div className='col'>
