@@ -1,16 +1,27 @@
+import { useEffect, useState } from 'react'
 import { CloudinaryWidget } from '../CloudinaryWidget'
 import style from './style.module.css'
 import { useFormik } from 'formik'
 import { useGetAllCategories } from '../../../hooks'
 import close from './Recurso 62@300x.png'
 import flechas from '@/assets/flechas.png'
+import { deleteCloudinaryImage } from '../../utilities'
 
-export default function FormCreateProduct ({ urlImage, setUrlImage }) {
-  const { data, loading, error } = useGetAllCategories()
-  const {values, handleChange} = useFormik({ // eslint-disable-line
+export default function FormCreateProduct () {
+  // Aqui Guardamos la url de la imagen y el publicId
+  // la url para poder renderizarla y el publicId para poder eliminarla
+  const [urlImage, setUrlImage] = useState({
+    secureUrl: undefined,
+    publicId: undefined,
+    delete_token: undefined
+  })
+  const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
+
+  // Inicio Formik
+  const {values, handleChange, handleSubmit, setValues} = useFormik({ // eslint-disable-line
     initialValues: {
       name: '',
-      image: urlImage.secureUrl || '',
+      image: urlImage.secureUrl,
       details: '',
       categoryId: ''
     },
@@ -18,15 +29,22 @@ export default function FormCreateProduct ({ urlImage, setUrlImage }) {
       console.log(values)
     }
   })
-  const cancelImage = () => {
+  // Fin Formik
+
+  // Eliminar imagen
+  const detroyImage = () => {
+    deleteCloudinaryImage(urlImage.delete_token)
     setUrlImage({
       secureUrl: undefined,
-      publicId: undefined
+      publicId: undefined,
+      delete_token: undefined
     })
   }
-  console.log(values)
+  // Actualizar el estado de la imagen
+  useEffect(() => { setValues({ ...values, image: urlImage.secureUrl }) }, [urlImage])
+  // console.log(values)
   return (
-    <form className='row h-100 justify-content-center'>
+    <form className='row h-100 justify-content-center' onSubmit={handleSubmit}>
 
       {/* ---------------------------Card------------------------ */}
       <div className='col-6 col-lg-5'>
@@ -39,7 +57,7 @@ export default function FormCreateProduct ({ urlImage, setUrlImage }) {
                       ? (
                         <>
                           <img src={urlImage.secureUrl} alt='...' className={` w-100 h-100 ${style.cardImg}`} />
-                          <img src={close} alt='Close image' className={`${style.close}`} onClick={cancelImage} />
+                          <img src={close} alt='Close image' className={`${style.close}`} onClick={detroyImage} />
                         </>
                         )
                       : (
@@ -67,7 +85,7 @@ export default function FormCreateProduct ({ urlImage, setUrlImage }) {
       </div>
       {/* --------------------------Fin-Card------------------------ */}
       {/* --------------------------Details------------------------ */}
-      <div className={`col-5 offset-1 bkgWhite px-5 py-5 ${style.detailsContainer}`}>
+      <div className={`col-5 offset-1 bkgWhite px-5 py-5 mb-2 ${style.detailsContainer}`}>
         <div className='row'>
           <div className='col-12'>
             <h2 className='bold'>Texto Detalle:</h2>
@@ -80,7 +98,7 @@ export default function FormCreateProduct ({ urlImage, setUrlImage }) {
               name='details'
               id='details'
               placeholder='Escribe aqui el detalle del producto..'
-              className='w-100 textArea'
+              className='w-100  textArea'
               onChange={handleChange}
             />
           </div>
@@ -115,6 +133,7 @@ export default function FormCreateProduct ({ urlImage, setUrlImage }) {
         }
         </div>
       </div>
+      <button type='submit' className='btn btn-primary'>Submit</button>
     </form>
   )
 }

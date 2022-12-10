@@ -24,7 +24,8 @@ export default function CloudinaryWidget ({ setUrlImage }) {
         setUrlImage(prev => ({
           ...prev,
           secureUrl: result.info.secure_url,
-          publicId: result.info.public_id
+          publicId: result.info.public_id,
+          delete_token: result.info.delete_token
         }))
       }
     })

@@ -4,10 +4,6 @@ import { FormCreateProduct } from '../../components'
 import HeaderProducts from './HeaderProducts'
 
 export default function Products () {
-  const [urlImage, setUrlImage] = useState({
-    secureUrl: undefined,
-    publicId: undefined
-  }) // eslint-disable-line
   const [editing, setEditing] = useState(false) // eslint-disable-line
   const text = editing ? 'Editar' : 'Crear'
   const [creating, setCreating] = useState({
@@ -31,7 +27,7 @@ export default function Products () {
 
         {/* -----------------FORM------------------------------------ */}
         <div className={`container-fluid mt-5 ${style.containerBody}`}>
-          <FormCreateProduct setUrlImage={setUrlImage} urlImage={urlImage} />
+          <FormCreateProduct />
         </div>
       </div>
     </section>
