@@ -33,12 +33,20 @@ select {
   padding-right: 2rem;
 }
 
+option{
+  color: var(--font-color-3);
+  border-radius: 23px;
+  padding: 1rem;
+  padding-right: 2rem;
+  background-color: var(--background-color-blue2);
+}
 :root{
   --background-color: #FFF;
   --background-color-2: #E8E9E8;
   --background-color-body: #F9F9F9;
   --background-color-blue: #232851;
   --background-color-gray: #EDEDED;
+  --background-color-blue2: #124E78;
   --font-family-1: 'Gothan', sans-serif;
   --font-family-2: 'Montserrat', sans-serif;
   --font-family-3: italic2;
