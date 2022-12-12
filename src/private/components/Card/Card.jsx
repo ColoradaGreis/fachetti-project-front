@@ -1,18 +1,18 @@
 import style from './style.module.css'
-import close from './Recurso 62@300x.png'
+import close from '@/assets/crossIcon.png'
 import { CloudinaryWidget } from '../'
 import { useEffect, useState } from 'react'
 import { deleteCloudinaryImage } from '../../utilities'
 
 export default function Card ({ handleChange, setValues, values }) {
   const [urlImage, setUrlImage] = useState({
-    secureUrl: undefined,
+    secureUrl: values.image || undefined,
     publicId: undefined,
     delete_token: undefined
   })
   // Eliminar imagen
   const destroyImage = () => {
-    deleteCloudinaryImage(urlImage.delete_token)
+    if (urlImage.delete_token) deleteCloudinaryImage(urlImage.delete_token)
     setUrlImage({
       secureUrl: undefined,
       publicId: undefined,
@@ -51,6 +51,7 @@ export default function Card ({ handleChange, setValues, values }) {
             placeholder='Nombre del producto..'
             className='w-100 textArea'
             onChange={handleChange}
+            value={values.name}
           />
         </div>
       </div>

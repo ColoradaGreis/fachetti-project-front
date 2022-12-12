@@ -1,0 +1,17 @@
+.container{
+  border-left: solid 8px var(--background-color-blue);
+}
+
+.add{
+  padding: 0 5px 4px 0;
+  width: 26px;
+}
+
+.borderBottom{
+  border-bottom: solid 4px var(--background-color-blue);
+}
+
+.containerBody{
+  width: 100%;
+  height: 750px;
+}

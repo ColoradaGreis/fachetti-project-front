@@ -2,8 +2,9 @@ import style from './style.module.css'
 import { useFormik } from 'formik'
 import { useGetAllCategories } from '../../../hooks'
 import flechas from '@/assets/flechas.png'
-import { CustonButton } from '../CustonButton'
+import search from '@/assets/SearchIcon.png'
 import { Card } from '../Card'
+import { Link } from 'react-router-dom'
 
 export default function FormCreateProduct () {
   const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
@@ -22,7 +23,6 @@ export default function FormCreateProduct () {
   })
   // Fin Formik
 
-  console.log(values)
   return (
     <form className='row h-100 justify-content-center' onSubmit={handleSubmit}>
 
@@ -51,6 +51,7 @@ export default function FormCreateProduct () {
               placeholder='Escribe aqui el detalle del producto..'
               className='w-100  textArea'
               onChange={handleChange}
+              value={values.details}
             />
           </div>
         </div>
@@ -59,13 +60,14 @@ export default function FormCreateProduct () {
       {/* --------------------------Fin-Details------------------------ */}
 
       <div className='row mt-5'>
+        {/* --------------------------Select------------------------ */}
         <div className='col-6'>
-          <label htmlFor='categoryId' className='form-label bold pointer'>
-            <img src={flechas} alt='arrows' className={style.flechas} /> <span> SELECCIONAR UNA CATEGORÍA</span>
+          <label htmlFor='categoryId' className='form-label bold pointer mb-0'>
+            <img src={flechas} alt='arrows' className={style.icons} /><span> SELECCIONAR UNA CATEGORÍA</span>
           </label>
           {
           (!loading && !error) && (
-            <div className='offset-1 col-10 mt-3'>
+            <div className='offset-1 col-10 mt-1'>
               <select
                 name='categoryId'
                 id='categoryId'
@@ -83,10 +85,17 @@ export default function FormCreateProduct () {
           )
         }
         </div>
+        {/* --------------------------Fin-Select------------------------ */}
+        {/* --------------------------Search-Icon------------------------ */}
+        <div className='col-6'>
+          <Link to='/'>
+            <img src={search} alt='search' className={style.icons} /><span className='black'> BUSCAR PRODUCTOS</span>
+          </Link>
+        </div>
       </div>
       <div className='row  pe-5'>
         <div className='offset-9 col-3 px-0'>
-          <CustonButton>GUARDAR</CustonButton>
+          <button>GUARDAR</button>
         </div>
       </div>
     </form>

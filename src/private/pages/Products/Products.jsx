@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import style from './style.module.css'
-import { FormCreateProduct } from '../../components'
+import { FormCreateProduct, FormCreateCategori } from '../../components'
 import HeaderProducts from './HeaderProducts'
 
 export default function Products () {
@@ -27,7 +27,11 @@ export default function Products () {
 
         {/* -----------------FORM------------------------------------ */}
         <div className={`container-fluid mt-5 ${style.containerBody}`}>
-          <FormCreateProduct />
+          {
+            creating.status
+              ? <FormCreateProduct />
+              : <FormCreateCategori />
+         }
         </div>
       </div>
     </section>

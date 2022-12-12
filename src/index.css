@@ -29,7 +29,7 @@ select {
   background-position-y: 50%;
   border: 1px solid #dfdfdf;
   border-radius: 23px;
-  padding: 1rem;
+  padding: 0.5rem;
   padding-right: 2rem;
 }
 
@@ -40,6 +40,38 @@ option{
   padding-right: 2rem;
   background-color: var(--background-color-blue2);
 }
+
+button{
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 23px;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--background-color-blue);
+  color: var(--font-color-3);
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: var(--font-family-2);
+  
+  border: 4px #000 solid; ;
+}
+
+button:hover{
+  text-decoration: underline;
+  box-shadow: inset 0px 0px 24px -4px rgba(0,0,0,0.75);
+}
+
+button:disabled,
+button[disabled]{
+  background-color: var(--background-color);
+  color: var(--font-color-2);
+  cursor: not-allowed;
+  border-color: var(--font-color-2);
+  box-shadow: inset 0px 0px 24px -4px rgba(0,0,0,0.75);
+}
+
 :root{
   --background-color: #FFF;
   --background-color-2: #E8E9E8;
@@ -73,6 +105,9 @@ GLOBALES
 .white{
   color: var(--font-color-3);
 }
+.black{
+  color: var(--font-color-1);
+}
 .bold{
   font-weight: bold;
 }
@@ -90,3 +125,4 @@ GLOBALES
   font-style: italic;
   font-size: 1.2rem;
 }
+

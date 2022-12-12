@@ -19,3 +19,7 @@
   cursor: pointer;
   width: 50px;
 }
+
+.close:hover{
+  opacity: 0.5;
+}

@@ -9,7 +9,6 @@ export default function CloudinaryWidget ({ setUrlImage }) {
 
   useEffect(() => {
     cloudirayRef.current = window.cloudinary
-    console.log(cloudirayRef.current)
     widgetRef.current = cloudirayRef.current.createUploadWidget({
       cloud_name: cloudinaryKeys.cloud_name,
       api_key: cloudinaryKeys.api_key,
@@ -20,7 +19,7 @@ export default function CloudinaryWidget ({ setUrlImage }) {
       maxFiles: 1
     }, (error, result) => {
       if (!error && result && result.event === 'success') {
-        console.log('Done! Here is the image info: ', result.info)
+        // console.log('Done! Here is the image info: ', result.info)
         setUrlImage(prev => ({
           ...prev,
           secureUrl: result.info.secure_url,
