@@ -26,6 +26,15 @@
     justify-content: center;
     gap: 10px;
 }
+.titlePage{
+    font-family: var(--font-family-1);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 10px;
+    align-items: center;
+    line-height: 19.14px;
+ 
+}
 .titleContacto{
     font-family: var(--font-family-2);
 }
@@ -36,6 +45,14 @@
 .map{
     width: 100px;
     height: 100px;
+}
+.titleUbi{
+    font-family: var(--font-family-1);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+    align-items: center;
+    line-height: 19.14px;
 }
 @media (max-width:992px) {
     .footer{
