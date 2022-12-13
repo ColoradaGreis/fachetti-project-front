@@ -6,9 +6,9 @@ import { useFormik } from 'formik'
 
 export default function FormCreatePublication () {
   // Inicio Formik
-  const {values, handleChange, handleSubmit, setValues} = useFormik({ // eslint-disable-line
+  const {values, handleChange, handleSubmit, setValues, handleBlur, touched, errors} = useFormik({ // eslint-disable-line
     initialValues: {
-      name: '',
+      title: '',
       image: ''
     },
     onSubmit: values => {
@@ -24,6 +24,10 @@ export default function FormCreatePublication () {
           values={values}
           handleChange={handleChange}
           setValues={setValues}
+          title
+          handleBlur={handleBlur}
+          touched={touched}
+          errors={errors}
         />
       </div>
       {/* --------------------------Fin-Card------------------------ */}

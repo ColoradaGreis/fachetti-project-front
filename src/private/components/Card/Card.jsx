@@ -4,7 +4,7 @@ import { CloudinaryWidget } from '../'
 import { useEffect, useState } from 'react'
 import { deleteCloudinaryImage } from '../../utilities'
 
-export default function Card ({ handleChange, setValues, values }) {
+export default function Card ({ handleChange, setValues, values, title, handleBlur, touched, errors }) {
   const [urlImage, setUrlImage] = useState({
     secureUrl: values.image || undefined,
     publicId: undefined,
@@ -19,6 +19,7 @@ export default function Card ({ handleChange, setValues, values }) {
       delete_token: undefined
     })
   }
+
   useEffect(() => { setValues({ ...values, image: urlImage.secureUrl }) }, [urlImage])
   return (
     <div className={`container p-5 ${style.cardShadow}`}>
@@ -46,14 +47,20 @@ export default function Card ({ handleChange, setValues, values }) {
         <div className='col-12 mt-3 px-0'>
           <textarea
             maxLength={70}
-            name='name'
-            id='name'
+            name={title ? 'title' : 'name'}
+            id={title ? 'title' : 'name'}
             placeholder='Nombre del producto..'
             className='w-100 textArea'
             onChange={handleChange}
-            value={values.name}
+            value={title ? values.title : values.name}
+            onBlur={handleBlur}
           />
         </div>
+        {
+                    touched.name && errors.name
+                      ? <span className='errorText'>{errors.name}</span>
+                      : null
+        }
       </div>
     </div>
   )

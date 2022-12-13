@@ -85,6 +85,7 @@ button[disabled]{
   --font-color-1: #000000;
   --font-color-2: #124E78;
   --font-color-3: #FFF;
+  --font-color-4: #ff0000;
   --font-color-title: #16213E;
 }
 /* 
@@ -126,3 +127,9 @@ GLOBALES
   font-size: 1.2rem;
 }
 
+.errorText{ 
+  color: var(--font-color-4);
+  font-size: 0.8rem;
+  font-weight: 300;
+  font-style: italic;
+}

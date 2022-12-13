@@ -5,24 +5,25 @@ import flechas from '@/assets/flechas.png'
 import search from '@/assets/SearchIcon.png'
 import { Card } from '../Card'
 import { Link } from 'react-router-dom'
+import { formProductSchema } from '../../utilities'
 
 export default function FormCreateProduct () {
   const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
 
   // Inicio Formik
-  const {values, handleChange, handleSubmit, setValues} = useFormik({ // eslint-disable-line
+  const {values, handleChange, handleSubmit, setValues, isSubmitting, handleBlur,touched, errors} = useFormik({ // eslint-disable-line
     initialValues: {
       name: '',
       image: '',
       details: '',
       categoryId: ''
     },
+    validationSchema: formProductSchema,
     onSubmit: values => {
       console.log(values)
     }
   })
   // Fin Formik
-
   return (
     <form className='row h-100 justify-content-center' onSubmit={handleSubmit}>
 
@@ -32,6 +33,9 @@ export default function FormCreateProduct () {
           values={values}
           handleChange={handleChange}
           setValues={setValues}
+          handleBlur={handleBlur}
+          touched={touched}
+          errors={errors}
         />
       </div>
       {/* --------------------------Fin-Card------------------------ */}
@@ -45,7 +49,8 @@ export default function FormCreateProduct () {
         <div className='row'>
           <div className='col-12'>
             <textarea
-              maxLength={200}
+              maxLength={600}
+              rows={13}
               name='details'
               id='details'
               placeholder='Escribe aqui el detalle del producto..'
@@ -95,7 +100,7 @@ export default function FormCreateProduct () {
       </div>
       <div className='row  pe-5'>
         <div className='offset-9 col-3 px-0'>
-          <button>GUARDAR</button>
+          <button disabled={isSubmitting}>GUARDAR</button>
         </div>
       </div>
     </form>
