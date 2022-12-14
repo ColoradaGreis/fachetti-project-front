@@ -3,9 +3,14 @@ import { cloudinaryKeys } from '../../utilities'
 import addPhoto from '@/assets/addPhoto.png'
 import style from './style.module.css'
 
-export default function CloudinaryWidget ({ setUrlImage }) {
+export default function CloudinaryWidget ({ setUrlImage, setPressed }) {
   const cloudirayRef = useRef(null)
   const widgetRef = useRef(null)
+
+  const handleClick = () => {
+    widgetRef.current.open()
+    setPressed(true)
+  }
 
   useEffect(() => {
     cloudirayRef.current = window.cloudinary
@@ -30,7 +35,7 @@ export default function CloudinaryWidget ({ setUrlImage }) {
     })
   }, [])
   return (
-    <div onClick={() => widgetRef.current.open()} className='pointer'>
+    <div onClick={handleClick} className='pointer'>
       <img src={addPhoto} alt='Icon add photo' className={style.icon} />
     </div>
   )

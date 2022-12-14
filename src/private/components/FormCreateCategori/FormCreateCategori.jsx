@@ -3,18 +3,23 @@ import search from '@/assets/SearchIcon.png'
 import { Card } from '..'
 import style from './style.module.css'
 import { useFormik } from 'formik'
-import { urlApi } from '@/api'
+import { formCategorySchema, postForms } from '../../utilities'
 
 export default function FormCreateCategori () {
   // Inicio Formik
-  const {values, handleChange, handleSubmit, setValues, handleBlur, touched, errors} = useFormik({ // eslint-disable-line
+  const {values, handleChange, handleSubmit, setValues, handleBlur, touched, errors, isSubmitting} = useFormik({ // eslint-disable-line
     initialValues: {
       name: '',
       image: ''
     },
-    onSubmit: async values => {
-      const res = await urlApi.post('categories', values)
-      console.log(res)
+    validationSchema: formCategorySchema,
+    onSubmit: async (values, { resetForm }) => {
+      const { message, ok } = await postForms('categories', values)
+      if (ok) {
+        resetForm()
+        alert(`Categoría ${message}`) // eslint-disable-line
+      }
+      if(!ok) alert(`message`) // eslint-disable-line
     }
   })
   return (
@@ -41,7 +46,7 @@ export default function FormCreateCategori () {
           </Link>
         </div>
         <div className='col-6  pe-5'>
-          <button>GUARDAR</button>
+          <button type='submit' disabled={isSubmitting}>GUARDAR</button>
         </div>
       </div>
     </form>

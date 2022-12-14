@@ -3,17 +3,25 @@ import search from '@/assets/SearchIcon.png'
 import { Card } from '..'
 import style from './style.module.css'
 import { useFormik } from 'formik'
+import { formPublicationsSchema, postForms } from '../../utilities'
 
 export default function FormCreatePublication () {
   // Inicio Formik
-  const {values, handleChange, handleSubmit, setValues, handleBlur, touched, errors} = useFormik({ // eslint-disable-line
+  const {values, handleChange, handleSubmit, setValues, handleBlur, touched, errors, isSubmitting} = useFormik({ // eslint-disable-line
     initialValues: {
       title: '',
       image: ''
     },
-    onSubmit: values => {
-      console.log(values)
+    validationSchema: formPublicationsSchema,
+    onSubmit: async (values, { resetForm }) => {
+      const { message, ok } = await postForms('publications', values)
+      if (ok) {
+        resetForm()
+        alert(`Publicación ${message}`) // eslint-disable-line
+      }
+      if(!ok) alert(`message`) // eslint-disable-line
     }
+
   })
   return (
     <form className='row h-100 justify-content-center' onSubmit={handleSubmit}>
@@ -40,7 +48,7 @@ export default function FormCreatePublication () {
           </Link>
         </div>
         <div className='col-6  pe-5'>
-          <button>GUARDAR</button>
+          <button type='submit' disabled={isSubmitting}>GUARDAR</button>
         </div>
       </div>
     </form>

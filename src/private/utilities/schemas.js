@@ -11,7 +11,7 @@ export const formProductSchema = Yup.object().shape({
     .required('*Campo obligatorio'),
   image: Yup.string()
     .url()
-    .required('*Campo obligatorio'),
+    .required('*Debes ingresar una imagen'),
   categoryId: Yup.string()
     .uuid()
     .required('*Campo obligatorio')
@@ -24,7 +24,7 @@ export const formCategorySchema = Yup.object().shape({
     .required('*Campo obligatorio'),
   image: Yup.string()
     .url()
-    .required('*Campo obligatorio')
+    .required('*Debes ingresar una imagen')
 })
 
 export const formPublicationsSchema = Yup.object().shape({
@@ -34,5 +34,5 @@ export const formPublicationsSchema = Yup.object().shape({
     .required('*Campo obligatorio'),
   image: Yup.string()
     .url()
-    .required('*Campo obligatorio')
+    .required('*Debes ingresar una imagen')
 })

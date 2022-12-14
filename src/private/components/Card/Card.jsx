@@ -10,6 +10,7 @@ export default function Card ({ handleChange, setValues, values, title, handleBl
     publicId: undefined,
     delete_token: undefined
   })
+  const [pressed, setPressed] = useState(false)
   // Eliminar imagen
   const destroyImage = () => {
     if (urlImage.delete_token) deleteCloudinaryImage(urlImage.delete_token)
@@ -21,29 +22,39 @@ export default function Card ({ handleChange, setValues, values, title, handleBl
   }
 
   useEffect(() => { setValues({ ...values, image: urlImage.secureUrl }) }, [urlImage])
+
   return (
     <div className={`container p-5 ${style.cardShadow}`}>
 
       <div className='row justify-content-center position-relative'>
 
         {
-                    urlImage.secureUrl
+                    values.image
                       ? (
                         <>
-                          <img src={urlImage.secureUrl} alt='...' className={` w-100 h-100 ${style.cardImg}`} />
+                          <img src={values.image} alt='...' className={` w-100 h-100 ${style.cardImg}`} />
                           <img src={close} alt='Close image' className={`${style.close}`} onClick={destroyImage} />
                         </>
                         )
                       : (
-                        <div className={`w-100 bkgWhite d-flex align-items-center justify-content-center ${style.notImage}`}>
-                          <CloudinaryWidget setUrlImage={setUrlImage} />
+                        <div
+                          name='image'
+                          onBlur={handleBlur}
+                          className={`w-100 bkgWhite d-flex align-items-center justify-content-center position-relative ${style.notImage}`}
+                        >
+                          <CloudinaryWidget setUrlImage={setUrlImage} setPressed={setPressed} />
+                          {
+                            pressed && errors.image
+                              ? <span className='errorText position-absolute bottom-0'>{errors.image}</span>
+                              : null
+                          }
                         </div>
                         )
                   }
 
       </div>
 
-      <div className='row'>
+      <div className='row position-relative'>
         <div className='col-12 mt-3 px-0'>
           <textarea
             maxLength={70}
@@ -57,8 +68,13 @@ export default function Card ({ handleChange, setValues, values, title, handleBl
           />
         </div>
         {
-                    touched.name && errors.name
-                      ? <span className='errorText'>{errors.name}</span>
+                    !title && touched.name && errors.name
+                      ? <span className='errorText position-absolute bottom-0'>{errors.name}</span>
+                      : null
+        }
+        {
+                    title && touched.title && errors.title
+                      ? <span className='errorText position-absolute bottom-0'>{errors.title}</span>
                       : null
         }
       </div>

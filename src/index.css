@@ -17,6 +17,11 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
+a{
+  text-decoration: none;
+  color: var(--font-color-1);
+}
+
 select {
   cursor: pointer;
   -webkit-appearance: none;
@@ -54,7 +59,6 @@ button{
   font-weight: 600;
   font-size: 1.2rem;
   font-family: var(--font-family-2);
-  
   border: 4px #000 solid; ;
 }
 
@@ -91,6 +95,8 @@ button[disabled]{
 /* 
 GLOBALES
  */
+
+
 .bkgWhite{
   background-color: var(--background-color);
 }
@@ -129,7 +135,7 @@ GLOBALES
 
 .errorText{ 
   color: var(--font-color-4);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 300;
   font-style: italic;
 }
