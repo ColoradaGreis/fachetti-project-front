@@ -28,7 +28,7 @@ export default function Footer () {
           <div className='row'>
             <div className='d-flex justify-content-center align-items-center flex-row gap-3 fs-5 text-decoration-none'>
               <img width='30px' height='30px' src={wapp} alt='phone' />
-              <a className='text-decoration-none white' href='mailto:https://wa.me/+541161625130' target='_blank' rel='noreferrer'>(+54) 11-6162-5130</a>
+              <a className='text-decoration-none white' href={`https://wa.me/+${import.meta.env.VITE_WHATSAPP_NUMBER}`} target='_blank' rel='noreferrer'>(+54) 11-6162-5130</a>
             </div>
           </div>
           <div className='col mt-3'>

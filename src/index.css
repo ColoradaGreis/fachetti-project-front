@@ -17,22 +17,86 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
+a{
+  text-decoration: none;
+  color: var(--font-color-1);
+}
+
+select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: var(--background-color-blue);
+  color: var(--font-color-3);
+  background-image: url("assets/arrowsSelect.svg") ;
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 50%;
+  border: 1px solid #dfdfdf;
+  border-radius: 23px;
+  padding: 0.5rem;
+  padding-right: 2rem;
+}
+
+option{
+  color: var(--font-color-3);
+  border-radius: 23px;
+  padding: 1rem;
+  padding-right: 2rem;
+  background-color: var(--background-color-blue2);
+}
+
+button{
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 23px;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--background-color-blue);
+  color: var(--font-color-3);
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: var(--font-family-2);
+  border: 4px #000 solid; ;
+}
+
+button:hover{
+  text-decoration: underline;
+  box-shadow: inset 0px 0px 24px -4px rgba(0,0,0,0.75);
+}
+
+button:disabled,
+button[disabled]{
+  background-color: var(--background-color);
+  color: var(--font-color-2);
+  cursor: not-allowed;
+  border-color: var(--font-color-2);
+  box-shadow: inset 0px 0px 24px -4px rgba(0,0,0,0.75);
+}
+
 :root{
   --background-color: #FFF;
   --background-color-2: #E8E9E8;
   --background-color-body: #F9F9F9;
-  --background-color-blue: #16213E;
+  --background-color-blue: #232851;
+  --background-color-gray: #EDEDED;
+  --background-color-blue2: #124E78;
   --font-family-1: 'Gothan', sans-serif;
   --font-family-2: 'Montserrat', sans-serif;
   --font-family-3: 'Roboto Condensed', sans-serif;
   --font-color-1: #000000;
   --font-color-2: #124E78;
   --font-color-3: #FFF;
+  --font-color-4: #ff0000;
   --font-color-title: #16213E;
 }
 /* 
 GLOBALES
  */
+
+
 .bkgWhite{
   background-color: var(--background-color);
 }
@@ -48,10 +112,30 @@ GLOBALES
 .white{
   color: var(--font-color-3);
 }
+.black{
+  color: var(--font-color-1);
+}
 .bold{
   font-weight: bold;
 }
 
 .underLineHover:hover{
   text-decoration: underline;
+}
+
+.textArea{
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.errorText{ 
+  color: var(--font-color-4);
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
 }

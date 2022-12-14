@@ -4,13 +4,12 @@ import { urlApi } from '$Api'
 export default function useGetAllCategories () {
   const [state, setState] = useState({
     data: [],
-    loading: false,
+    loading: true,
     error: null
   })
 
   const getCategories = async () => {
     try {
-      setState({ ...state, loading: true })
       const api = await urlApi.get('/categories')
       if (typeof api.data === 'string') throw new Error(api.data)
 
