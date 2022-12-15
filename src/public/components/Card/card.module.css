@@ -6,9 +6,9 @@
     padding: 10px;
     justify-content: center;
     background-size: auto;
-    width: 275px;
-    height: 350px;
-    margin: 50px 15px 0px 15px;
+    width: 413px;
+    height: 526px;
+    /* margin: 25px 15px 0px 15px; */
     box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
     font-family: var(--font-family-1);
 }
@@ -22,9 +22,12 @@
     display: flex;
     height: 75%;
     width: 90%;
-    object-fit: cover;
+    object-fit:cover;
     background-color: var(--background-color-1);
     padding: 0;
     cursor: pointer;
-}
 
+}
+.div{
+ height: 300px;
+}
