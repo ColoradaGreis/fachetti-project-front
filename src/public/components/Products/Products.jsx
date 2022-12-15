@@ -14,7 +14,7 @@ export default function Products () {
     <div>
       <h1 className={s.h1Products}>PRODUCTOS</h1>
       <h3 className={s.h3Products}>Nuestros productos</h3>
-      <div className='d-flex p-5'>
+      <div className='d-flex flex-wrap mx-5 p-5 gap-5 justify-content-center'>
 
         {
         loading
@@ -22,7 +22,7 @@ export default function Products () {
           : error
             ? alert(error) //eslint-disable-line
             : data.map(e =>
-              <Link key={e.id} to={`/${e.name}`}>
+              <Link key={e.id} to={`/${e.id}`}>
                 <Card
                   key={e.id}
                   id={e.id}
