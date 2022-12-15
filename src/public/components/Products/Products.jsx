@@ -4,7 +4,6 @@ import Card from '../Card/Card'
 import s from './Product.module.css'
 import { useGetAllCategories } from '../../../hooks'
 import Loading from '../Loading/Loading.jsx'
-import { Navigate } from 'react-router-dom'
 
 export default function Products () {
   const { data, loading, error } = useGetAllCategories()
@@ -14,24 +13,27 @@ export default function Products () {
     <div>
       <h1 className={s.h1Products}>PRODUCTOS</h1>
       <h3 className={s.h3Products}>Nuestros productos</h3>
-      {
+      <div className='d-flex p-5'>
+
+        {
         loading
           ? <Loading />
           : error
             ? alert(error) //eslint-disable-line
             : data.map(e =>
-              <Navigate key={e.id} to='categories/:category'>
-                <Card
-                  key={e.id}
-                  id={e.id}
-                  title={e.name}
-                  image={e.image}
-                />
-              </Navigate>
+
+              <Card
+                key={e.id}
+                id={e.id}
+                title={e.name}
+                image={e.image}
+              />
+
             )
 
                //eslint-disable-line
       }
+      </div>
     </div>
   )
 }

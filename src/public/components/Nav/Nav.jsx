@@ -9,7 +9,7 @@ import { PublicNameRoutes } from '@/routes/routes.name'
 const routes = [
   { name: 'INICIO', path: PublicNameRoutes.HOME },
   { name: 'CLIENTES', path: PublicNameRoutes.CLIENTS },
-  { name: 'PRODUCTOS', path: PublicNameRoutes.PRODUCTS },
+  { name: 'PRODUCTOS', path: PublicNameRoutes.CATEGORIES },
   { name: 'NOTICIAS', path: PublicNameRoutes.NEWS },
   { name: 'CONTACTO', path: PublicNameRoutes.CONTACT },
   { name: 'OBRAS', path: PublicNameRoutes.WORKS }
