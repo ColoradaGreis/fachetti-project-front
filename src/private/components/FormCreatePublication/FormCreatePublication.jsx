@@ -3,7 +3,7 @@ import search from '@/assets/SearchIcon.png'
 import { Card } from '..'
 import style from './style.module.css'
 import { useFormik } from 'formik'
-import { formPublicationsSchema, postForms } from '../../utilities'
+import { formPublicationsSchema, postForms, swalErrorOrSuccess } from '../../utilities'
 
 export default function FormCreatePublication () {
   // Inicio Formik
@@ -17,9 +17,9 @@ export default function FormCreatePublication () {
       const { message, ok } = await postForms('publications', values)
       if (ok) {
         resetForm()
-        alert(`Publicación ${message}`) // eslint-disable-line
+        swalErrorOrSuccess(`Publicación ${message}`, ok)
       }
-      if(!ok) alert(`message`) // eslint-disable-line
+      swalErrorOrSuccess(message, ok)
     }
 
   })
@@ -48,7 +48,7 @@ export default function FormCreatePublication () {
           </Link>
         </div>
         <div className='col-6  pe-5'>
-          <button type='submit' disabled={isSubmitting}>GUARDAR</button>
+          <button type='submit' disabled={isSubmitting} className='button'>{!isSubmitting ? 'GUARDAR' : 'GUARDANDO...'}</button>
         </div>
       </div>
     </form>

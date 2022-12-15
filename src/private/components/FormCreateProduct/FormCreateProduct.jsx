@@ -5,7 +5,7 @@ import flechas from '@/assets/flechas.png'
 import search from '@/assets/SearchIcon.png'
 import { Card } from '../Card'
 import { Link } from 'react-router-dom'
-import { formProductSchema, postForms } from '../../utilities'
+import { formProductSchema, postForms, swalErrorOrSuccess } from '../../utilities'
 
 export default function FormCreateProduct () {
   const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
@@ -23,9 +23,9 @@ export default function FormCreateProduct () {
       const { message, ok } = await postForms('products', values)
       if (ok) {
         resetForm()
-        alert(`Producto ${message}`) // eslint-disable-line
+        swalErrorOrSuccess(`Producto ${message}`, ok)
       }
-      if(!ok) alert(`message`) // eslint-disable-line
+      swalErrorOrSuccess(message, ok)
     }
   })
   // Fin Formik
@@ -84,15 +84,15 @@ export default function FormCreateProduct () {
               <select
                 name='categoryId'
                 id='categoryId'
-                className='w-100'
+                className='w-100 select'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.categoryId}
               >
-                <option hidden defaultValue value=''>Seleccionar</option>
+                <option className='option' hidden defaultValue value=''>Seleccionar</option>
                 {
                   data.map(category => (
-                    <option key={category.id} value={category.id}>{category.name}</option>
+                    <option className='option' key={category.id} value={category.id}>{category.name}</option>
                   ))
                 }
               </select>
@@ -113,7 +113,7 @@ export default function FormCreateProduct () {
       </div>
       <div className='row  pe-5'>
         <div className='offset-9 col-3 px-0'>
-          <button type='submit' disabled={isSubmitting}>GUARDAR</button>
+          <button className='button' type='submit' disabled={isSubmitting}>{!isSubmitting ? 'GUARDAR' : 'GUARDANDO...'}</button>
         </div>
       </div>
     </form>

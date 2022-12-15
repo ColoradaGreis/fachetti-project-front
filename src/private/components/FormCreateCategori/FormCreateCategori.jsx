@@ -3,7 +3,7 @@ import search from '@/assets/SearchIcon.png'
 import { Card } from '..'
 import style from './style.module.css'
 import { useFormik } from 'formik'
-import { formCategorySchema, postForms } from '../../utilities'
+import { formCategorySchema, postForms, swalErrorOrSuccess } from '../../utilities'
 
 export default function FormCreateCategori () {
   // Inicio Formik
@@ -17,9 +17,11 @@ export default function FormCreateCategori () {
       const { message, ok } = await postForms('categories', values)
       if (ok) {
         resetForm()
-        alert(`Categoría ${message}`) // eslint-disable-line
+        swalErrorOrSuccess(`Categoría ${message}`, ok)
       }
-      if(!ok) alert(`message`) // eslint-disable-line
+      if (!ok) {
+        swalErrorOrSuccess(message, ok)
+      }
     }
   })
   return (
@@ -46,7 +48,7 @@ export default function FormCreateCategori () {
           </Link>
         </div>
         <div className='col-6  pe-5'>
-          <button type='submit' disabled={isSubmitting}>GUARDAR</button>
+          <button className='button' type='submit' disabled={isSubmitting}>{!isSubmitting ? 'GUARDAR' : 'GUARDANDO...'}</button>
         </div>
       </div>
     </form>
