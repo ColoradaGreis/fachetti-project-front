@@ -4,6 +4,7 @@ import Card from '../Card/Card'
 import s from './Product.module.css'
 import { useGetAllCategories } from '../../../hooks'
 import Loading from '../Loading/Loading.jsx'
+import { Link } from 'react-router-dom'
 
 export default function Products () {
   const { data, loading, error } = useGetAllCategories()
@@ -21,18 +22,17 @@ export default function Products () {
           : error
             ? alert(error) //eslint-disable-line
             : data.map(e =>
-
-              <Card
-                key={e.id}
-                id={e.id}
-                title={e.name}
-                image={e.image}
-              />
-
+              <Link key={e.id} to={`/${e.name}`}>
+                <Card
+                  key={e.id}
+                  id={e.id}
+                  title={e.name}
+                  image={e.image}
+                />
+              </Link>
             )
 
-               //eslint-disable-line
-      }
+        }
       </div>
     </div>
   )
