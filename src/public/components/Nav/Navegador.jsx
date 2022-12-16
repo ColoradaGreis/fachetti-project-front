@@ -1,20 +1,24 @@
 import React from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import style from './Navegador.module.css'
 
 function Navegador (props) {
-  const { link, span, children } = props
-  console.log(link)
-  const location = useLocation()
-  console.log(location)
+  const { link, children } = props
+
+  const active = {
+    transition: 'all 0.3s ease',
+    borderBottom: '3px solid whitesmoke',
+    textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+  }
 
   return (
     <>
       <NavLink
         to={link}
-        className={`${location.pathname === link && style.navlinkActive} ${style.navlink}  `}
+        className={style.navlink}
+        style={({ isActive }) =>
+          isActive ? active : undefined}
       >
-        {span ? <span className={style.span}>{span}</span> : null}
         {children || null}
       </NavLink>
     </>
