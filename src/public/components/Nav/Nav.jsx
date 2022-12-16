@@ -7,7 +7,7 @@ import { PublicNameRoutes } from '@/routes/routes.name'
 import { useTranslation } from 'react-i18next'
 
 export default function Nav () {
-  const { t, i18n } = useTranslation('global')
+  const { t, i18n } = useTranslation('public')
 
   // Colocar aqui las nuevas rutas
   const routes = [

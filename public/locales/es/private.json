@@ -1,0 +1,34 @@
+{
+  "header":{
+    "title": "PANEL DE CONTROL",
+    "logOut": "CERRAR SESIÓN"
+  },
+  "sidebar":{
+    "consults": "Consultas",
+    "products": "Productos",
+    "publications": "Publiciones"
+  },
+  "products":{
+    "title": "Producto",
+    "details:": "Texto de detalle:",
+    "detailsPlaceHolder": "Escriba el texto de detalle...",
+    "selectTitle": "Seleccionar una categoría"
+  },
+  "categories":{
+    "title": "Categoría"
+  },
+  "publications":{
+    "title": "Publicación"
+  },
+  "utils":{
+    "edit": "Editar",
+    "create": "Crear",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "search": "Buscar",
+    "add": "Agregar",
+    "title": "Titulo..."
+  }
+
+}

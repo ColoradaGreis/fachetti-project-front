@@ -6,8 +6,10 @@ import search from '@/assets/SearchIcon.png'
 import { Card } from '../Card'
 import { Link } from 'react-router-dom'
 import { formProductSchema, postForms, swalErrorOrSuccess } from '../../utilities'
+import { useTranslation } from 'react-i18next'
 
 export default function FormCreateProduct () {
+  const { t } = useTranslation('private')
   const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
 
   // Inicio Formik
@@ -48,7 +50,7 @@ export default function FormCreateProduct () {
       <div className={`col-5 offset-1 bkgWhite px-5 py-5 mb-2 position-relative ${style.detailsContainer}`}>
         <div className='row'>
           <div className='col-12'>
-            <h2 className='bold'>Texto Detalle:</h2>
+            <h2 className='bold'>{t('products.details')}</h2>
           </div>
         </div>
         <div className='row'>
@@ -58,7 +60,7 @@ export default function FormCreateProduct () {
               rows={13}
               name='description'
               id='description'
-              placeholder='Escribe aqui el detalle del producto..'
+              placeholder={t('products.detailsPlaceholder')}
               className='w-100  textArea'
               onChange={handleChange}
               value={values.description}
@@ -76,7 +78,7 @@ export default function FormCreateProduct () {
         {/* --------------------------Select------------------------ */}
         <div className='col-6 position-relative'>
           <label htmlFor='categoryId' className='form-label bold pointer mb-0'>
-            <img src={flechas} alt='arrows' className={style.icons} /><span> SELECCIONAR UNA CATEGORÍA</span>
+            <img src={flechas} alt='arrows' className={style.icons} /><span className='text-uppercase'> {t('products.selectTitle')}</span>
           </label>
           {
           (!loading && !error) && (

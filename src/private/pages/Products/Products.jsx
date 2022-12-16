@@ -2,14 +2,16 @@ import { useState } from 'react'
 import style from './style.module.css'
 import { FormCreateProduct, FormCreateCategori } from '../../components'
 import HeaderProducts from './HeaderProducts'
+import { useTranslation } from 'react-i18next'
 
 export default function Products () {
+  const { t } = useTranslation('private')
   const [editing, setEditing] = useState(false) // eslint-disable-line
-  const text = editing ? 'Editar' : 'Crear'
+  const text = editing ? t('utils.edit') : t('utils.create')
   const [creating, setCreating] = useState({
     status: true,
-    product: 'Producto',
-    category: 'Categoría'
+    product: t('products.title'),
+    category: t('categories.title')
   })
 
   return (
