@@ -1,7 +1,7 @@
 import { Route } from 'react-router-dom'
 import { PublicNameRoutes } from './routes.name'
 import NotFoundRoute from './NotFoundRoute'
-import { Home, Clients, Products, News, Contact, Footer, Nav } from '$Public/components'
+import { Home, Clients, Products, News, Contact, Footer, Nav, CategoryProducts } from '$Public/components'
 
 export default function PublicRoutes () {
   return (
@@ -12,8 +12,8 @@ export default function PublicRoutes () {
 
         <Route index path={PublicNameRoutes.HOME} element={<Home />} />
         <Route path={PublicNameRoutes.CLIENTS} element={<Clients />} />
-        <Route path={PublicNameRoutes.PRODUCTS} element={<Products />} />
-        {/* <Route path='/products/:name' element={<CategoryProduct />} /> */}
+        <Route path={PublicNameRoutes.CATEGORIES} element={<Products />} />
+        <Route path={PublicNameRoutes.PRODUCTS} element={<CategoryProducts />} />
         <Route path={PublicNameRoutes.NEWS} element={<News />} />
         <Route path={PublicNameRoutes.CONTACT} element={<Contact />} />
       </NotFoundRoute>

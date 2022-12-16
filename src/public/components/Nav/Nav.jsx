@@ -13,7 +13,7 @@ export default function Nav () {
   const routes = [
     { name: t('nav.home'), path: PublicNameRoutes.HOME },
     { name: t('nav.clients'), path: PublicNameRoutes.CLIENTS },
-    { name: t('nav.products'), path: PublicNameRoutes.PRODUCTS },
+    { name: t('nav.products'), path: PublicNameRoutes.CATEGORIES },
     { name: t('nav.news'), path: PublicNameRoutes.NEWS },
     { name: t('nav.contact'), path: PublicNameRoutes.CONTACT },
     { name: t('nav.works'), path: PublicNameRoutes.WORKS }

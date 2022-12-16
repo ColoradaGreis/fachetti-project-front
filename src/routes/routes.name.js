@@ -1,10 +1,13 @@
 export const PublicNameRoutes = {
   HOME: '/',
   CLIENTS: 'clients',
-  PRODUCTS: 'products',
+  CATEGORIES: 'categories',
   NEWS: 'news',
   CONTACT: 'contact',
-  WORKS: 'works'
+  WORKS: 'works',
+  DETAIL: 'categories/:category/:id',
+  PRODUCTS: 'categories/:category'
+
 }
 
 export const PrivateNameRoutes = {
