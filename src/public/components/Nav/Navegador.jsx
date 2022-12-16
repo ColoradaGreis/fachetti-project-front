@@ -4,7 +4,9 @@ import style from './Navegador.module.css'
 
 function Navegador (props) {
   const { link, span, children } = props
+  console.log(link)
   const location = useLocation()
+  console.log(location)
 
   return (
     <>

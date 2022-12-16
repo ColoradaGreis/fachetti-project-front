@@ -4,18 +4,21 @@ import style from './nav.module.css'
 import Navegador from './Navegador'
 import { AiOutlineMenu } from 'react-icons/ai' // eslint-disable-line
 import { PublicNameRoutes } from '@/routes/routes.name'
-
-// Colocar aqui las nuevas rutas
-const routes = [
-  { name: 'INICIO', path: PublicNameRoutes.HOME },
-  { name: 'CLIENTES', path: PublicNameRoutes.CLIENTS },
-  { name: 'PRODUCTOS', path: PublicNameRoutes.PRODUCTS },
-  { name: 'NOTICIAS', path: PublicNameRoutes.NEWS },
-  { name: 'CONTACTO', path: PublicNameRoutes.CONTACT },
-  { name: 'OBRAS', path: PublicNameRoutes.WORKS }
-]
+import { useTranslation } from 'react-i18next'
 
 export default function Nav () {
+  const { t, i18n } = useTranslation('global')
+
+  // Colocar aqui las nuevas rutas
+  const routes = [
+    { name: t('nav.home'), path: PublicNameRoutes.HOME },
+    { name: t('nav.clients'), path: PublicNameRoutes.CLIENTS },
+    { name: t('nav.products'), path: PublicNameRoutes.PRODUCTS },
+    { name: t('nav.news'), path: PublicNameRoutes.NEWS },
+    { name: t('nav.contact'), path: PublicNameRoutes.CONTACT },
+    { name: t('nav.works'), path: PublicNameRoutes.WORKS }
+  ]
+
   return (
     <nav className={`navbar navbar-expand-lg navbar-light ${style.nav}`}>
       <div className='container-fluid d-flex align-items-center'>
@@ -35,6 +38,15 @@ export default function Nav () {
             ))}
 
           </ul>
+          <div className='nav-item dropdown'>
+            <div className={`nav-link dropdown-toggle noStyle white ${style.dropdown}`} id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+              {t('nav.idioma')}
+            </div>
+            <ul className='dropdown-menu ' aria-labelledby='navbarDropdown'>
+              <li><button onClick={() => i18n.changeLanguage('en')} className='dropdown-item '>{t('nav.english')}</button></li>
+              <li><button onClick={() => i18n.changeLanguage('es')} className='dropdown-item'>{t('nav.spanish')}</button></li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
