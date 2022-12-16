@@ -1,6 +1,6 @@
-export default function Body ({ user, read }) {
+export default function Body ({ user }) {
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid px-0 py-0'>
       <div className='row'>
         <div className='col-6'>
           <p>
@@ -22,7 +22,7 @@ export default function Body ({ user, read }) {
             <span className='bold'>Mensaje: </span>
             {user.message}
           </p>
-          <p>Leido: {read ? 'Si' : 'No'}</p>
+
         </div>
       </div>
     </div>

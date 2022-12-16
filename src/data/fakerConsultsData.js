@@ -19,6 +19,6 @@ function createRandomUser () {
   }
 }
 
-Array.from({ length: 20 }).forEach(() => {
+Array.from({ length: 8 }).forEach(() => {
   Consults.push(createRandomUser())
 })

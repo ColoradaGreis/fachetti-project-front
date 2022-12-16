@@ -109,6 +109,9 @@ GLOBALES
 .pointer{
   cursor: pointer;
 }
+.noPointer{
+  cursor:default
+}
 .white{
   color: var(--font-color-3);
 }
