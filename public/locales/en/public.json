@@ -1,0 +1,13 @@
+{
+  "nav":{
+    "home":"HOME",
+    "clients": "CLIENTS",
+    "products": "PRODUCTS",
+    "news": "NEWS",
+    "contact": "CONTACT",
+    "works": "WORKS",
+    "idioma": "LANGUAGE",
+    "english": "English",
+    "spanish": "Spanish"
+  }
+}

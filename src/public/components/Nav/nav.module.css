@@ -18,6 +18,10 @@
 .spanToggle{
   background-color: var(--background-color-blue);
 }
+.dropdown{
+  font-size: 18px;
+  margin-top: 2px;
+}
 @media (max-width: 622px) {
   .imgLogo{
     width: 100%;

@@ -1,9 +1,6 @@
-import { Link } from 'react-router-dom'
-import search from '@/assets/SearchIcon.png'
-import { Card } from '..'
-import style from './style.module.css'
+import { Card, CustonBotton, SerachAll } from '..'
 import { useFormik } from 'formik'
-import { formCategorySchema, postForms } from '../../utilities'
+import { formCategorySchema, postForms, swalErrorOrSuccess } from '../../utilities'
 
 export default function FormCreateCategori () {
   // Inicio Formik
@@ -17,9 +14,11 @@ export default function FormCreateCategori () {
       const { message, ok } = await postForms('categories', values)
       if (ok) {
         resetForm()
-        alert(`Categoría ${message}`) // eslint-disable-line
+        swalErrorOrSuccess(`Categoría ${message}`, ok)
       }
-      if(!ok) alert(`message`) // eslint-disable-line
+      if (!ok) {
+        swalErrorOrSuccess(message, ok)
+      }
     }
   })
   return (
@@ -41,12 +40,10 @@ export default function FormCreateCategori () {
       <div className='row mt-5'>
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <Link to='/'>
-            <img src={search} alt='search' className={style.icons} /><span className='black'> BUSCAR PRODUCTOS</span>
-          </Link>
+          <SerachAll route='/' />
         </div>
         <div className='col-6  pe-5'>
-          <button type='submit' disabled={isSubmitting}>GUARDAR</button>
+          <CustonBotton disabled={isSubmitting} />
         </div>
       </div>
     </form>

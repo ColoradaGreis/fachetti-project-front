@@ -22,7 +22,7 @@ a{
   color: var(--font-color-1);
 }
 
-select {
+.select {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -38,7 +38,7 @@ select {
   padding-right: 2rem;
 }
 
-option{
+.option{
   color: var(--font-color-3);
   border-radius: 23px;
   padding: 1rem;
@@ -46,7 +46,7 @@ option{
   background-color: var(--background-color-blue2);
 }
 
-button{
+.button{
   width: 100%;
   border: none;
   outline: none;
@@ -59,16 +59,16 @@ button{
   font-weight: 600;
   font-size: 1.2rem;
   font-family: var(--font-family-2);
-  border: 4px #000 solid; ;
+  border: 4px var(--background-color-blue) solid; ;
 }
 
-button:hover{
+.button:hover{
   text-decoration: underline;
   box-shadow: inset 0px 0px 24px -4px rgba(0,0,0,0.75);
 }
 
-button:disabled,
-button[disabled]{
+.button:disabled,
+.button[disabled]{
   background-color: var(--background-color);
   color: var(--font-color-2);
   cursor: not-allowed;
@@ -108,6 +108,9 @@ GLOBALES
 }
 .pointer{
   cursor: pointer;
+}
+.noPointer{
+  cursor:default
 }
 .white{
   color: var(--font-color-3);

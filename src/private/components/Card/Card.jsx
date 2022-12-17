@@ -3,8 +3,10 @@ import close from '@/assets/crossIcon.png'
 import { CloudinaryWidget } from '../'
 import { useEffect, useState } from 'react'
 import { deleteCloudinaryImage } from '../../utilities'
+import { useTranslation } from 'react-i18next'
 
 export default function Card ({ handleChange, setValues, values, title, handleBlur, touched, errors }) {
+  const { t } = useTranslation('private')
   const [urlImage, setUrlImage] = useState({
     secureUrl: values.image || undefined,
     publicId: undefined,
@@ -60,7 +62,7 @@ export default function Card ({ handleChange, setValues, values, title, handleBl
             maxLength={70}
             name={title ? 'title' : 'name'}
             id={title ? 'title' : 'name'}
-            placeholder='Nombre del producto..'
+            placeholder={t('utils.title')}
             className='w-100 textArea'
             onChange={handleChange}
             value={title ? values.title : values.name}

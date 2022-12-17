@@ -2,14 +2,16 @@ import style from './style.module.css'
 import { useFormik } from 'formik'
 import { useGetAllCategories } from '../../../hooks'
 import flechas from '@/assets/flechas.png'
-import search from '@/assets/SearchIcon.png'
 import { Card } from '../Card'
-import { Link } from 'react-router-dom'
-import { formProductSchema, postForms } from '../../utilities'
+import { formProductSchema, postForms, swalErrorOrSuccess } from '../../utilities'
+import { useTranslation } from 'react-i18next'
+import { CustonBotton } from '../CustonBotton'
+import { SerachAll } from '../SeachAll'
 
 export default function FormCreateProduct () {
+  const { t } = useTranslation('private')
   const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
-
+  console.log(data, loading, error)
   // Inicio Formik
   const {values, handleChange, handleSubmit, setValues, isSubmitting, handleBlur,touched, errors} = useFormik({ // eslint-disable-line
     initialValues: {
@@ -23,9 +25,9 @@ export default function FormCreateProduct () {
       const { message, ok } = await postForms('products', values)
       if (ok) {
         resetForm()
-        alert(`Producto ${message}`) // eslint-disable-line
+        swalErrorOrSuccess(`Producto ${message}`, ok)
       }
-      if(!ok) alert(`message`) // eslint-disable-line
+      swalErrorOrSuccess(message, ok)
     }
   })
   // Fin Formik
@@ -48,7 +50,7 @@ export default function FormCreateProduct () {
       <div className={`col-5 offset-1 bkgWhite px-5 py-5 mb-2 position-relative ${style.detailsContainer}`}>
         <div className='row'>
           <div className='col-12'>
-            <h2 className='bold'>Texto Detalle:</h2>
+            <h2 className='bold'>{t('products.details')}</h2>
           </div>
         </div>
         <div className='row'>
@@ -58,7 +60,7 @@ export default function FormCreateProduct () {
               rows={13}
               name='description'
               id='description'
-              placeholder='Escribe aqui el detalle del producto..'
+              placeholder={t('products.placeHolder')}
               className='w-100  textArea'
               onChange={handleChange}
               value={values.description}
@@ -76,7 +78,7 @@ export default function FormCreateProduct () {
         {/* --------------------------Select------------------------ */}
         <div className='col-6 position-relative'>
           <label htmlFor='categoryId' className='form-label bold pointer mb-0'>
-            <img src={flechas} alt='arrows' className={style.icons} /><span> SELECCIONAR UNA CATEGORÍA</span>
+            <img src={flechas} alt='arrows' className={style.icons} /><span className='text-uppercase'> {t('products.selectTitle')}</span>
           </label>
           {
           (!loading && !error) && (
@@ -84,20 +86,21 @@ export default function FormCreateProduct () {
               <select
                 name='categoryId'
                 id='categoryId'
-                className='w-100'
+                className='w-100 select'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.categoryId}
               >
-                <option hidden defaultValue value=''>Seleccionar</option>
+                <option className='option' hidden defaultValue value=''>{t('utils.select')}</option>
                 {
                   data.map(category => (
-                    <option key={category.id} value={category.id}>{category.name}</option>
+                    <option className='option' key={category.id} value={category.id}>{category.name}</option>
                   ))
                 }
               </select>
             </div>
           )
+
         }
           {
           touched.categoryId && errors.categoryId && <span className='errorText position-absolute ms-5 mt-2'>{errors.categoryId}</span>
@@ -106,14 +109,12 @@ export default function FormCreateProduct () {
         {/* --------------------------Fin-Select------------------------ */}
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <Link to='/'>
-            <img src={search} alt='search' className={style.icons} /><span className='black'> BUSCAR PRODUCTOS</span>
-          </Link>
+          <SerachAll route='/products' />
         </div>
       </div>
       <div className='row  pe-5'>
         <div className='offset-9 col-3 px-0'>
-          <button type='submit' disabled={isSubmitting}>GUARDAR</button>
+          <CustonBotton disabled={isSubmitting} />
         </div>
       </div>
     </form>

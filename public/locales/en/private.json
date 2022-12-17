@@ -1,0 +1,37 @@
+{
+  "header":{
+    "title": "ADMIN PANEL",
+    "logOut": "LOG OUT"
+  },
+  "sidebar":{
+    "consults": "Consults",
+    "products": "Products",
+    "publications": "Publications"
+  },
+  "products":{
+    "title": "Product",
+    "placeHolder": "Write details text here...",
+    "selectTitle": "Select a category",
+    "details": "Details text:"
+  },
+  "categories":{
+    "title": "Category"
+  },
+  "publications":{
+    "title": "Publication"
+  },
+  "utils":{
+    "edit": "Edit",
+    "create": "Create",
+    "delete": "Delete",
+    "save": "Save",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "search": "Search",
+    "add": "Add",
+    "title": "Title",
+    "searchAll": "Search all",
+    "select": "Select"
+    
+  }
+}

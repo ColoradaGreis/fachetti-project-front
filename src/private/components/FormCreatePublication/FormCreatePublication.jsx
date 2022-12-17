@@ -1,9 +1,6 @@
-import { Link } from 'react-router-dom'
-import search from '@/assets/SearchIcon.png'
-import { Card } from '..'
-import style from './style.module.css'
+import { Card, CustonBotton, SerachAll } from '..'
 import { useFormik } from 'formik'
-import { formPublicationsSchema, postForms } from '../../utilities'
+import { formPublicationsSchema, postForms, swalErrorOrSuccess } from '../../utilities'
 
 export default function FormCreatePublication () {
   // Inicio Formik
@@ -17,9 +14,9 @@ export default function FormCreatePublication () {
       const { message, ok } = await postForms('publications', values)
       if (ok) {
         resetForm()
-        alert(`Publicación ${message}`) // eslint-disable-line
+        swalErrorOrSuccess(`Publicación ${message}`, ok)
       }
-      if(!ok) alert(`message`) // eslint-disable-line
+      swalErrorOrSuccess(message, ok)
     }
 
   })
@@ -43,12 +40,10 @@ export default function FormCreatePublication () {
       <div className='row mt-5'>
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <Link to='/'>
-            <img src={search} alt='search' className={style.icons} /><span className='black'> BUSCAR PRODUCTOS</span>
-          </Link>
+          <SerachAll route='/' />
         </div>
         <div className='col-6  pe-5'>
-          <button type='submit' disabled={isSubmitting}>GUARDAR</button>
+          <CustonBotton disabled={isSubmitting} />
         </div>
       </div>
     </form>
