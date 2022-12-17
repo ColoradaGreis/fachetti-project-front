@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker'
 // import { faker } from '@faker-js/faker/locale/de';
 
-export const Consults = []
+const Consults = []
 const cellPhoneArray = [
   faker.phone.number(),
   undefined
@@ -22,3 +22,5 @@ function createRandomUser () {
 Array.from({ length: 8 }).forEach(() => {
   Consults.push(createRandomUser())
 })
+
+export default Consults

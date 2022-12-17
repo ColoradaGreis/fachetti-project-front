@@ -13,6 +13,7 @@ const postForms = async (url, data) => {
     }
   } catch (error) {
     res.message = error.response.data.message
+    console.log(error)
   }
   return res
 }

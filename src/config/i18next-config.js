@@ -15,6 +15,5 @@ i18next
     },
     interpolation: {
       escapeValue: false // react already safes from xss
-    },
-    debug: true
+    }
   })

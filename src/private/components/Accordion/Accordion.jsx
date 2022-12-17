@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Accordion as Acordion, Card } from 'react-bootstrap'
 import { CustomToggle, Body } from './'
-import { Consults as data } from '../../../data'
+import { fakerConsultsData as data } from '../../../data'
 import { parseDate } from '../../utilities'
 
 export default function Accordion () {

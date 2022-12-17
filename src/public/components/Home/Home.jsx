@@ -19,28 +19,28 @@ export default function Home () {
       {/* {Array.isArray(ImportantPublications) && ImportantPublications.map(p => ( */}
       <div className='container'>
         <input type='radio' name='slider' id='item-1' />
-        <input type='radio' name='slider' id='item-2' checked />
+        <input type='radio' name='slider' id='item-2' />
         <input type='radio' name='slider' id='item-3' />
 
         <div className='cards'>
-          <label className='card' for='item-1' id='selector-1'>
+          <label className='card' htmlFor='item-1' id='selector-1'>
             <img className='imgLanding' src={image1} alt='image1' />
           </label>
-          <label className='card' for='item-2' id='selector-2'>
+          <label className='card' htmlFor='item-2' id='selector-2'>
             <img className='imgLanding' src={image2} alt='image2' />
           </label>
-          <label className='card' for='item-3' id='selector-3'>
+          <label className='card' htmlFor='item-3' id='selector-3'>
             <img className='imgLanding' src={image3} alt='image3' />
           </label>
         </div>
         <div className='buttonImages'>
-          <label className='bsCircle' for='item-1' id='selector-1'>
+          <label className='bsCircle' htmlFor='item-1' id='selector-1'>
             <BsCircle className='bsCircle' />
           </label>
-          <label className='bsCircle' for='item-2' id='selector-2'>
+          <label className='bsCircle' htmlFor='item-2' id='selector-2'>
             <BsCircle className='bsCircle' />
           </label>
-          <label className='bsCircle' for='item-3' id='selector-3'>
+          <label className='bsCircle' htmlFor='item-3' id='selector-3'>
             <BsCircle className='bsCircle' />
           </label>
         </div>
