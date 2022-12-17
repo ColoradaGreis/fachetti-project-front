@@ -2,16 +2,16 @@ import style from './style.module.css'
 import { useFormik } from 'formik'
 import { useGetAllCategories } from '../../../hooks'
 import flechas from '@/assets/flechas.png'
-import search from '@/assets/SearchIcon.png'
 import { Card } from '../Card'
-import { Link } from 'react-router-dom'
 import { formProductSchema, postForms, swalErrorOrSuccess } from '../../utilities'
 import { useTranslation } from 'react-i18next'
+import { CustonBotton } from '../CustonBotton'
+import { SerachAll } from '../SeachAll'
 
 export default function FormCreateProduct () {
   const { t } = useTranslation('private')
   const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
-
+  console.log(data, loading, error)
   // Inicio Formik
   const {values, handleChange, handleSubmit, setValues, isSubmitting, handleBlur,touched, errors} = useFormik({ // eslint-disable-line
     initialValues: {
@@ -60,7 +60,7 @@ export default function FormCreateProduct () {
               rows={13}
               name='description'
               id='description'
-              placeholder={t('products.detailsPlaceholder')}
+              placeholder={t('products.placeHolder')}
               className='w-100  textArea'
               onChange={handleChange}
               value={values.description}
@@ -91,7 +91,7 @@ export default function FormCreateProduct () {
                 onBlur={handleBlur}
                 value={values.categoryId}
               >
-                <option className='option' hidden defaultValue value=''>Seleccionar</option>
+                <option className='option' hidden defaultValue value=''>{t('utils.select')}</option>
                 {
                   data.map(category => (
                     <option className='option' key={category.id} value={category.id}>{category.name}</option>
@@ -100,6 +100,7 @@ export default function FormCreateProduct () {
               </select>
             </div>
           )
+
         }
           {
           touched.categoryId && errors.categoryId && <span className='errorText position-absolute ms-5 mt-2'>{errors.categoryId}</span>
@@ -108,14 +109,12 @@ export default function FormCreateProduct () {
         {/* --------------------------Fin-Select------------------------ */}
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <Link to='/'>
-            <img src={search} alt='search' className={style.icons} /><span className='black'> BUSCAR PRODUCTOS</span>
-          </Link>
+          <SerachAll route='/products' />
         </div>
       </div>
       <div className='row  pe-5'>
         <div className='offset-9 col-3 px-0'>
-          <button className='button' type='submit' disabled={isSubmitting}>{!isSubmitting ? 'GUARDAR' : 'GUARDANDO...'}</button>
+          <CustonBotton disabled={isSubmitting} />
         </div>
       </div>
     </form>

@@ -8,5 +8,13 @@ i18next
   .use(Languagedetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en'
+    fallbackLng: 'en',
+    backend: {
+      // for all available options read the backend's repository readme file
+      loadPath: 'http://127.0.0.1:5173/locales/{{lng}}/{{ns}}.json'
+    },
+    interpolation: {
+      escapeValue: false // react already safes from xss
+    },
+    debug: true
   })

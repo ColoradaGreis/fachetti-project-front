@@ -1,6 +1,7 @@
 import { Accordion } from '../../components'
 import { urlApi } from '@/api'
 import { useState } from 'react'
+import jwtDecode from 'jwt-decode'
 
 export default function Consults () {
   const [state, setState] = useState({
@@ -17,6 +18,8 @@ export default function Consults () {
     e.preventDefault()
     const response = await urlApi.post('users/login', state)
     console.log(response)
+    const user = jwtDecode(response.data, { payload: true })
+    console.log(user)
   }
   return (
     <>

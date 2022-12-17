@@ -1,7 +1,4 @@
-import { Link } from 'react-router-dom'
-import search from '@/assets/SearchIcon.png'
-import { Card } from '..'
-import style from './style.module.css'
+import { Card, CustonBotton, SerachAll } from '..'
 import { useFormik } from 'formik'
 import { formCategorySchema, postForms, swalErrorOrSuccess } from '../../utilities'
 
@@ -43,12 +40,10 @@ export default function FormCreateCategori () {
       <div className='row mt-5'>
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <Link to='/'>
-            <img src={search} alt='search' className={style.icons} /><span className='black'> BUSCAR PRODUCTOS</span>
-          </Link>
+          <SerachAll route='/' />
         </div>
         <div className='col-6  pe-5'>
-          <button className='button' type='submit' disabled={isSubmitting}>{!isSubmitting ? 'GUARDAR' : 'GUARDANDO...'}</button>
+          <CustonBotton disabled={isSubmitting} />
         </div>
       </div>
     </form>

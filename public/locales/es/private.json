@@ -10,9 +10,9 @@
   },
   "products":{
     "title": "Producto",
-    "details:": "Texto de detalle:",
-    "detailsPlaceHolder": "Escriba el texto de detalle...",
-    "selectTitle": "Seleccionar una categoría"
+    "placeHolder": "Escriba el texto de detalle...",
+    "selectTitle": "Seleccionar una categoría",
+    "details": "Texto de detalle:"
   },
   "categories":{
     "title": "Categoría"
@@ -25,10 +25,13 @@
     "create": "Crear",
     "delete": "Eliminar",
     "save": "Guardar",
+    "saving": "Guardando...",
     "cancel": "Cancelar",
     "search": "Buscar",
     "add": "Agregar",
-    "title": "Titulo..."
+    "title": "Titulo",
+    "searchAll": "Ver todos",
+    "select": "Seleccionar"
   }
 
 }

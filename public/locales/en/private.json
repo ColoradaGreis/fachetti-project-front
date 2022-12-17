@@ -10,9 +10,9 @@
   },
   "products":{
     "title": "Product",
-    "details:": "Details text:",
-    "detailsPlaceHolder": "Write details text here...",
-    "selectTitle": "Select a category"
+    "placeHolder": "Write details text here...",
+    "selectTitle": "Select a category",
+    "details": "Details text:"
   },
   "categories":{
     "title": "Category"
@@ -25,9 +25,13 @@
     "create": "Create",
     "delete": "Delete",
     "save": "Save",
-    "cancel": "Cancerl",
+    "saving": "Saving...",
+    "cancel": "Cancel",
     "search": "Search",
     "add": "Add",
-    "title": "Title..."
+    "title": "Title",
+    "searchAll": "Search all",
+    "select": "Select"
+    
   }
 }
