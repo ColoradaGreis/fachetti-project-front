@@ -19,6 +19,7 @@ const fakerProductsPost = async (cantidad) => {
     return response.data.map((value) => value.id)
   }
   const arrayIdsCategories = await getAllCategories()
+
   const postFakerProducts = async (value) => {
     await postForms('products', value)
   }

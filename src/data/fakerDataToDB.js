@@ -2,10 +2,10 @@ import { urlApi } from '@/api'
 import { fakerCategoriesPost, fakerProductsPost, fakerPublicationsPost, fakerQuestionsPost } from './'
 
 const cantidad = {
-  categories: 10,
-  products: 10,
-  publications: 10,
-  questions: 10
+  categories: 1,
+  products: 1,
+  publications: 1,
+  questions: 5
 }
 
 const fakerDataToDB = async () => {

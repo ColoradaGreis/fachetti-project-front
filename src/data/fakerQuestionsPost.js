@@ -2,10 +2,6 @@ import { faker } from '@faker-js/faker'
 import { postForms } from '../private/utilities'
 
 const fakerQuestionsPost = async (cantidad) => {
-  const cellPhoneArray = [
-    faker.phone.number(),
-    undefined
-  ]
   const postFakerQuestions = async (value) => {
     await postForms('questions', value)
   }
@@ -13,6 +9,10 @@ const fakerQuestionsPost = async (cantidad) => {
   const fakeQuestions = []
 
   const createFakerQuestions = () => {
+    const cellPhoneArray = [
+      faker.phone.number('+54 ##-#######'),
+      undefined
+    ]
     return {
       name: faker.name.fullName(),
       message: faker.lorem.paragraph(),
@@ -28,6 +28,7 @@ const fakerQuestionsPost = async (cantidad) => {
   fakeQuestions.forEach((value) => {
     postFakerQuestions(value)
   })
+  console.log(fakeQuestions)
 }
 
 export default fakerQuestionsPost
