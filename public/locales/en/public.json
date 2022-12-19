@@ -9,5 +9,9 @@
     "idioma": "LANGUAGE",
     "english": "English",
     "spanish": "Spanish"
+  },
+  "Products":{
+    "title": "Products",
+    "subTitle": "Our Products"
   }
 }
