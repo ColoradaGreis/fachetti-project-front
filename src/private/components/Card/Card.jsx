@@ -47,7 +47,7 @@ export default function Card ({ handleChange, setValues, values, title, handleBl
                           <CloudinaryWidget setUrlImage={setUrlImage} setPressed={setPressed} />
                           {
                             pressed && errors.image
-                              ? <span className='errorText position-absolute bottom-0'>{errors.image}</span>
+                              ? <span className='errorText position-absolute bottom-0'>{t(errors.image)}</span>
                               : null
                           }
                         </div>
@@ -71,12 +71,12 @@ export default function Card ({ handleChange, setValues, values, title, handleBl
         </div>
         {
                     !title && touched.name && errors.name
-                      ? <span className='errorText position-absolute bottom-0'>{errors.name}</span>
+                      ? <span className='errorText position-absolute bottom-0'>{t(errors.name)}</span>
                       : null
         }
         {
                     title && touched.title && errors.title
-                      ? <span className='errorText position-absolute bottom-0'>{errors.title}</span>
+                      ? <span className='errorText position-absolute bottom-0'>{t(errors.title)}</span>
                       : null
         }
       </div>
