@@ -5,15 +5,17 @@ import s from './Product.module.css'
 import { useGetAllCategories } from '../../../hooks'
 import Loading from '../Loading/Loading.jsx'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function Products () {
+  const { t } = useTranslation('public')
   const { data, loading, error } = useGetAllCategories()
   console.log(data)
 
   return (
     <div>
-      <h1 className={s.h1Products}>PRODUCTOS</h1>
-      <h3 className={s.h3Products}>Nuestros productos</h3>
+      <h1 className={s.h1Products}>{t('Products.title')}</h1>
+      <h3 className={s.h3Products}>{t('Products.subTitle')}</h3>
       <div className='d-flex flex-wrap mx-5 p-5 gap-5 justify-content-center'>
 
         {
@@ -22,7 +24,7 @@ export default function Products () {
           : error
             ? alert(error) //eslint-disable-line
             : data.map(e =>
-              <Link key={e.id} to={`/${e.id}`}>
+              <Link key={e.id} to={`/categories/${e.name}`}>
                 <Card
                   key={e.id}
                   id={e.id}
