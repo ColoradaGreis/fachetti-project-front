@@ -2,16 +2,16 @@ import { useEffect, useState } from 'react'
 import { urlApi } from '$Api'
 // import { useParams } from 'react-router'
 
-export default function useGetAllProducts (category) {
+export default function useGetDetailProduct (id) {
   const [state, setState] = useState({
     data: [],
     loading: true,
     error: null
   })
 
-  const getProducts = async () => {
+  const getProduct = async () => {
     try {
-      const api = await urlApi.get(`/products/categories/${category}`)
+      const api = await urlApi.get(`/products/${id}`)
       if (typeof api.data === 'string') throw new Error(api.data)
       setState({
         data: api.data,
@@ -27,7 +27,7 @@ export default function useGetAllProducts (category) {
     }
   }
   useEffect(() => {
-    getProducts()
+    getProduct()
   }, []) // eslint-disable-line
 
   return {
