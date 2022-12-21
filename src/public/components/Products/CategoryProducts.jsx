@@ -9,8 +9,6 @@ import { Link, useParams } from 'react-router-dom'
 export default function CategoryProducts () {
   const { category } = useParams()
   const { data, loading, error } = useGetAllProducts(category)
-  console.log('esta es la data que me llega', data)
-  console.log(error)
 
   return (
     <div>
@@ -22,9 +20,9 @@ export default function CategoryProducts () {
         loading
           ? <Loading />
           : error
-            ? console.log(error) //eslint-disable-line
+            ? alert(error) //eslint-disable-line
             : data.map(e =>
-              <Link key={e.id} to={`categories/detail/${e.id}`}>
+              <Link key={e.id} to={`/categories/detail/${e.id}`}>
                 <Card
                   key={e.id}
                   id={e.id}
