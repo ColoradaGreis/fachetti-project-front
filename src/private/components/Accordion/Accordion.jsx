@@ -1,22 +1,27 @@
 import { useEffect, useState } from 'react'
 import { Accordion as Acordion, Card } from 'react-bootstrap'
 import { CustomToggle, Body } from './'
-import { fakerConsultsData as data } from '../../../data'
-import { parseDate } from '../../utilities'
+import { useGetAllQuestions } from '../../../hooks'
+import { Loading } from '../../../public/components'
 
-export default function Accordion () {
-  console.log(data[0].date.getDate())
-  console.log(data)
+export default function Accordion ({ answered }) {
+  const { data, loading, error } = useGetAllQuestions(answered)
   const [state, setState] = useState([])// [booleanos]
-
+  console.log(data)
   useEffect(() => {
-    const readState = data.map(user => user.read)
-
+    const readState = data.map(user => user.isRead)
     setState(readState)
   }, [data])
+
+  // TODO: falta el telefono en las respuestas del back
+  // TODO: Ver tema paginado del back como manejarlo
+  // TODO: Ver tema de la fecha deberia ser mas corta
+
   return (
     <>
-      {
+      {loading && <Loading />}
+      {error && <p>Error</p>}
+      {data &&
       data.map((user, index) => (
         <Acordion as='div' key={index}>
           <Card className='position-relative'>
@@ -24,7 +29,7 @@ export default function Accordion () {
               <CustomToggle
                 eventKey={user.id}
                 name={user.name}
-                date={parseDate(user.date)}
+                date={user.date}
                 read={state[index]}
                 index={index}
                 setState={setState}
@@ -38,8 +43,7 @@ export default function Accordion () {
             </Acordion.Collapse>
           </Card>
         </Acordion>
-      ))
-    }
+      ))}
     </>
   )
 }

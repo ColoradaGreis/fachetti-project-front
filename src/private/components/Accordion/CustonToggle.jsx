@@ -5,9 +5,9 @@ import greenArrow from './greenArrow.png'
 import style from './style.module.css'
 
 export function CustomToggle ({ eventKey, read, name, date, index, setState, state }) {
-  const [show, setShow] = useState(false)
+  const [rotate, setRotate] = useState(false)
   const handleClick = useAccordionButton(eventKey, () => {
-    setShow(!show)
+    setRotate(!rotate)
     if (state[index]) return
     setState(prev => {
       const newState = [...prev]
@@ -28,7 +28,7 @@ export function CustomToggle ({ eventKey, read, name, date, index, setState, sta
       <img
         src={!read ? greenArrow : blueArrow}
         alt='Arrow'
-        className={`${style.icon} ${show && style.rotate} `}
+        className={`${style.icon} ${rotate && style.rotate} `}
       />
     </button>
   )

@@ -20,6 +20,13 @@
   "publications":{
     "title": "Publicación"
   },
+  "consults":{
+    "accordion":{
+      "email": "Correo",
+      "phone": "Telefono",
+      "message": "Mensaje"
+    }
+  },
   "utils":{
     "edit": "Editar",
     "create": "Crear",
