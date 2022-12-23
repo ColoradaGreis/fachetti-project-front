@@ -1,8 +1,8 @@
 export function parseDate (date) {
-  const day = date.getDate()
-  const month = date.getMonth() + 1
-  const year = date.getFullYear()
-  const hours = date.getHours()
-  const minutes = date.getMinutes()
-  return `${day}/${month}/${year} ${hours}:${minutes}`
+  const allDate = date.split(' ')
+  const yearOnly = allDate[0].split('/')[2].split('').slice(2, 4).join('')
+  const newDate = allDate[0].split('/')[0] + '/' + allDate[0].split('/')[1] + '/' + yearOnly
+  const timeOnly = allDate[1].split(':')
+  timeOnly.pop()
+  return `${newDate} ${timeOnly.join(':')}`
 }

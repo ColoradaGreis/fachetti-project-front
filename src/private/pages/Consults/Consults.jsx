@@ -1,9 +1,25 @@
 import { Accordion } from '../../components'
+import Form from 'react-bootstrap/Form'
+import { useState } from 'react'
 
 export default function Consults () {
+  const [state, setState] = useState(false)
+  const handleChange = (e) => {
+    setState(e.target.checked)
+  }
   return (
     <>
-      <Accordion answered={false} />
+      <Form>
+        <Form.Check
+          type='switch'
+          id='custom-switch'
+          label={state ? 'Preguntas respondidas' : 'Preguntas sin responder'}
+          onChange={handleChange}
+        />
+      </Form>
+      <div className='container-fluid px-0'>
+        <Accordion answered={state} />
+      </div>
     </>
   )
 }

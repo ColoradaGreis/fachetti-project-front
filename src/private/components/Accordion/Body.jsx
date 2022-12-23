@@ -1,7 +1,21 @@
+import { useState } from 'react'
+import { urlApi } from '@/api'
 import { useTranslation } from 'react-i18next'
+import { Form } from 'react-bootstrap'
 
 export default function Body ({ user }) {
   const { t } = useTranslation('private')
+  const [state, setState] = useState(user.isAnswered)
+
+  const handleChange = async (e) => {
+    setState(e.target.checked)
+    try {
+      const response = await urlApi.put(`questions/${user.id}?answered=${e.target.checked}`)
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className='container-fluid px-0 py-0'>
       <div className='row'>
@@ -28,6 +42,15 @@ export default function Body ({ user }) {
 
         </div>
       </div>
+      <Form.Check
+        type='checkbox'
+        id='checkbox'
+        label='Checkbox'
+        className='mt-3'
+        checked={state}
+        onChange={handleChange}
+      />
+
     </div>
   )
 }
