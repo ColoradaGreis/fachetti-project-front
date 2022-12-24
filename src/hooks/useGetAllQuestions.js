@@ -1,5 +1,6 @@
 import { urlApi } from '@/api'
 import { useEffect, useRef, useState } from 'react'
+import { questionsAdapter } from './adapters'
 
 export default function useGetAllQuestions (answered = false) {
   const refPage = useRef(0)
@@ -15,8 +16,9 @@ export default function useGetAllQuestions (answered = false) {
     try {
       const api = await urlApi.get(`/questions?answered=${answered}&page=${refPage.current}`)
       if (typeof api.data === 'string') throw new Error(api.data)
+      const adapterData = questionsAdapter(api.data[0])
       setState({
-        data: (refPage.current) ? state.data.concat(api.data[0]) : api.data[0],
+        data: (refPage.current) ? state.data.concat(adapterData) : adapterData,
         loading: false,
         error: null
       })
