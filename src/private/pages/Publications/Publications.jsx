@@ -1,4 +1,4 @@
-import { FormCreatePublication } from '../../components'
+import { FormCreatePublication } from './components'
 import style from './style.module.css'
 
 export default function Publications () {

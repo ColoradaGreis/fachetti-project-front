@@ -1,6 +1,6 @@
-import { Card, CustonBotton, SerachAll } from '..'
 import { useFormik } from 'formik'
-import { formPublicationsSchema, postForms, swalErrorOrSuccess } from '../../utilities'
+import { Card, CustonBotton, SerachAll } from '@/private/components'
+import { formPublicationsSchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
 
 export default function FormCreatePublication () {
   // Inicio Formik

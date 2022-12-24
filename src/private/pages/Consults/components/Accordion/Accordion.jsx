@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Accordion as Acordion, Card } from 'react-bootstrap'
-import { CustomToggle, Body } from './'
-import { useGetAllQuestions } from '../../../hooks'
-import { Loading } from '../../../public/components'
+import { CustonToggle, Body } from '../'
+import { useGetAllQuestions } from '@/hooks'
+import { Loading } from '@/public/components'
 
 export default function Accordion ({ answered }) {
   const { data, loading, error, getQuestions } = useGetAllQuestions(answered)
@@ -24,7 +24,7 @@ export default function Accordion ({ answered }) {
         <Acordion as='div' key={index}>
           <Card className='position-relative w-100 '>
             <Card.Header className='bkgGray'>
-              <CustomToggle
+              <CustonToggle
                 eventKey={user.id}
                 name={user.name}
                 date={user.date}

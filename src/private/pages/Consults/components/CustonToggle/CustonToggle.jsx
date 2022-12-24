@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { urlApi } from '@/api'
 import { useAccordionButton } from 'react-bootstrap'
-import blueArrow from './blueArrow.png'
-import greenArrow from './greenArrow.png'
+import blueArrow from './assets/blueArrow.png'
+import greenArrow from './assets/greenArrow.png'
 import style from './style.module.css'
 
-export function CustomToggle ({ eventKey, read, name, date, index, setState, state }) {
+function CustomToggle ({ eventKey, read, name, date, index, setState, state }) {
   const [rotate, setRotate] = useState(false)
   const handleClick = useAccordionButton(eventKey, async () => {
     setRotate(!rotate)
@@ -36,3 +36,5 @@ export function CustomToggle ({ eventKey, read, name, date, index, setState, sta
     </button>
   )
 }
+
+export default CustomToggle

@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react'
 import style from './style.module.css'
 import close from '@/assets/crossIcon.png'
 import { CloudinaryWidget } from '../'
-import { useEffect, useState } from 'react'
 import { deleteCloudinaryImage } from '../../utilities'
 import { useTranslation } from 'react-i18next'
 

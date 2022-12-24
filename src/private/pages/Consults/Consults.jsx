@@ -1,6 +1,6 @@
-import { Accordion } from '../../components'
-import Form from 'react-bootstrap/Form'
 import { useState } from 'react'
+import { Accordion } from './components'
+import Form from 'react-bootstrap/Form'
 
 export default function Consults () {
   const [state, setState] = useState(false)

@@ -1,6 +1,6 @@
-import { Card, CustonBotton, SerachAll } from '..'
 import { useFormik } from 'formik'
-import { formCategorySchema, postForms, swalErrorOrSuccess } from '../../utilities'
+import { Card, SerachAll, CustonBotton } from '@/private/components'
+import { formCategorySchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
 
 export default function FormCreateCategori () {
   // Inicio Formik

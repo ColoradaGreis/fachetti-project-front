@@ -1,12 +1,10 @@
-import style from './style.module.css'
 import { useFormik } from 'formik'
-import { useGetAllCategories } from '../../../hooks'
-import flechas from '@/assets/flechas.png'
-import { Card } from '../Card'
-import { formProductSchema, postForms, swalErrorOrSuccess } from '../../utilities'
+import style from './style.module.css'
+import { useGetAllCategories } from '@/hooks'
+import flechas from './assets/flechas.png'
+import { Card, CustonBotton, SerachAll } from '@/private/components'
+import { formProductSchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
 import { useTranslation } from 'react-i18next'
-import { CustonBotton } from '../CustonBotton'
-import { SerachAll } from '../SeachAll'
 
 export default function FormCreateProduct () {
   const { t } = useTranslation('private')
