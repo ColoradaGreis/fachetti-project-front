@@ -3,11 +3,9 @@ import { Accordion as Acordion, Card } from 'react-bootstrap'
 import { CustomToggle, Body } from './'
 import { useGetAllQuestions } from '../../../hooks'
 import { Loading } from '../../../public/components'
-import { parseDate } from '../../utilities'
 
 export default function Accordion ({ answered }) {
   const { data, loading, error, getQuestions } = useGetAllQuestions(answered)
-  console.log(data)
   const [state, setState] = useState([])// [booleanos]
   useEffect(() => {
     const readState = data.map(user => user.isRead)
@@ -29,7 +27,7 @@ export default function Accordion ({ answered }) {
               <CustomToggle
                 eventKey={user.id}
                 name={user.name}
-                date={parseDate(user.date)}
+                date={user.date}
                 read={state[index]}
                 index={index}
                 setState={setState}

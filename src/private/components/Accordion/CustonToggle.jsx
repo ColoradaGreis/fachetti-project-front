@@ -7,7 +7,7 @@ import style from './style.module.css'
 
 export function CustomToggle ({ eventKey, read, name, date, index, setState, state }) {
   const [rotate, setRotate] = useState(false)
-  const handleClick = useAccordionButton(eventKey, () => {
+  const handleClick = useAccordionButton(eventKey, async () => {
     setRotate(!rotate)
     if (state[index]) return
     setState(prev => {
@@ -15,7 +15,8 @@ export function CustomToggle ({ eventKey, read, name, date, index, setState, sta
       newState[index] = true
       return newState
     })
-    urlApi.put(`questions/${eventKey}?isReaded=true`)
+    const response = await urlApi.put(`questions/${eventKey}?readed=true`)
+    console.log(response)
   }
   )
 

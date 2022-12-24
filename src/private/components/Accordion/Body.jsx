@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { urlApi } from '@/api'
 import { useTranslation } from 'react-i18next'
 import { Form } from 'react-bootstrap'
 
 export default function Body ({ user }) {
   const { t } = useTranslation('private')
-  const [state, setState] = useState(user.isAnswered)
+  const isAnsweredRef = useRef(user.isAnswered)
+  const [state, setState] = useState(isAnsweredRef.current)
 
   const handleChange = async (e) => {
     setState(e.target.checked)

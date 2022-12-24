@@ -2,7 +2,7 @@ import { urlApi } from '@/api'
 import { useEffect, useRef, useState } from 'react'
 
 export default function useGetAllQuestions (answered = false) {
-  const refPage = useRef(1)
+  const refPage = useRef(0)
   const [state, setState] = useState({
     data: [],
     loading: true,
@@ -15,12 +15,12 @@ export default function useGetAllQuestions (answered = false) {
     try {
       const api = await urlApi.get(`/questions?answered=${answered}&page=${refPage.current}`)
       if (typeof api.data === 'string') throw new Error(api.data)
-      refPage.current += 1
       setState({
-        data: (!answered) ? state.data.concat(api.data[0]) : api.data[0],
+        data: (refPage.current) ? state.data.concat(api.data[0]) : api.data[0],
         loading: false,
         error: null
       })
+      refPage.current += 1
     } catch (error) {
       setState({
         data: [],
@@ -30,7 +30,7 @@ export default function useGetAllQuestions (answered = false) {
     }
   }
   useEffect(() => {
-    refPage.current = 1
+    refPage.current = 0
     getQuestions()
   }, [answered])
 
