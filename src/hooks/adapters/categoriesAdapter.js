@@ -1,6 +1,6 @@
 
 export default function categoriesAdapter (categories) {
-  if (Array.isArray(categories) && categories.length === 0) return []
+  if (!Array.isArray(categories)) return categories
   return categories.map(category => {
     return {
       id: category.id,

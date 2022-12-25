@@ -1,5 +1,6 @@
 import { urlApi } from '@/api'
 import { useEffect, useRef, useState } from 'react'
+import { swalErrorOrSuccess } from '../private/utilities'
 import { questionsAdapter } from './adapters'
 
 export default function useGetAllQuestions (answered = false) {
@@ -24,6 +25,7 @@ export default function useGetAllQuestions (answered = false) {
       })
       refPage.current += 1
     } catch (error) {
+      swalErrorOrSuccess(error.message, false)
       setState({
         data: [],
         loading: false,

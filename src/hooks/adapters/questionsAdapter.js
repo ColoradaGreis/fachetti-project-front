@@ -1,6 +1,6 @@
 
 export default function questionsAdapter (questions) {
-  if (Array.isArray(questions) && questions.length === 0) return []
+  if (!Array.isArray(questions)) return questions
   return questions.map(question => {
     return {
       id: question.id,

@@ -2,9 +2,9 @@ import { urlApi } from '@/api'
 import { fakerCategoriesPost, fakerProductsPost, fakerPublicationsPost, fakerQuestionsPost } from './'
 
 const cantidad = {
-  categories: 1,
-  products: 1,
-  publications: 1,
+  categories: 5,
+  products: 10,
+  publications: 10,
   questions: 5
 }
 
