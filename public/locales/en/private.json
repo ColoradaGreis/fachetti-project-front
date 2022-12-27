@@ -21,10 +21,15 @@
     "title": "Publication"
   },
   "consults":{
+    "title": "Query consults",
     "accordion":{
+      "name": "Name",
+      "date": "Date",
+      "status": "Status",
       "email": "Email",
       "phone": "Phone",
-      "message": "Message"
+      "message": "Message",
+      "answered": "Answered"
     }
   },
 

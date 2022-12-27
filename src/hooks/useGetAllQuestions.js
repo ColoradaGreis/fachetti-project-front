@@ -11,12 +11,11 @@ export default function useGetAllQuestions (answered = false) {
     error: null
   })
 
-  // TODO: Cuando se pide las answered a la pag 1 no me trae la data del back debo poner la pag 0 para que funcione en postman hay un ejemplo
-
   const getQuestions = async () => {
     try {
       const api = await urlApi.get(`/questions?answered=${answered}&page=${refPage.current}`)
       if (typeof api.data === 'string') throw new Error(api.data)
+      console.log(api)
       const adapterData = questionsAdapter(api.data[0])
       setState({
         data: (refPage.current) ? state.data.concat(adapterData) : adapterData,

@@ -1,26 +1,45 @@
-import { useState } from 'react'
-import { Accordion } from './components'
-import Form from 'react-bootstrap/Form'
+import { Accordion, SwichStatus } from './components'
+import { useTranslation } from 'react-i18next'
 
 export default function Consults () {
-  const [state, setState] = useState(false)
-  const handleChange = (e) => {
-    setState(e.target.checked)
-  }
+  const { t } = useTranslation('private')
   return (
-    <>
-      <Form>
-        <Form.Check
-          type='switch'
-          id='custom-switch'
-          label={state ? 'Preguntas respondidas' : 'Preguntas sin responder'}
-          onChange={handleChange}
-        />
-      </Form>
-      <div className='container-fluid px-0'>
-        <Accordion answered={state} />
+    <div className='container-fluid px-0 mx-0 '>
+
+      <div className='row'>
+        <div className='col-12'>
+          <h2 className='text-uppercase'>{t('consults.title')}</h2>
+        </div>
       </div>
-    </>
+
+      <div className='row'>
+        <div className='col-8'>
+          mensajes sin leer
+        </div>
+        <div className='col-4'>
+          Mensajes Leidos
+        </div>
+      </div>
+
+      <div className='row'>
+        <div className='col-12'>
+          Detalles
+        </div>
+      </div>
+
+      <div className='row container-fluid px-0 py-0'>
+        <div className='col-12'>
+          <Accordion />
+        </div>
+      </div>
+
+      <div className='row'>
+        <div className='col-12'>
+          <SwichStatus />
+        </div>
+      </div>
+
+    </div>
   )
 }
 

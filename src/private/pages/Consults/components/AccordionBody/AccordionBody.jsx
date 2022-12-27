@@ -3,7 +3,7 @@ import { urlApi } from '@/api'
 import { useTranslation } from 'react-i18next'
 import { Form } from 'react-bootstrap'
 
-export default function Body ({ user }) {
+export default function AccordionBody ({ user }) {
   const { t } = useTranslation('private')
   const isAnsweredRef = useRef(user.isAnswered)
   const [state, setState] = useState(isAnsweredRef.current)
@@ -46,7 +46,7 @@ export default function Body ({ user }) {
       <Form.Check
         type='checkbox'
         id='checkbox'
-        label='Checkbox'
+        label={t('consults.accordion.answered')}
         className='mt-3'
         checked={state}
         onChange={handleChange}

@@ -21,10 +21,15 @@
     "title": "Publicación"
   },
   "consults":{
+    "title": "Tablero de consultas",
     "accordion":{
+      "name": "Nombre",
+      "date": "Fecha",
+      "status": "Estado",
       "email": "Correo",
       "phone": "Telefono",
-      "message": "Mensaje"
+      "message": "Mensaje",
+      "answered": "Respondido"
     }
   },
   "utils":{
