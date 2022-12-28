@@ -1,5 +1,3 @@
-import React from 'react'
-// import { useSelector } from 'react-redux'
 import Card from '../Card/Card'
 import s from './Product.module.css'
 import { useGetAllCategories } from '../../../hooks'
@@ -10,7 +8,6 @@ import { useTranslation } from 'react-i18next'
 export default function Products () {
   const { t } = useTranslation('public')
   const { data, loading, error } = useGetAllCategories()
-  console.log(data)
 
   return (
     <div>

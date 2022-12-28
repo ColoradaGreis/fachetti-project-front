@@ -1,17 +1,14 @@
-import style from './style.module.css'
 import { useFormik } from 'formik'
-import { useGetAllCategories } from '../../../hooks'
-import flechas from '@/assets/flechas.png'
-import { Card } from '../Card'
-import { formProductSchema, postForms, swalErrorOrSuccess } from '../../utilities'
+import style from './style.module.css'
+import { useGetAllCategories } from '@/hooks'
+import flechas from './assets/flechas.png'
+import { Card, CustonBotton, SerachAll } from '@/private/components'
+import { formProductSchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
 import { useTranslation } from 'react-i18next'
-import { CustonBotton } from '../CustonBotton'
-import { SerachAll } from '../SeachAll'
 
 export default function FormCreateProduct () {
   const { t } = useTranslation('private')
   const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
-  console.log(data, loading, error)
   // Inicio Formik
   const {values, handleChange, handleSubmit, setValues, isSubmitting, handleBlur,touched, errors} = useFormik({ // eslint-disable-line
     initialValues: {
@@ -31,6 +28,7 @@ export default function FormCreateProduct () {
     }
   })
   // Fin Formik
+  console.log(errors)
   return (
     <form className='row h-100 justify-content-center' onSubmit={handleSubmit}>
 
@@ -69,7 +67,7 @@ export default function FormCreateProduct () {
           </div>
         </div>
         {
-          touched.description && errors.description && <span className='errorText position-absolute'>{errors.description}</span>
+          touched.description && errors.description && <span className='errorText position-absolute'>{t(errors.description)}</span>
         }
       </div>
       {/* --------------------------Fin-description------------------------ */}
@@ -103,7 +101,7 @@ export default function FormCreateProduct () {
 
         }
           {
-          touched.categoryId && errors.categoryId && <span className='errorText position-absolute ms-5 mt-2'>{errors.categoryId}</span>
+          touched.categoryId && errors.categoryId && <span className='errorText position-absolute ms-5 mt-2'>{t(errors.categoryId)}</span>
         }
         </div>
         {/* --------------------------Fin-Select------------------------ */}

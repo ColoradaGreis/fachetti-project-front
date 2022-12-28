@@ -1,4 +1,4 @@
-import add from '@/assets/add.png'
+import add from './assets/add.png'
 import style from './style.module.css'
 
 export default function HeaderProducts ({ creating, setCreating, text }) {

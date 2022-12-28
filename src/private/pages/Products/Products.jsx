@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import style from './style.module.css'
-import { FormCreateProduct, FormCreateCategori } from '../../components'
-import HeaderProducts from './HeaderProducts'
+import { FormCreateProduct, FormCreateCategori, HeaderProducts } from './components'
 import { useTranslation } from 'react-i18next'
 
 export default function Products () {

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { urlApi } from '$Api'
+import { swalErrorOrSuccess } from '../private/utilities'
+import { categoriesAdapter } from './adapters'
 
 export default function useGetAllCategories () {
   const [state, setState] = useState({
@@ -12,13 +14,15 @@ export default function useGetAllCategories () {
     try {
       const api = await urlApi.get('/categories')
       if (typeof api.data === 'string') throw new Error(api.data)
+      const adapterData = categoriesAdapter(api.data)
 
       setState({
-        data: api.data,
+        data: adapterData,
         loading: false,
         error: null
       })
     } catch (error) {
+      swalErrorOrSuccess(error.message, false)
       setState({
         data: [],
         loading: false,

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { cloudinaryKeys } from '../../utilities'
+import { cloudinaryKeys } from '@/private/utilities'
 import addPhoto from '@/assets/addPhoto.png'
 import style from './style.module.css'
 
