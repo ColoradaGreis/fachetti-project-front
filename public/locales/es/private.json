@@ -30,6 +30,10 @@
       "phone": "Telefono",
       "message": "Mensaje",
       "answered": "Respondido"
+    },
+    "messagesHeader":{
+      "noReaded": "Mensajes no leídos {{count}}",
+      "readed": "Mensajes leídos"
     }
   },
   "utils":{

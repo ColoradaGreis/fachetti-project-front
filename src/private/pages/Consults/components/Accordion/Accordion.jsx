@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 export default function Accordion () {
   const { t } = useTranslation('private')
   const answered = subjectManager.getSubject()
-  const [asnweredState, setAnsweredState] = useState(answered)
+  const [asnweredState, setAnsweredState] = useState(false)
   const { data, loading, error, getQuestions } = useGetAllQuestions(asnweredState)
   const [state, setState] = useState([])// [booleanos]
 

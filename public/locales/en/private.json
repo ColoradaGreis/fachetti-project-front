@@ -30,6 +30,10 @@
       "phone": "Phone",
       "message": "Message",
       "answered": "Answered"
+    },
+    "messagesHeader":{
+      "noReaded": "Mesagges no read",
+      "readed": "Mesagges read"
     }
   },
 

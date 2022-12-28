@@ -1,4 +1,4 @@
-import { Accordion, SwichStatus } from './components'
+import { Accordion, SwichStatus, MessagesHeader } from './components'
 import { useTranslation } from 'react-i18next'
 
 export default function Consults () {
@@ -13,12 +13,7 @@ export default function Consults () {
       </div>
 
       <div className='row'>
-        <div className='col-8'>
-          mensajes sin leer
-        </div>
-        <div className='col-4'>
-          Mensajes Leidos
-        </div>
+        <MessagesHeader />
       </div>
 
       <div className='row'>

@@ -1,7 +1,6 @@
 import { lazy } from 'react'
 import { Route } from 'react-router-dom'
 import { NavAdmin, HeaderAdmin } from '$Private/components'
-// import { Consults, Products, Publications } from '$Private/pages'
 import NotFoundRoute from './NotFoundRoute'
 import { PrivateNameRoutes } from './routes.name'
 
@@ -12,12 +11,13 @@ const PublicationsLazy = lazy(() => import('../private/pages/Publications/Public
 export default function PrivateRoutes () {
   return (
     <>
-      <HeaderAdmin />
       <NotFoundRoute>
-        <Route element={<NavAdmin />}>
-          <Route index path={PrivateNameRoutes.CONSULTS} element={<ConsultLazy />} />
-          <Route index path={PrivateNameRoutes.PRODUCTS} element={<ProductLazy />} />
-          <Route index path={PrivateNameRoutes.PUBLICATIONS} element={<PublicationsLazy />} />
+        <Route element={<HeaderAdmin />}>
+          <Route element={<NavAdmin />}>
+            <Route index path={PrivateNameRoutes.CONSULTS} element={<ConsultLazy />} />
+            <Route index path={PrivateNameRoutes.PRODUCTS} element={<ProductLazy />} />
+            <Route index path={PrivateNameRoutes.PUBLICATIONS} element={<PublicationsLazy />} />
+          </Route>
         </Route>
       </NotFoundRoute>
     </>
