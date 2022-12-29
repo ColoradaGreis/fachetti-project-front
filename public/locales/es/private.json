@@ -29,11 +29,13 @@
       "email": "Correo",
       "phone": "Telefono",
       "message": "Mensaje",
-      "answered": "Respondido"
+      "answered": "Respondido",
+      "button": "Cargar más"
     },
     "messagesHeader":{
-      "noReaded": "Mensajes no leídos {{count}}",
-      "readed": "Mensajes leídos"
+      "noReaded": "Mensajes no leídos",
+      "readed": "Mensajes leídos",
+      "details": "Detalles"
     }
   },
   "utils":{

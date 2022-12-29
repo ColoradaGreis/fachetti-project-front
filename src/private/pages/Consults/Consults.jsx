@@ -1,4 +1,4 @@
-import { Accordion, SwichStatus, MessagesHeader } from './components'
+import { Accordion, MessagesHeader } from './components'
 import { useTranslation } from 'react-i18next'
 
 export default function Consults () {
@@ -8,29 +8,17 @@ export default function Consults () {
 
       <div className='row'>
         <div className='col-12'>
-          <h2 className='text-uppercase'>{t('consults.title')}</h2>
+          <h2 className='text-uppercase user-select-none fs-1'>{t('consults.title')}</h2>
         </div>
       </div>
 
-      <div className='row'>
+      <div className='row mw-100 my-3'>
         <MessagesHeader />
-      </div>
-
-      <div className='row'>
-        <div className='col-12'>
-          Detalles
-        </div>
       </div>
 
       <div className='row container-fluid px-0 py-0'>
         <div className='col-12'>
           <Accordion />
-        </div>
-      </div>
-
-      <div className='row'>
-        <div className='col-12'>
-          <SwichStatus />
         </div>
       </div>
 

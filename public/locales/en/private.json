@@ -33,7 +33,9 @@
     },
     "messagesHeader":{
       "noReaded": "Mesagges no read",
-      "readed": "Mesagges read"
+      "readed": "Mesagges read",
+      "details": "Details",
+      "button": "Load more"
     }
   },
 

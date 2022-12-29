@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Accordion as Acordion, Card } from 'react-bootstrap'
-import { CustonToggle, AccordionBody } from '../'
+import { CustonToggle, AccordionBody, SwichStatus } from '../'
 import { useGetAllQuestions } from '@/hooks'
 import { Loading } from '@/public/components'
 import { subjectManager } from '../../services/manager-status'
@@ -10,7 +10,7 @@ export default function Accordion () {
   const { t } = useTranslation('private')
   const answered = subjectManager.getSubject()
   const [asnweredState, setAnsweredState] = useState(false)
-  const { data, loading, error, getQuestions } = useGetAllQuestions(asnweredState)
+  const { data, loading, error, getQuestions, lastPage } = useGetAllQuestions(asnweredState)
   const [state, setState] = useState([])// [booleanos]
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Accordion () {
 
   return (
     <>
-      <div className='row px-0 mx-0 justify-content-between text-center'>
+      <div className='row px-0 mx-0 justify-content-between text-center mb-2 bold fs-4'>
         <p className='col-3 my-1 px-0'>{t('consults.accordion.name')}</p>
         <p className='col-1 my-1 px-0'>{t('consults.accordion.date')}</p>
         <p className='col-1 my-1 px-0 me-3'>{t('consults.accordion.status')}</p>
@@ -56,7 +56,20 @@ export default function Accordion () {
           </Card>
         </Acordion>
       ))}
-      <button onClick={getQuestions}>Next</button>
+      <div className='row mx-0 px-0 d-flex align-items-center'>
+        <div className='col-5'>
+          <button
+            className='button my-3 '
+            disabled={!!lastPage}
+            onClick={getQuestions}
+          >
+            {t('consults.accordion.button')}
+          </button>
+        </div>
+        <div className='col-7 d-flex justify-content-center'>
+          <SwichStatus />
+        </div>
+      </div>
     </>
   )
 }

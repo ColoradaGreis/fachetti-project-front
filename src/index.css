@@ -81,8 +81,9 @@ a{
   --background-color-2: #E8E9E8;
   --background-color-body: #F9F9F9;
   --background-color-blue: #232851;
-  --background-color-gray: #EDEDED;
   --background-color-blue2: #124E78;
+  --background-color-gray: #EDEDED;
+  --background-color-green: #00FF75;
   --font-family-1: 'Gothan', sans-serif;
   --font-family-2: 'Montserrat', sans-serif;
   --font-family-3: 'Roboto Condensed', sans-serif;
@@ -105,6 +106,12 @@ GLOBALES
 }
 .bkgBlue{
   background-color: var(--background-color-blue);
+}
+.bkgBlue2{
+  background-color: var(--background-color-blue2);
+}
+.bkgGreen{
+  background-color: var(--background-color-green);
 }
 .pointer{
   cursor: pointer;
