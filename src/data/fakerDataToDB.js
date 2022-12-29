@@ -3,7 +3,7 @@ import { fakerCategoriesPost, fakerProductsPost, fakerPublicationsPost, fakerQue
 
 const cantidad = {
   categories: 5,
-  products: 10,
+  products: 20,
   publications: 10,
   questions: 5
 }

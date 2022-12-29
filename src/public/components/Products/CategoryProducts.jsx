@@ -22,7 +22,7 @@ export default function CategoryProducts () {
           : error
             ? alert(error) //eslint-disable-line
             : data.map(e =>
-              <Link key={e.id} to={`/categories/detail/${e.id}`}>
+              <Link key={e.id} to={`detail/${e.id}`}>
                 <Card
                   key={e.id}
                   id={e.id}

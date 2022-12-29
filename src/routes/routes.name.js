@@ -5,7 +5,7 @@ export const PublicNameRoutes = {
   NEWS: 'news',
   CONTACT: 'contact',
   WORKS: 'works',
-  DETAIL: 'categories/detail/:id',
+  DETAIL: 'categories/:category/detail/:id',
   PRODUCTS: 'categories/:category'
 
 }

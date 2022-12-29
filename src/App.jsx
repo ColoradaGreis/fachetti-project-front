@@ -3,7 +3,7 @@ import { fakerDataToDB } from './data'
 import { useEffect } from 'react'
 import ReactGA from 'react-ga4'
 
-const googleAnalyticsId = import.meta.env.VITE_GA_TRACKING_ID
+const googleAnalyticsId = import.meta.env.VITE_GA_TRACKING_ID || 'G-JM8S1JKYFR'
 
 function App () {
   useEffect(() => {
