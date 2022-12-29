@@ -13,5 +13,8 @@
   "Products":{
     "title": "Products",
     "subTitle": "Our Products"
+  },
+  "notFound":{
+    "botton": "Back to Home"
   }
 }
