@@ -35,6 +35,7 @@ export default function useGetAllQuestions (answered = false) {
   }
   useEffect(() => {
     refPage.current = 0
+    setLastPage(false)
     getQuestions()
   }, [answered])
 
