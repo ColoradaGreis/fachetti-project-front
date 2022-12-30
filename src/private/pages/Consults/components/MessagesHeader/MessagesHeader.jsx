@@ -1,7 +1,7 @@
 import { urlApi } from '@/api'
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { SubjetManajerGetCount } from '../../services/manager-status'
+import { SubjetManajerGetCount } from '@/private/services/manager-status'
 import style from './style.module.css'
 
 export default function MessagesHeader () {

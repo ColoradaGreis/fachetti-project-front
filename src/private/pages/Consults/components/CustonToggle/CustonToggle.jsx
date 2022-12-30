@@ -4,7 +4,7 @@ import { useAccordionButton } from 'react-bootstrap'
 import blueArrow from './assets/blueArrow.png'
 import greenArrow from './assets/greenArrow.png'
 import style from './style.module.css'
-import { SubjetManajerGetCount, subjectManager } from '../../services/manager-status'
+import { SubjetManajerGetCount, subjectManager } from '@/private/services/manager-status'
 
 function CustomToggle ({ eventKey, read, name, date, index, setState, state }) {
   const ref = useRef(false)

@@ -1,4 +1,4 @@
-import { SubjectManager } from '../../../utilities'
+import { SubjectManager } from '../utilities'
 
 export const subjectManager = new SubjectManager()
 

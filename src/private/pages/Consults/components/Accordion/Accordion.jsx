@@ -3,7 +3,7 @@ import { Accordion as Acordion, Card } from 'react-bootstrap'
 import { CustonToggle, AccordionBody, SwichStatus } from '../'
 import { useGetAllQuestions } from '@/hooks'
 import { Loading } from '@/public/components'
-import { subjectManager } from '../../services/manager-status'
+import { subjectManager } from '@/private/services/manager-status'
 import { useTranslation } from 'react-i18next'
 
 export default function Accordion () {
