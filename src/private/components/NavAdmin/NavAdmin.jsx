@@ -1,11 +1,33 @@
-import { Outlet } from 'react-router-dom'
+import { useState, useRef, useEffect } from 'react'
+import { Outlet, Link, useLocation } from 'react-router-dom'
 import style from './navAdmin.module.css'
 import userExample from '@/assets/userExample.png'
 import Engran from '@/assets/Engran.png'
 import Notificacion from '@/assets/Notificacion.png'
 import NavLinks from './NavLinks'
+import { getCountMessages } from '../../utilities'
+import { SubjetManajerGetCount } from '../../services/manager-status'
+import { PrivateNameRoutes } from '../../../routes'
 
 export default function NavAdmin () {
+  const { pathname } = useLocation()
+  const noRouteRender = `/admin/${PrivateNameRoutes.CONSULTS}`
+  const ref = useRef(false)
+  const subject = SubjetManajerGetCount.getSubject()
+  const [cant, setCant] = useState(0)
+  getCountMessages().then((value) => {
+    setCant(value)
+  })
+  useEffect(() => {
+    subject.subscribe((value) => {
+      if (ref.current !== value) {
+        ref.current = value
+        getCountMessages().then((value) => {
+          setCant(value)
+        })
+      }
+    })
+  }, [])
   return (
     <div className='container-fluid mx-0 px-0'>
 
@@ -24,7 +46,13 @@ export default function NavAdmin () {
 
           <div className='row bkgGray align-items-center'>
             <div className={`col-6 text-center ${style.borderRight}`}>
-              <img src={Notificacion} alt='icono' className='my-2' />
+              <Link to={PrivateNameRoutes.CONSULTS} className='position-relative'>
+                {
+                (pathname !== noRouteRender && cant) && <span className={`position-absolute badge rounded-pill bg-danger ${style.badge}`}>{cant}</span>
+              }
+                <img src={Notificacion} alt='icono' className='my-2 pointer' />
+
+              </Link>
             </div>
             <div className={`col-6 text-center ${style.borderLeft}`}>
               <img src={Engran} alt='icono' className='my-2' />

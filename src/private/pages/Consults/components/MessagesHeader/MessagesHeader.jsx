@@ -1,7 +1,7 @@
-import { urlApi } from '@/api'
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SubjetManajerGetCount } from '@/private/services/manager-status'
+import { getCountMessages } from '@/private/utilities'
 import style from './style.module.css'
 
 export default function MessagesHeader () {
@@ -9,26 +9,22 @@ export default function MessagesHeader () {
   const { t } = useTranslation('private')
   const subject = SubjetManajerGetCount.getSubject()
   const [state, setState] = useState(0)
-  const getCountMessages = async () => {
-    try {
-      const response = await urlApi.get('questions?readed=false')
-      setState(response.data.totalData)
-    } catch (error) {
-      console.log(error)
-    }
-  }
 
   useEffect(() => {
     subject.subscribe((value) => {
       if (ref.current !== value) {
         ref.current = value
-        getCountMessages()
+        getCountMessages().then((value) => {
+          setState(value)
+        })
       }
     })
   }, [])
 
   useEffect(() => {
-    getCountMessages()
+    getCountMessages().then((value) => {
+      setState(value)
+    })
   }, [])
 
   return (
