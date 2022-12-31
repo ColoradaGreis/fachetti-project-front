@@ -1,7 +1,6 @@
 import React from 'react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import s from './Contact.module.css'
-import { register } from '../../utils'
 import telefono from '@/assets/telefonoContact.png'
 import instagram from '@/assets/instagramContact.png'
 import mail from '@/assets/gmailContact.png'
@@ -22,11 +21,7 @@ const validateFields = values => {
   return errors
 }
 const handleSubmit = (values, { setFieldError }) => {
-  return register(values)
-    .catch((error) => {
-      setFieldError('message', 'Algo salió mal')
-      console.log(error)
-    })
+  console.log(values)
 }
 export default function Contact () {
   return (

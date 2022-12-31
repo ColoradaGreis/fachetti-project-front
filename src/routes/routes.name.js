@@ -6,7 +6,8 @@ export const PublicNameRoutes = {
   CONTACT: 'contact',
   WORKS: 'works',
   DETAIL: 'categories/:category/detail/:id',
-  PRODUCTS: 'categories/:category'
+  PRODUCTS: 'categories/:category',
+  LOGIN: 'login'
 
 }
 

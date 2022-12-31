@@ -14,6 +14,13 @@
     "title": "Products",
     "subTitle": "Our Products"
   },
+  "login":{
+    "emailLabel": "Email Address",
+    "emailText": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordText": "Enter your password",
+    "submit": "Login"
+  },
   "notFound":{
     "botton": "Back to Home"
   }

@@ -1,10 +1,16 @@
 import style from './headerAdmin.module.css'
 import Exit from '@/assets/Exit.png'
 import { useTranslation } from 'react-i18next'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { removeToken } from '@/public/utils'
 
 export default function HeaderAdmin () {
+  const navigate = useNavigate()
   const { t } = useTranslation('private')
+  const logOut = () => {
+    removeToken()
+    navigate('/login')
+  }
   return (
     <>
       <header className={`container-fluid mx-0 px-0 ${style.header}`}>
@@ -12,7 +18,7 @@ export default function HeaderAdmin () {
           <div className='col-2 offset-1'>
             <p className='mb-0 fs-4'>{t('header.title')}</p>
           </div>
-          <div className='col offset-6 '>
+          <div className='col offset-6 pointer' onClick={logOut}>
             <p className='mb-0 fs-6 font-italic'>{t('header.logOut')}<img src={Exit} alt='exit' /></p>
           </div>
         </div>
