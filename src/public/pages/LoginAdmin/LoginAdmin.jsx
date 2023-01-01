@@ -12,10 +12,10 @@ import { useEffect } from 'react'
 
 function LoginAdmin () {
   const routeToNavigateifAdmin = `/admin/${PrivateNameRoutes.CONSULTS}`
+  const navigate = useNavigate()
   useEffect(() => {
     if (tokenExists()) { navigate(routeToNavigateifAdmin) }
   }, [])
-  const navigate = useNavigate()
   const { t } = useTranslation('public')
   const { values, handleSubmit, handleChange, errors, touched, handleBlur } = useFormik({
     initialValues: {

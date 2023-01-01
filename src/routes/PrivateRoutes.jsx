@@ -7,6 +7,7 @@ import { PrivateNameRoutes } from './routes.name'
 const ConsultLazy = lazy(() => import('../private/pages/Consults/Consults'))
 const ProductLazy = lazy(() => import('../private/pages/Products/Products'))
 const PublicationsLazy = lazy(() => import('../private/pages/Publications/Publications'))
+const SettingsLazy = lazy(() => import('../private/pages/SettingsPage/Settings'))
 
 export default function PrivateRoutes () {
   return (
@@ -17,6 +18,7 @@ export default function PrivateRoutes () {
             <Route index path={PrivateNameRoutes.CONSULTS} element={<ConsultLazy />} />
             <Route index path={PrivateNameRoutes.PRODUCTS} element={<ProductLazy />} />
             <Route index path={PrivateNameRoutes.PUBLICATIONS} element={<PublicationsLazy />} />
+            <Route index path={PrivateNameRoutes.SETTINGS} element={<SettingsLazy />} />
           </Route>
         </Route>
       </NotFoundRoute>

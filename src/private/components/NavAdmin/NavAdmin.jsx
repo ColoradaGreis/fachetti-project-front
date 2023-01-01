@@ -8,8 +8,10 @@ import NavLinks from './NavLinks'
 import { getCountMessages } from '../../utilities'
 import { SubjetManajerGetCount } from '../../services/manager-status'
 import { PrivateNameRoutes } from '../../../routes'
+import { getDecodedToken } from '../../../public/utils'
 
 export default function NavAdmin () {
+  const refUser = useRef(getDecodedToken())
   const { pathname } = useLocation()
   const noRouteRender = `/admin/${PrivateNameRoutes.CONSULTS}`
   const ref = useRef(false)
@@ -54,9 +56,13 @@ export default function NavAdmin () {
 
               </Link>
             </div>
+
             <div className={`col-6 text-center ${style.borderLeft}`}>
-              <img src={Engran} alt='icono' className='my-2' />
+              <Link to={PrivateNameRoutes.SETTINGS}>
+                <img src={Engran} alt='icono' className='my-2' />
+              </Link>
             </div>
+
           </div>
 
           <div className='row bkgBlue pt-4  fs-5 '>
