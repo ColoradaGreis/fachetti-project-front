@@ -17,9 +17,11 @@ export default function NavAdmin () {
   const ref = useRef(false)
   const subject = SubjetManajerGetCount.getSubject()
   const [cant, setCant] = useState(0)
-  getCountMessages().then((value) => {
-    setCant(value)
-  })
+  useEffect(() => {
+    getCountMessages().then((value) => {
+      setCant(value)
+    })
+  }, [])
   useEffect(() => {
     subject.subscribe((value) => {
       if (ref.current !== value) {
