@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-import { postForms } from '../private/utilities'
+import { postAll } from './'
 
 const fakerPublicationsImages = [
   'https://res.cloudinary.com/dnitjpfm5/image/upload/v1671311464/fachetti/cargarBaseDatos/publicaciones/Rectangle_42_edlnid.png',
@@ -13,9 +13,6 @@ const fakerPublicationsImages = [
 
 const fakerPublicationsPost = async cantidad => {
   if (!cantidad) return
-  const postFakerPublications = async (value) => {
-    await postForms('publications', value)
-  }
 
   const fakePublications = []
 
@@ -30,9 +27,7 @@ const fakerPublicationsPost = async cantidad => {
     fakePublications.push(createFakerPublications())
   })
 
-  fakePublications.forEach((value) => {
-    postFakerPublications(value)
-  })
+  await postAll('publications', fakePublications)
 }
 
 export default fakerPublicationsPost

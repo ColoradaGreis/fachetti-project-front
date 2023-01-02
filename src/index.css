@@ -150,6 +150,11 @@ GLOBALES
   font-style: italic;
 }
 
+.opacity:hover{
+  transition: 0.5s;
+  opacity: 0.5;
+}
+
 .noStyle{
   border: none;
   outline: none;

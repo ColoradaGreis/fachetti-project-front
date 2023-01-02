@@ -24,7 +24,7 @@
     "title": "Query consults",
     "accordion":{
       "name": "Name",
-      "date": "Date",
+      "date": "Date/hour",
       "status": "Status",
       "email": "Email",
       "phone": "Phone",

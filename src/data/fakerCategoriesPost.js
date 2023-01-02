@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-import { postForms } from '../private/utilities'
+import { postAll } from './'
 
 const fakerCategoriesImages = [
   'https://res.cloudinary.com/dnitjpfm5/image/upload/v1671311634/fachetti/cargarBaseDatos/categories/Rectangle_47_h9rdxt.png',
@@ -12,9 +12,6 @@ const fakerCategoriesImages = [
 
 const fakerCategoriesPost = async (cantidad) => {
   if (!cantidad) return
-  const postFakerCategories = async (value) => {
-    await postForms('categories', value)
-  }
   const fakeCategories = []
   const createFakerCategories = () => {
     return {
@@ -27,9 +24,7 @@ const fakerCategoriesPost = async (cantidad) => {
     fakeCategories.push(createFakerCategories())
   })
 
-  fakeCategories.forEach((value) => {
-    postFakerCategories(value)
-  })
+  await postAll('categories', fakeCategories)
 }
 
 export default fakerCategoriesPost

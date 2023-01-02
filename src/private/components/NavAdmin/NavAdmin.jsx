@@ -61,7 +61,7 @@ export default function NavAdmin () {
 
             <div className={`col-6 text-center ${style.borderLeft}`}>
               <Link to={PrivateNameRoutes.SETTINGS}>
-                <img src={Engran} alt='icono' className='my-2' />
+                <img src={Engran} alt='icono' className='my-2 opacity pointer' />
               </Link>
             </div>
 

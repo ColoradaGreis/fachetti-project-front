@@ -24,7 +24,7 @@
     "title": "Tablero de consultas",
     "accordion":{
       "name": "Nombre",
-      "date": "Fecha",
+      "date": "Fecha/hora",
       "status": "Estado",
       "email": "Correo",
       "phone": "Telefono",
