@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import { NavAdmin, HeaderAdmin } from '$Private/components'
 import NotFoundRoute from './NotFoundRoute'
 import { PrivateNameRoutes } from './routes.name'
+import { UserProvider } from '../context'
 
 const ConsultLazy = lazy(() => import('../private/pages/Consults/Consults'))
 const ProductLazy = lazy(() => import('../private/pages/Products/Products'))
@@ -11,7 +12,7 @@ const SettingsLazy = lazy(() => import('../private/pages/SettingsPage/Settings')
 
 export default function PrivateRoutes () {
   return (
-    <>
+    <UserProvider>
       <NotFoundRoute>
         <Route element={<HeaderAdmin />}>
           <Route element={<NavAdmin />}>
@@ -22,6 +23,6 @@ export default function PrivateRoutes () {
           </Route>
         </Route>
       </NotFoundRoute>
-    </>
+    </UserProvider>
   )
 }

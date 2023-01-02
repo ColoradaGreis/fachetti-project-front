@@ -8,10 +8,11 @@ import NavLinks from './NavLinks'
 import { getCountMessages } from '../../utilities'
 import { SubjetManajerGetCount } from '../../services/manager-status'
 import { PrivateNameRoutes } from '../../../routes'
-import { getDecodedToken } from '../../../public/utils'
+import { useUserContext } from '@/context'
 
 export default function NavAdmin () {
-  const refUser = useRef(getDecodedToken())
+  const { userContextValue } = useUserContext()
+  console.log(userContextValue)
   const { pathname } = useLocation()
   const noRouteRender = `/admin/${PrivateNameRoutes.CONSULTS}`
   const ref = useRef(false)
@@ -43,7 +44,7 @@ export default function NavAdmin () {
           <div className={`row  align-items-center bkgGray ${style.containerProfile}`}>
             <div className='col-12 text-center'>
               <img src={userExample} alt='foto' />
-              <h3 className='fw-bold mt-2 mb-0'>User Name</h3>
+              <h3 className='fw-bold mt-2 mb-0'>{userContextValue.email}</h3>
               <p>Asesor</p>
             </div>
           </div>
