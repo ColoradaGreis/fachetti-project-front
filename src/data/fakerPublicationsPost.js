@@ -12,6 +12,7 @@ const fakerPublicationsImages = [
 ]
 
 const fakerPublicationsPost = async cantidad => {
+  if (!cantidad) return
   const postFakerPublications = async (value) => {
     await postForms('publications', value)
   }

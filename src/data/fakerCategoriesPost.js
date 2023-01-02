@@ -11,6 +11,7 @@ const fakerCategoriesImages = [
 ]
 
 const fakerCategoriesPost = async (cantidad) => {
+  if (!cantidad) return
   const postFakerCategories = async (value) => {
     await postForms('categories', value)
   }

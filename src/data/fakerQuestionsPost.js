@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker'
 import { postForms } from '../private/utilities'
 
 const fakerQuestionsPost = async (cantidad) => {
+  if (!cantidad) return
   const postFakerQuestions = async (value) => {
     await postForms('questions', value)
   }

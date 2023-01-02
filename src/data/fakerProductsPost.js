@@ -13,6 +13,7 @@ const fakerProductsImages = [
 ]
 
 const fakerProductsPost = async (cantidad) => {
+  if (!cantidad) return
   const getAllCategories = async () => {
     const response = await urlApi.get('/categories')
     if (typeof response.data === 'string') return []
