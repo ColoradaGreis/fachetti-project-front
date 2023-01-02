@@ -149,3 +149,9 @@ GLOBALES
   font-weight: 300;
   font-style: italic;
 }
+
+.noStyle{
+  border: none;
+  outline: none;
+  background-color: transparent;
+}

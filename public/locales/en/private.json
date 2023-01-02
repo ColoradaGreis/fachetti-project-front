@@ -38,7 +38,9 @@
       "button": "Load more"
     }
   },
-
+  "settings":{
+    "title": "Settings"
+  },
   "utils":{
     "edit": "Edit",
     "create": "Create",

@@ -38,6 +38,9 @@
       "details": "Detalles"
     }
   },
+  "settings":{
+    "title": "Configuraciónes"
+  },
   "utils":{
     "edit": "Editar",
     "create": "Crear",

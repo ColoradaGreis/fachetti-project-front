@@ -12,7 +12,6 @@ import { useUserContext } from '@/context'
 
 export default function NavAdmin () {
   const { userContextValue } = useUserContext()
-  console.log(userContextValue)
   const { pathname } = useLocation()
   const noRouteRender = `/admin/${PrivateNameRoutes.CONSULTS}`
   const ref = useRef(false)

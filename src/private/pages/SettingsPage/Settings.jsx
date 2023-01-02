@@ -1,32 +1,18 @@
+import { useTranslation } from 'react-i18next'
+import { HeaderSettings, FooterSettings } from './components'
+import style from './style.module.css'
+
 export default function Settings () {
+  const { t } = useTranslation('private')
   return (
-    <div>Settings</div>
+    <div>
+      <h1>{t('settings.title')}</h1>
+      <div className={`containter mx-0 px-0 ${style.underBorder}`}>
+        <HeaderSettings />
+      </div>
+      <div className={`containter mx-0 px-0 ${style.underBorder}`}>
+        <FooterSettings />
+      </div>
+    </div>
   )
 }
-// const [state, setState] = useState({
-//   email: '',
-//   password: ''
-// })
-// const handleChange = (e) => {
-//   setState({
-//     ...state,
-//     [e.target.name]: e.target.value
-//   })
-// }
-// const handleSubmit = async (e) => {
-//   e.preventDefault()
-//   const response = await urlApi.post('users/login', state)
-//   console.log(response)
-//   const user = jwtDecode(response.data, { payload: true })
-//   console.log(user)
-// }
-// return (
-//   <>
-//
-//     <form onSubmit={handleSubmit}>
-//       <input type='email' name='email' onChange={handleChange} />
-//       <input type='password' name='password' onChange={handleChange} />
-//       <button type='submit'>Send</button>
-//     </form>
-//   </>
-// )

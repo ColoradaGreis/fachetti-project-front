@@ -19,7 +19,7 @@ export default function HeaderAdmin () {
             <p className='mb-0 fs-4'>{t('header.title')}</p>
           </div>
           <div className='col offset-6 pointer' onClick={logOut}>
-            <p className='mb-0 fs-6 font-italic'>{t('header.logOut')}<img src={Exit} alt='exit' /></p>
+            <p className='mb-0 fs-6 font-italic'>{t('header.logOut')}<img src={Exit} alt='exit' className='ms-2' /></p>
           </div>
         </div>
       </header>

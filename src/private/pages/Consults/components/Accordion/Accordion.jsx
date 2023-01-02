@@ -12,7 +12,6 @@ export default function Accordion () {
   const [asnweredState, setAnsweredState] = useState(false)
   const { data, loading, error, getQuestions, lastPage } = useGetAllQuestions(asnweredState)
   const [state, setState] = useState([])// [booleanos]
-
   useEffect(() => {
     answered.subscribe((value) => {
       setAnsweredState(value)
@@ -60,7 +59,7 @@ export default function Accordion () {
         <div className='col-5'>
           <button
             className='button my-3 '
-            disabled={!!lastPage}
+            disabled={lastPage}
             onClick={getQuestions}
           >
             {t('consults.accordion.button')}
