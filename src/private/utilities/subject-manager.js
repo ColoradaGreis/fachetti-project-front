@@ -10,4 +10,8 @@ export class SubjectManager {
   setSubject (value) {
     this.subject$.next(value)
   }
+
+  setContrarySubject () {
+    this.subject$.next(!this.subject$.value)
+  }
 }

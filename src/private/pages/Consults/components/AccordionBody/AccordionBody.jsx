@@ -1,18 +1,19 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { urlApi } from '@/api'
 import { useTranslation } from 'react-i18next'
 import { Form } from 'react-bootstrap'
 
 export default function AccordionBody ({ user }) {
+  const { id, isAnswered, email, phone, message } = user
   const { t } = useTranslation('private')
-  const isAnsweredRef = useRef(user.isAnswered)
-  const [state, setState] = useState(isAnsweredRef.current)
+  const [state, setState] = useState(false)
+
+  useEffect(() => { setState(isAnswered) }, [user]) // Es necesario para que cuando modifiquen el swich se actualice el estado
 
   const handleChange = async (e) => {
     setState(e.target.checked)
     try {
-      const response = await urlApi.put(`questions/${user.id}?answered=${e.target.checked}`)
-      console.log(response)
+      await urlApi.put(`questions/${id}?answered=${e.target.checked}`)
     } catch (error) {
       console.log(error)
     }
@@ -23,13 +24,13 @@ export default function AccordionBody ({ user }) {
         <div className='col-6'>
           <p>
             <span className='bold'>{t('consults.accordion.email')}: </span>
-            <a className='text-decoration-none black' href={`mailto:${user.email}`} target='_blank' rel='noreferrer'>{user.email}</a>
+            <a className='text-decoration-none black' href={`mailto:${email}`} target='_blank' rel='noreferrer'>{email}</a>
           </p>
         </div>
         {
-                    user.phone && (
+                    phone && (
                       <div className='col-6'>
-                        <span className='bold'>{t('consults.accordion.phone')}: {user.phone}</span>
+                        <span className='bold'>{t('consults.accordion.phone')}: {phone}</span>
                       </div>
                     )
                   }
@@ -38,7 +39,7 @@ export default function AccordionBody ({ user }) {
         <div className='col-12'>
           <p>
             <span className='bold'>{t('consults.accordion.message')}: </span>
-            {user.message}
+            {message}
           </p>
 
         </div>

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-import { postForms } from '../private/utilities'
+import { postAll } from './'
 import { urlApi } from '@/api'
 
 const fakerProductsImages = [
@@ -13,16 +13,13 @@ const fakerProductsImages = [
 ]
 
 const fakerProductsPost = async (cantidad) => {
+  if (!cantidad) return
   const getAllCategories = async () => {
     const response = await urlApi.get('/categories')
     if (typeof response.data === 'string') return []
     return response.data.map((value) => value.id)
   }
   const arrayIdsCategories = await getAllCategories()
-
-  const postFakerProducts = async (value) => {
-    await postForms('products', value)
-  }
 
   const fakeProducts = []
   const createFakerProducts = () => {
@@ -38,9 +35,7 @@ const fakerProductsPost = async (cantidad) => {
     fakeProducts.push(createFakerProducts())
   })
 
-  fakeProducts.forEach((value) => {
-    postFakerProducts(value)
-  })
+  await postAll('products', fakeProducts)
 }
 
 export default fakerProductsPost

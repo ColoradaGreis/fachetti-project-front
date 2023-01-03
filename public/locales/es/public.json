@@ -17,5 +17,15 @@
   "Publications":{
     "title": "Novedades",
     "subTitle": "Nuestras Novedades"
+  },
+  "login":{
+    "emailLabel": "Correo Electrónico",
+    "emailText": "Ingrese su correo electrónico",
+    "passwordLabel": "Contraseña",
+    "passwordText": "Ingrese su contraseña",
+    "submit": "Ingresar"
+  },
+  "notFound":{
+    "botton": "Volver al Inicio"
   }
 }
