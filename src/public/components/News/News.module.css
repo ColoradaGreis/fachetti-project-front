@@ -4,3 +4,14 @@
     font-size: 2.2rem;
     color: var(--font-color-title);
 }
+.h1Products{
+    font-family: var(--font-family-2);
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: var(--font-color-title);
+}
+.h3Products{
+    font-family: var(--font-family-2);
+    font-weight: 700;
+    font-size: 1.6rem;
+}

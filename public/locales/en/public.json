@@ -13,5 +13,9 @@
   "Products":{
     "title": "Products",
     "subTitle": "Our Products"
+  },
+  "Publications":{
+    "title": "News",
+    "subTitle": "Our News"
   }
 }
