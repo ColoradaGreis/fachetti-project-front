@@ -24,15 +24,23 @@
     "title": "Query consults",
     "accordion":{
       "name": "Name",
-      "date": "Date",
+      "date": "Date/hour",
       "status": "Status",
       "email": "Email",
       "phone": "Phone",
       "message": "Message",
       "answered": "Answered"
+    },
+    "messagesHeader":{
+      "noReaded": "Mesagges no read",
+      "readed": "Mesagges read",
+      "details": "Details",
+      "button": "Load more"
     }
   },
-
+  "settings":{
+    "title": "Settings"
+  },
   "utils":{
     "edit": "Edit",
     "create": "Create",

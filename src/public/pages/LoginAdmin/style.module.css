@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 100vw;
+}
+
+.form{
+    width: 100%;
+}
+
+@media screen and (min-width: 768px){
+    .form{
+        width: 40%;
+    }
+}
+    

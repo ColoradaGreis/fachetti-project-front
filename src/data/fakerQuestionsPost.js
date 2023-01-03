@@ -1,10 +1,8 @@
 import { faker } from '@faker-js/faker'
-import { postForms } from '../private/utilities'
+import { postAll } from './'
 
 const fakerQuestionsPost = async (cantidad) => {
-  const postFakerQuestions = async (value) => {
-    await postForms('questions', value)
-  }
+  if (!cantidad) return
 
   const fakeQuestions = []
 
@@ -25,10 +23,7 @@ const fakerQuestionsPost = async (cantidad) => {
     fakeQuestions.push(createFakerQuestions())
   })
 
-  fakeQuestions.forEach((value) => {
-    postFakerQuestions(value)
-  })
-  console.log(fakeQuestions)
+  await postAll('questions', fakeQuestions)
 }
 
 export default fakerQuestionsPost

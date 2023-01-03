@@ -24,13 +24,22 @@
     "title": "Tablero de consultas",
     "accordion":{
       "name": "Nombre",
-      "date": "Fecha",
+      "date": "Fecha/hora",
       "status": "Estado",
       "email": "Correo",
       "phone": "Telefono",
       "message": "Mensaje",
-      "answered": "Respondido"
+      "answered": "Respondido",
+      "button": "Cargar más"
+    },
+    "messagesHeader":{
+      "noReaded": "Mensajes no leídos",
+      "readed": "Mensajes leídos",
+      "details": "Detalles"
     }
+  },
+  "settings":{
+    "title": "Configuraciónes"
   },
   "utils":{
     "edit": "Editar",

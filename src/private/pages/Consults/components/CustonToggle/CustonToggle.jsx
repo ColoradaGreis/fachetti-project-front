@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { urlApi } from '@/api'
 import { useAccordionButton } from 'react-bootstrap'
 import blueArrow from './assets/blueArrow.png'
 import greenArrow from './assets/greenArrow.png'
 import style from './style.module.css'
+import { SubjetManajerGetCount, subjectManager } from '@/private/services/manager-status'
 
 function CustomToggle ({ eventKey, read, name, date, index, setState, state }) {
+  const ref = useRef(false)
+  const isChangeSwich = subjectManager.getSubject()
   const [rotate, setRotate] = useState(false)
   const handleClick = useAccordionButton(eventKey, async () => {
     setRotate(!rotate)
@@ -15,10 +18,19 @@ function CustomToggle ({ eventKey, read, name, date, index, setState, state }) {
       newState[index] = true
       return newState
     })
-    const response = await urlApi.put(`questions/${eventKey}?readed=true`)
-    console.log(response)
+    await urlApi.put(`questions/${eventKey}?readed=true`)
+    SubjetManajerGetCount.setContrarySubject()
   }
   )
+  useEffect(() => {
+    // Si ocurre el evento del swich, reinicio el estado de la flecha
+    isChangeSwich.subscribe((value) => {
+      if (value !== ref.current) {
+        ref.current = value
+        setRotate(false)
+      }
+    })
+  })
 
   return (
     <button

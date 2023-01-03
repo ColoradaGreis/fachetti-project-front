@@ -1,0 +1,13 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("@/assets/images/notFound.jpg");
+  background-position: center;
+  position: relative;
+}
+
+.links{
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}

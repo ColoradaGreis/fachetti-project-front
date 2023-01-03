@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form'
-import { subjectManager } from '../../services/manager-status'
+import { subjectManager } from '../../../../services/manager-status'
 
 export default function SwichStatus () {
   const subject = subjectManager.getSubject()
