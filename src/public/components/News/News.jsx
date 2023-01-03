@@ -13,7 +13,6 @@ export default function News () {
   return (
     <div>
       <h1 className={s.h1Products}>{t('Publications.title')}</h1>
-      <h3 className={s.h3Products}>{t('Publications.subTitle')}</h3>
       <div className='d-flex flex-wrap mx-5 p-5 gap-5 justify-content-center'>
 
         {
