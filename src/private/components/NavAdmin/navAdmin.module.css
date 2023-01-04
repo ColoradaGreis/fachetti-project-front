@@ -20,3 +20,7 @@
 .badge{
   transform: translate(43px, 8px);
 }
+
+.profileImage{
+  max-width: 120px;
+}

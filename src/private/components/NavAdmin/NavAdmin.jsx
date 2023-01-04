@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import style from './navAdmin.module.css'
-import userExample from '@/assets/userExample.png'
 import Engran from '@/assets/Engran.png'
 import Notificacion from '@/assets/Notificacion.png'
 import NavLinks from './NavLinks'
@@ -9,9 +8,11 @@ import { getCountMessages } from '../../utilities'
 import { SubjetManajerGetCount } from '../../services/manager-status'
 import { PrivateNameRoutes } from '../../../routes'
 import { useUserContext } from '@/context'
+import { firstLetterUppercase } from '@/utils'
 
 export default function NavAdmin () {
   const { userContextValue } = useUserContext()
+  const { fullName } = userContextValue
   const { pathname } = useLocation()
   const noRouteRender = `/admin/${PrivateNameRoutes.CONSULTS}`
   const ref = useRef(false)
@@ -42,9 +43,9 @@ export default function NavAdmin () {
 
           <div className={`row  align-items-center bkgGray ${style.containerProfile}`}>
             <div className='col-12 text-center'>
-              <img src={userExample} alt='foto' />
-              <h3 className='fw-bold mt-2 mb-0'>{userContextValue.email}</h3>
-              <p>Asesor</p>
+              <img src={userContextValue.profileImage} alt='foto' className={style.profileImage} />
+              <h3 className='fw-bold mt-2 mb-0'>{firstLetterUppercase(fullName)}</h3>
+              <p>{firstLetterUppercase('admin')}</p>
             </div>
           </div>
 

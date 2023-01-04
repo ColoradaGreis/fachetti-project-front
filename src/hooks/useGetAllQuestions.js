@@ -34,7 +34,6 @@ export default function useGetAllQuestions (answered = false) {
     }
   }
   useEffect(() => {
-    console.log('first')
     refPage.current = 0
     setLastPage(false)
     getQuestions()
