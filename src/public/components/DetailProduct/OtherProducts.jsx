@@ -16,7 +16,7 @@ export default function OtherProducts () {
 
         {
           products.map(e =>
-            <Link key={e.id} to={`/categories/detail/${e.id}`}>
+            <Link key={e.id} to={`/categories/${category}/detail/${e.id}`}>
               <Card
                 key={e.id}
                 id={e.id}

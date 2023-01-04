@@ -28,7 +28,7 @@ export default function useGetDetailProduct (id) {
   }
   useEffect(() => {
     getProduct()
-  }, []) // eslint-disable-line
+  }, [id]) // eslint-disable-line
 
   return {
     ...state

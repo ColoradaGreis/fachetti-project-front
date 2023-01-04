@@ -8,6 +8,8 @@ import { OtherProducts } from '.'
 const DetailProduct = () => {
   const { id } = useParams()
   const { data, loading, error } = useGetDetailProduct(id)
+  console.log(id)
+  console.log(data)
 
   return (
     <div className='container-fluid justify-content-center m-5'>
