@@ -45,6 +45,11 @@
       "email": "Email",
       "button": "Change name",
       "button2": "Save"
+    },
+    "footerSettings":{
+      "title": "Lenguage",
+      "language": "English",
+      "button": "Change language"
     }
   },
   "utils":{
