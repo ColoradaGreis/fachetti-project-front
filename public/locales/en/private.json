@@ -39,7 +39,13 @@
     }
   },
   "settings":{
-    "title": "Settings"
+    "title": "Settings",
+    "headerSettings":{
+      "name": "Name",
+      "email": "Email",
+      "button": "Change name",
+      "button2": "Save"
+    }
   },
   "utils":{
     "edit": "Edit",

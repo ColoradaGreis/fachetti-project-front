@@ -2,14 +2,14 @@ import { urlApi } from '@/api'
 import { fakerCategoriesPost, fakerProductsPost, fakerPublicationsPost, fakerQuestionsPost, postAnUser } from './'
 
 const cantidad = {
-  categories: 2,
+  categories: 0,
   products: 0,
-  publications: 0,
+  publications: 15,
   questions: 0
 }
 
 const user = {
-  name: 'Julian Martinez',
+  fullName: 'Julian Martinez',
   email: 'juli@hotmail.com',
   password: '123'
 }
@@ -24,8 +24,8 @@ const fakerDataToDB = async () => {
   const existCategories = await getAllCategories()
   if (existCategories.length > 0) return
 
-  await fakerCategoriesPost(cantidad.categories)
   await fakerProductsPost(cantidad.products)
+  await fakerCategoriesPost(cantidad.categories)
   await fakerPublicationsPost(cantidad.publications)
   await fakerQuestionsPost(cantidad.questions)
 }
