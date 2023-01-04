@@ -2,8 +2,7 @@ import { useUserContext } from '@/context'
 import style from './style.module.css'
 import { CloudinaryWidget } from '../../../../components'
 import { useEffect, useState } from 'react'
-import { udpateToken, getDecodedToken } from '@/public/utils'
-import { urlApi } from '@/api'
+import { putUser } from '../../utils'
 
 export default function ProfileImage () {
   const { userContextValue, setUserContextValue } = useUserContext()
@@ -14,11 +13,8 @@ export default function ProfileImage () {
   })
   useEffect(() => {
     if (userContextValue.profileImage === imageData.secureUrl) return
-    urlApi.put(`/users/${userContextValue.userId}`, { profileImage: imageData.secureUrl })
-      .then(res => {
-        udpateToken(res.data)
-        setUserContextValue(getDecodedToken())
-      })
+    putUser(userContextValue.userId, { profileImage: imageData.secureUrl })
+      .then(res => setUserContextValue(res))
       .catch(err => console.log(err))
   }, [imageData])
   return (

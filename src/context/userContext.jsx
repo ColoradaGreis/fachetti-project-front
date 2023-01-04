@@ -6,7 +6,7 @@ export const userContext = createContext()
 export const UserProvider = ({ children }) => {
   const [userContextValue, setUserContextValue] = useState('')
   useEffect(() => {
-    setUserContextValue(getDecodedToken())
+    setUserContextValue(() => getDecodedToken())
   }, [])
   return <userContext.Provider value={{ userContextValue, setUserContextValue }}>{children}</userContext.Provider>
 }

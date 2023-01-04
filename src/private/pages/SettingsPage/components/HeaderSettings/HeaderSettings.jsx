@@ -3,51 +3,48 @@ import { useEffect, useState } from 'react'
 import style from './style.module.css'
 import { useTranslation } from 'react-i18next'
 import { ProfileImage } from '../ProfileImage'
-import { urlApi } from '@/api'
+import { putUser } from '../../utils'
 
 export default function HeaderSettings () {
   const { t } = useTranslation('private')
   const [editingName, setEditingName] = useState(false)
   const { userContextValue, setUserContextValue } = useUserContext()
-  const [userData, setUserData] = useState({
-    name: '',
-    email: '',
-    profileImage: ''
-  })
-  const handleNameChange = (e) => {
+  const [userData, setUserData] = useState(
+    {
+      fullName: '',
+      email: '',
+      profileImage: ''
+    }
+  )
+  useEffect(() => {
     setUserData({
-      ...userData,
-      name: e.target.value
+      fullName: userContextValue.fullName,
+      email: userContextValue.email,
+      profileImage: userContextValue.profileImage
+    })
+  }, [])
+
+  const handleNameChange = (e) => {
+    setUserData(prev => {
+      return {
+        ...prev,
+        fullName: e.target.value
+      }
     })
   }
-  useEffect(() => {
-    if (userContextValue) {
-      setUserData({
-        ...userData,
-        name: userContextValue.fullName,
-        email: userContextValue.email
-      })
-    }
-  }, [userContextValue])
 
-  if (userContextValue.name !== userData.name && editingName.edit) {
+  if (userContextValue.fullName !== userData.fullName && editingName.edit) {
     setEditingName({
       wasEdit: true,
       edit: true
     })
   }
   const putName = async () => {
-    setUserContextValue(prev => {
-      return {
-        ...prev,
-        name: userData.name
-      }
-    })
-    try {
-      await urlApi.put('/users', userContextValue)
-    } catch (error) {
-      console.log(error)
-    }
+    if (!userData.fullName) return
+    if (userData.fullName === userContextValue.fullName) return
+    const response = await putUser(userContextValue.userId, { fullName: userData.fullName })
+    setUserContextValue(response)
+    setEditingName(false)
   }
   return (
     <div className='container px-0 mx-0'>
@@ -67,10 +64,11 @@ export default function HeaderSettings () {
                   ? <input
                       type='text'
                       className='noStyle'
-                      value={userData.name}
+                      value={userData.fullName}
                       onChange={handleNameChange}
+                      autoFocus
                     />
-                  : <p className='mb-0'>{userData.name}</p>
+                  : <p className='mb-0'>{userData.fullName}</p>
               }
             </div>
 
