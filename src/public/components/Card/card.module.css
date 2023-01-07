@@ -31,3 +31,32 @@
 .div{
  height: 300px;
 }
+.cardTwo{
+    display: flex;
+    color: black;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    background-size: auto;
+    width: 410px;
+    height: 458px;
+    /* margin: 25px 15px 0px 15px; */
+    box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
+    font-family: var(--font-family-1);
+
+}
+.cardBig{
+        display: flex;
+    color: black;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    background-size: auto;
+    width: 874px;
+    height: 993px;
+    /* margin: 25px 15px 0px 15px; */
+    box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
+    font-family: var(--font-family-1);
+}
