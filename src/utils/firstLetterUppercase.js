@@ -1,3 +1,10 @@
+/**
+ *
+ * @param {*} string
+ * @returns {string} string with first letter uppercase
+ * @example
+ * firstLetterUppercase('hello world') // Hello World
+ */
 const firstLetterUppercase = (string) => {
   if (!string) return string
   const array = string.split(' ')

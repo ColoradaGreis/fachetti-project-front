@@ -13,8 +13,5 @@ export const UserProvider = ({ children }) => {
 
 export const useUserContext = () => {
   const context = useContext(userContext)
-  if (context === undefined) {
-    throw new Error('UserContext must be used within a UserProvider')
-  }
   return context
 }
