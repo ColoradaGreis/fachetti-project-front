@@ -13,7 +13,7 @@ export default function ProfileImage () {
   })
   useEffect(() => {
     if (userContextValue.profileImage === imageData.secureUrl) return
-    putUser(userContextValue.userId, { profileImage: imageData.secureUrl })
+    putUser({ ...userContextValue, profileImage: imageData.secureUrl })
       .then(res => setUserContextValue(res))
       .catch(err => console.log(err))
   }, [imageData])

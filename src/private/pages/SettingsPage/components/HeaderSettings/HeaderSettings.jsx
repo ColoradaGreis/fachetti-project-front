@@ -42,7 +42,7 @@ export default function HeaderSettings () {
   const putName = async () => {
     if (!userData.fullName) return
     if (userData.fullName === userContextValue.fullName) return
-    const response = await putUser(userContextValue.userId, { fullName: userData.fullName })
+    const response = await putUser({ ...userContextValue, fullName: userData.fullName })
     setUserContextValue(response)
     setEditingName(false)
   }

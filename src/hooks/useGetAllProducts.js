@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react'
 import { urlApi } from '$Api'
 // import { useParams } from 'react-router'
+/**
+ *
+ * @param {*} string
+ * @returns [array, boolean, string]
+ * @description Hook que obtiene todos los productos de una categoria
+ * @example
+ * const { data, loading, error } = useGetAllProducts('category')
+ */
 
 export default function useGetAllProducts (category) {
   const [state, setState] = useState({
