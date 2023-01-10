@@ -13,8 +13,9 @@ const postForms = async (url, data) => {
       res.message = 'creado con éxito'
     }
   } catch (error) {
-    swalErrorOrSuccess(error.response.data.message, false)
-    res.message = error.response.data.message
+    console.log(error)
+    swalErrorOrSuccess(error.response.data[0].msg, false)
+    res.message = error.response.data[0].msg
   }
   return res
 }

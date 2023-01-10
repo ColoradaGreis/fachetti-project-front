@@ -5,7 +5,7 @@ import flechas from './assets/flechas.png'
 import { Card, CustonBotton, SerachAll } from '@/private/components'
 import { formProductSchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
 import { useTranslation } from 'react-i18next'
-import { PrivateNameRoutes } from '../../../../../routes'
+import { PrivateNameRoutes } from '@/routes'
 
 export default function FormCreateProduct () {
   const { t } = useTranslation('private')
