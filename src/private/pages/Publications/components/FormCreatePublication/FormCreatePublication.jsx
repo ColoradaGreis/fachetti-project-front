@@ -1,6 +1,7 @@
 import { useFormik } from 'formik'
 import { Card, CustonBotton, SerachAll } from '@/private/components'
 import { formPublicationsSchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
+import { PrivateNameRoutes } from '../../../../../routes'
 
 export default function FormCreatePublication () {
   // Inicio Formik
@@ -40,7 +41,7 @@ export default function FormCreatePublication () {
       <div className='row mt-5'>
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <SerachAll route='/' />
+          <SerachAll route={PrivateNameRoutes.EDIT_PUBLICATIONS} />
         </div>
         <div className='col-6  pe-5'>
           <CustonBotton disabled={isSubmitting} />
