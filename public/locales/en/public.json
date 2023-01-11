@@ -23,5 +23,9 @@
   },
   "notFound":{
     "botton": "Back to Home"
+  },
+  "Publications":{
+    "title": "News",
+    "subTitle": "Our News"
   }
 }

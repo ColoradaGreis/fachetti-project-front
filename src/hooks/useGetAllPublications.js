@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react'
 import { urlApi } from '$Api'
-// import { useParams } from 'react-router'
 
-export default function useGetDetailProduct (id) {
+export default function useGetPublications () {
   const [state, setState] = useState({
     data: [],
     loading: true,
     error: null
   })
 
-  const getProduct = async () => {
+  const getPublications = async () => {
     try {
-      const api = await urlApi.get(`/products/${id}`)
+      const api = await urlApi.get('/publications')
       if (typeof api.data === 'string') throw new Error(api.data)
       setState({
         data: api.data,
@@ -27,8 +26,8 @@ export default function useGetDetailProduct (id) {
     }
   }
   useEffect(() => {
-    getProduct()
-  }, [id]) // eslint-disable-line
+    getPublications()
+  }, []) // eslint-disable-line
 
   return {
     ...state
