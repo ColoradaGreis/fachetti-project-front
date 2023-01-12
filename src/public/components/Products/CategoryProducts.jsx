@@ -12,9 +12,9 @@ export default function CategoryProducts () {
 
   return (
     <div>
-      <h1 className={s.h1Products}>Acá hay sólo productos de una categoría</h1>
-      <h3 className={s.h3Products}>Nuestros productos</h3>
-      <div className='d-flex flex-wrap mx-5 p-5 gap-5 justify-content-center'>
+      <h1 className={s.h1Products}>{category}</h1>
+      {/* <h3 className={s.h3Products}>Nuestros productos</h3> */}
+      <div className='d-flex flex-wrap mx-md-5 p-md-5 gap-sm-5 gap-4 justify-content-center'>
 
         {
         loading

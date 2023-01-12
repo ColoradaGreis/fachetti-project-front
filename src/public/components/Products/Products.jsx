@@ -13,7 +13,7 @@ export default function Products () {
     <div>
       <h1 className={s.h1Products}>{t('Products.title')}</h1>
       <h3 className={s.h3Products}>{t('Products.subTitle')}</h3>
-      <div className='d-flex flex-wrap mx-5 p-5 gap-5 justify-content-center'>
+      <div className='d-flex flex-wrap mx-md-5 p-md-5 gap-sm-5 gap-4 justify-content-center'>
 
         {
         loading
