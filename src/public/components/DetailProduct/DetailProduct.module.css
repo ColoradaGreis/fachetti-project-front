@@ -1,0 +1,18 @@
+.title{
+font-family: var(--font-family-1);
+font-style: normal;
+font-weight: 700;
+font-size: 64px;
+line-height: 71px;
+color: var(--font-color-title);
+text-transform: uppercase;
+}
+.h3{
+font-family: var(--font-family-1);
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 23px;
+color: var(--font-color-1);
+text-transform: uppercase;
+}

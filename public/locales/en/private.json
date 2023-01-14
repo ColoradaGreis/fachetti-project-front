@@ -1,0 +1,83 @@
+{
+  "header":{
+    "title": "ADMIN PANEL",
+    "logOut": "LOG OUT"
+  },
+  "sidebar":{
+    "consults": "Consults",
+    "products": "Products",
+    "publications": "Publications"
+  },
+  "products":{
+    "title": "Product",
+    "placeHolder": "Write details text here...",
+    "selectTitle": "Select a category",
+    "details": "Details text:"
+  },
+  "categories":{
+    "title": "Category"
+  },
+  "publications":{
+    "title": "Publication"
+  },
+  "consults":{
+    "title": "Query consults",
+    "accordion":{
+      "name": "Name",
+      "date": "Date/hour",
+      "status": "Status",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "answered": "Answered"
+    },
+    "messagesHeader":{
+      "noReaded": "Mesagges no read",
+      "readed": "Mesagges read",
+      "details": "Details",
+      "button": "Load more"
+    }
+  },
+  "settings":{
+    "title": "Settings"
+  },
+  "utils":{
+    "edit": "Edit",
+    "create": "Create",
+    "delete": "Delete",
+    "save": "Save",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "search": "Search",
+    "add": "Add",
+    "title": "Title",
+    "searchAll": "Search all",
+    "select": "Select"
+  },
+  "validation":{
+    "required": "This field is required",
+    "minLength": "Should have at least 2 characters",
+    "minLength2": "Should have at least 50 characters",
+    "maxLength": "Should have at most 50 characters",
+    "maxLength2": "Should have at most 300 characters",
+    "minValue": "This field must be greater than {0}",
+    "maxValue": "This field must be less than {0}",
+    "pattern": "This field is not valid",
+    "email": "This field must be a valid email",
+    "url": "This field must be a valid URL",
+    "number": "This field must be a valid number",
+    "date": "This field must be a valid date",
+    "dateISO": "This field must be a valid date (ISO)",
+    "digits": "This field must contain only digits",
+    "creditCard": "This field must be a valid credit card number",
+    "equalTo": "This field must be the same as {0}",
+    "accept": "This field must have a valid extension",
+    "maxlength": "This field must have at most {0} characters",
+    "minlength": "This field must have at least {0} characters",
+    "rangelength": "This field must have between {0} and {1} characters",
+    "range": "This field must be between {0} and {1}",
+    "max": "This field must be less than {0}",
+    "min": "This field must be greater than {0}",
+    "image": "Should add an image"
+  }
+}

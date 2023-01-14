@@ -1,0 +1,31 @@
+{
+  "nav":{
+    "home":"HOME",
+    "clients": "CLIENTS",
+    "products": "PRODUCTS",
+    "news": "NEWS",
+    "contact": "CONTACT",
+    "works": "WORKS",
+    "idioma": "LANGUAGE",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "Products":{
+    "title": "Products",
+    "subTitle": "Our Products"
+  },
+  "login":{
+    "emailLabel": "Email Address",
+    "emailText": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordText": "Enter your password",
+    "submit": "Login"
+  },
+  "notFound":{
+    "botton": "Back to Home"
+  },
+  "Publications":{
+    "title": "News",
+    "subTitle": "Our News"
+  }
+}

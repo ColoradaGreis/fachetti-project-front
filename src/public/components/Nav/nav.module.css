@@ -1,0 +1,34 @@
+.imgLogo{
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+}
+.nav{
+  padding: 10px 20px;
+  /* height: 100px; */
+  background-color: var(--background-color-blue);
+}
+.button{
+  background-color: var(--background-color-blue);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.spanToggle{
+  background-color: var(--background-color-blue);
+}
+.dropdown{
+  font-size: 18px;
+  margin-top: 2px;
+}
+@media (max-width: 622px) {
+  .imgLogo{
+    width: 100%;
+    height: 60px;
+    object-fit: cover;
+  }
+  .nav{
+    padding: 0px;
+  }
+}

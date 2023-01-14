@@ -1,0 +1,31 @@
+{
+  "nav":{
+    "home":"INICIO",
+    "clients": "CLIENTES",
+    "products": "PRODUCTOS",
+    "news": "NOTICIAS",
+    "contact": "CONTACTO",
+    "works": "OBRAS",
+    "idioma": "IDIOMA",
+    "spanish": "Español",
+    "english": "Inglés"
+  },
+  "Products":{
+    "title": "Productos",
+    "subTitle": "Nuestros Productos"
+  },
+  "Publications":{
+    "title": "Novedades",
+    "subTitle": "Nuestras Novedades"
+  },
+  "login":{
+    "emailLabel": "Correo Electrónico",
+    "emailText": "Ingrese su correo electrónico",
+    "passwordLabel": "Contraseña",
+    "passwordText": "Ingrese su contraseña",
+    "submit": "Ingresar"
+  },
+  "notFound":{
+    "botton": "Volver al Inicio"
+  }
+}
