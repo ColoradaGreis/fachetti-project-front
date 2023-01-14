@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import style from './style.module.css'
 import { FormCreateProduct, FormCreateCategori, HeaderProducts } from './components'
@@ -8,7 +9,7 @@ export default function Products () {
   const { pathname } = useLocation()
   const params = useParams()
   const { t } = useTranslation('private')
-  const [editing, setEditing] = useState(false) // eslint-disable-line
+  const [editing, setEditing] = useState(false)
   const text = editing ? t('utils.edit') : t('utils.create')
   const [creating, setCreating] = useState({
     status: true,

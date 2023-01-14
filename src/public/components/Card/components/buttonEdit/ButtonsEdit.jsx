@@ -12,8 +12,7 @@ export default function ButtonsEdit ({ isBanned, id }) {
     isProducts: pathname.includes('products'),
     isPublications: pathname.includes('publications')
   }
-  const url = route.isCategories ? `/categories/${id}` : route.isProducts ? `/products/${id}` : `/publications/${id}`
-  console.log()
+  const url = route.isCategories ? `/categories/banned/${id}` : route.isProducts ? `/products/banned/${id}` : `/publications/banned/${id}`
   const [banned, setBanned] = useState(isBanned)
 
   const handleBanned = async () => {

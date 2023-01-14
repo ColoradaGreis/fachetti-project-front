@@ -10,7 +10,7 @@ import { urlApi } from '$Api'
  * const { data, loading, error } = useGetAllProducts('category')
  */
 
-export default function useGetAllProducts (category) {
+export default function useGetAllProducts (category, banned) {
   const [state, setState] = useState({
     data: [],
     loading: true,
@@ -19,7 +19,7 @@ export default function useGetAllProducts (category) {
 
   const getProducts = async () => {
     try {
-      const api = await urlApi.get(`/products/categories/${category}`)
+      const api = await urlApi.get(`/products/categories/${category}${banned ? '/banned' : ''}`)
       if (typeof api.data === 'string') throw new Error(api.data)
       setState({
         data: api.data,

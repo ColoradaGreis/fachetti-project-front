@@ -3,7 +3,7 @@ import { urlApi } from '$Api'
 import { swalErrorOrSuccess } from '../private/utilities'
 import { categoriesAdapter } from './adapters'
 
-export default function useGetAllCategories () {
+export default function useGetAllCategories (banned) {
   const [state, setState] = useState({
     data: [],
     loading: true,
@@ -12,7 +12,7 @@ export default function useGetAllCategories () {
 
   const getCategories = async () => {
     try {
-      const api = await urlApi.get('/categories')
+      const api = await urlApi.get(`/categories${banned ? '/banned' : ''}`)
       if (typeof api.data === 'string') throw new Error(api.data)
       const adapterData = categoriesAdapter(api.data)
 
