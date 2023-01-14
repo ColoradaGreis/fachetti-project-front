@@ -21,7 +21,7 @@ export const PrivateNameRoutes = {
   EDIT_PRODUCTS: '/all/products/:categoryName',
   EDIT_PUBLICATIONS: '/all/publications',
 
-  EDIT_CATEGORIES_FORM: '/put/categories/:id',
-  EDIT_PRODUCTS_FORM: '/put/products/:categoriId/:id',
-  EDIT_PUBLICATIONS_FORM: '/put/publications/:id'
+  EDIT_CATEGORIES_FORM: 'put/categories/:id',
+  EDIT_PRODUCTS_FORM: 'put/products/:id',
+  EDIT_PUBLICATIONS_FORM: 'put/publications/:id'
 }
