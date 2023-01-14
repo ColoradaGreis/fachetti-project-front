@@ -5,7 +5,8 @@ export default function categoriesAdapter (categories) {
     return {
       id: category.id,
       name: category.name,
-      image: category.image
+      image: category.image,
+      isBanned: category.isBanned
     }
   })
 }

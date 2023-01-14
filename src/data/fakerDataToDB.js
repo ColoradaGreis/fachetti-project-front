@@ -4,10 +4,10 @@ import { fakerCategoriesPost, fakerProductsPost, fakerPublicationsPost, fakerQue
 // await postAnUser(user)
 
 const cantidad = {
-  categories: 15,
-  products: 30,
-  publications: 20,
-  questions: 20
+  categories: 0,
+  products: 0,
+  publications: 25,
+  questions: 0
 }
 
 const user = {

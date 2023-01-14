@@ -16,8 +16,7 @@ export default function ButtonsEdit ({ isBanned, id }) {
   const [banned, setBanned] = useState(isBanned)
 
   const handleBanned = async () => {
-    const response = await urlApi.put(`${url}?banned=${!banned}`)
-    console.log(response)
+    await urlApi.put(`${url}?banned=${!banned}`)
     setBanned(prev => !prev)
   }
   return (

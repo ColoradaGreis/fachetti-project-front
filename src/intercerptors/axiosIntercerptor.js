@@ -18,6 +18,7 @@ const axiosInterceptor = () => {
   })
 
   urlApi.interceptors.response.use(res => {
+    // console.log(res.data)
     return res
   }, err => {
     console.log(err)

@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom'
 //         <h2 className={s.name}>{title}</h2>
 export default function Card ({ id, image, title, isBanned, type }) {
   const user = useUserContext() // si existe es porque esta en la rutas de admin
+
   return (
     <div className={`${type === 'big' ? s.cardBig : type === 'small' ? s.cardTwo : s.card}`}>
       <div className={`d-flex justify-content-center align-items-center col position-relative ${s.div}`}>
