@@ -1,0 +1,7 @@
+.header{
+  height: 100px;
+  background-color: var(--background-color-blue);
+  color: var(--font-color-3);
+  font-family: var(--font-family-1);
+  
+}

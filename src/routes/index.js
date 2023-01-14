@@ -1,0 +1,6 @@
+export { default as AppRoutes } from './AppRoutes'
+export { default as Guard } from './Guard'
+export { default as NotFoundRoute } from './NotFoundRoute'
+export { default as PrivateRoutes } from './PrivateRoutes'
+export { default as PublicRoutes } from './PublicRoutes'
+export * from './routes.name'
