@@ -11,11 +11,10 @@ export default function useGetAllQuestions (answered = false) {
     loading: true,
     error: null
   })
-  // TODO: dice Total page 2 pero como comienza del 0, deberia ser 1
   const getQuestions = async () => {
     try {
       const api = await urlApi.get(`/questions?answered=${answered}&page=${refPage.current}`)
-      if (typeof api.data.data === 'string') throw new Error(api.data)
+      if (typeof api.data === 'string') throw new Error(api.data)
       const adapterData = questionsAdapter(api.data.data)
       setState({
         data: (refPage.current) ? state.data.concat(adapterData) : adapterData,
@@ -34,7 +33,6 @@ export default function useGetAllQuestions (answered = false) {
     }
   }
   useEffect(() => {
-    console.log('first')
     refPage.current = 0
     setLastPage(false)
     getQuestions()

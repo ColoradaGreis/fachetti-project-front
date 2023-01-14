@@ -23,10 +23,9 @@ export default function MessagesHeader () {
 
   useEffect(() => {
     getCountMessages().then((value) => {
-      setState(value)
+      setState(value || '0')
     })
   }, [])
-
   return (
     <div className='container mx-0 user-select-none '>
       <div className='row px-0 mx-0 d-flex gap-3 mb-5'>

@@ -1,14 +1,21 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import style from './style.module.css'
 import { FormCreateProduct, FormCreateCategori, HeaderProducts } from './components'
 import { useTranslation } from 'react-i18next'
+import { useParams, useLocation } from 'react-router-dom'
 
 export default function Products () {
   const { t } = useTranslation('private')
-  const [editing, setEditing] = useState(false) // eslint-disable-line
+  let isProducts = true
+  const { pathname } = useLocation()
+  const isEdit = pathname.includes('put')
+  if (isEdit) isProducts = pathname.includes('products')
+
+  const [editing, setEditing] = useState(isEdit)
   const text = editing ? t('utils.edit') : t('utils.create')
   const [creating, setCreating] = useState({
-    status: true,
+    status: isProducts,
     product: t('products.title'),
     category: t('categories.title')
   })
@@ -30,8 +37,8 @@ export default function Products () {
         <div className={`container-fluid mt-5 ${style.containerBody}`}>
           {
             creating.status
-              ? <FormCreateProduct />
-              : <FormCreateCategori />
+              ? <FormCreateProduct edit={editing} />
+              : <FormCreateCategori edit={editing} />
          }
         </div>
       </div>

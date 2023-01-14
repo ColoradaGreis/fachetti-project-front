@@ -3,14 +3,22 @@ import style from './style.module.css'
 import { useGetAllCategories } from '@/hooks'
 import flechas from './assets/flechas.png'
 import { Card, CustonBotton, SerachAll } from '@/private/components'
-import { formProductSchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
+import { formProductSchema, postForms, swalErrorOrSuccess, putForms } from '@/private/utilities'
 import { useTranslation } from 'react-i18next'
+import { PrivateNameRoutes } from '@/routes'
+import { useParams } from 'react-router-dom'
+import { initialProductFormValues } from '../../../../utilities'
+import { useEffect } from 'react'
 
-export default function FormCreateProduct () {
+export default function FormCreateProduct ({ edit }) {
+  const getInitialValues = async () => {
+    return await initialProductFormValues(edit, id)
+  }
   const { t } = useTranslation('private')
   const { data, loading, error } = useGetAllCategories() // Hook para traer todas las categorias y renderizar los selects
   // Inicio Formik
-  const {values, handleChange, handleSubmit, setValues, isSubmitting, handleBlur,touched, errors} = useFormik({ // eslint-disable-line
+  const { id } = useParams()
+  const { values, handleChange, handleSubmit, setValues, isSubmitting, handleBlur, touched, errors } = useFormik({
     initialValues: {
       name: '',
       image: '',
@@ -19,16 +27,24 @@ export default function FormCreateProduct () {
     },
     validationSchema: formProductSchema,
     onSubmit: async (values, { resetForm }) => {
-      const { message, ok } = await postForms('products', values)
-      if (ok) {
-        resetForm()
-        swalErrorOrSuccess(`Producto ${message}`, ok)
+      if (!edit) {
+        const { message, ok } = await postForms('products', values)
+        if (ok) {
+          resetForm()
+          swalErrorOrSuccess(`Producto ${message}`, ok)
+        }
+        swalErrorOrSuccess(message, ok)
+      } else if (edit) {
+        const { message, ok } = await putForms('products', values, id)
+        if (ok) {
+          swalErrorOrSuccess(`Producto ${message}`, ok)
+        }
+        swalErrorOrSuccess(message, ok)
       }
-      swalErrorOrSuccess(message, ok)
     }
   })
+  useEffect(() => { if (edit)getInitialValues().then(res => setValues(res)) }, [])
   // Fin Formik
-  console.log(errors)
   return (
     <form className='row h-100 justify-content-center' onSubmit={handleSubmit}>
 
@@ -107,7 +123,7 @@ export default function FormCreateProduct () {
         {/* --------------------------Fin-Select------------------------ */}
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <SerachAll route='/products' />
+          <SerachAll route={PrivateNameRoutes.EDIT_CATEGORIES} />
         </div>
       </div>
       <div className='row  pe-5'>

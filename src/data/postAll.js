@@ -5,7 +5,7 @@ const postAll = async (url, array) => {
     return urlApi.post(url, value)
   })
   console.log(promiseArray)
-  await Promise.all(promiseArray)
+  await Promise.allSettled(promiseArray)
 }
 
 export default postAll
