@@ -2,7 +2,7 @@
 import { useUserContext } from '../../../context'
 import s from './card.module.css'
 import { ButtonsEdit } from './components'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 // export default function Card ({ id, image, title, type }) {
 //   return (
