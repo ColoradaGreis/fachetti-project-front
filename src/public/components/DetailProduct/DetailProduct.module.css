@@ -16,3 +16,8 @@ line-height: 23px;
 color: var(--font-color-1);
 text-transform: uppercase;
 }
+@media (max-width: 900px) {
+    .title{
+        font-size: 40px;
+    }
+}

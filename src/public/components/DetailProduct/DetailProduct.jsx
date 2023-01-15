@@ -12,7 +12,7 @@ const DetailProduct = () => {
   console.log(data)
 
   return (
-    <div className='container-fluid justify-content-center m-5'>
+    <div className='container-fluid justify-content-center my-5'>
 
       {
       loading
@@ -41,7 +41,7 @@ const DetailProduct = () => {
       <div>
         <div>
 
-          <h1>OTROS PRODUCTOS</h1>
+          <h1 className={s.title}>OTROS PRODUCTOS</h1>
         </div>
         <div>
           <OtherProducts />
