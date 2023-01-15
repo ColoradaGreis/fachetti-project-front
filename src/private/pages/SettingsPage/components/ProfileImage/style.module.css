@@ -1,0 +1,11 @@
+.image{
+  opacity: 0.5;
+  width: 320px;
+}
+
+.icon{
+  position: absolute;
+  top: 61%;
+  left: 71%;
+  z-index: 100;
+}

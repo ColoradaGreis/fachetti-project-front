@@ -21,7 +21,6 @@ export default function Accordion () {
     const readState = data.map(user => user.isRead)
     setState(readState)
   }, [data])
-
   return (
     <>
       <div className='row px-0 mx-0 justify-content-between text-center mb-2 bold fs-4'>

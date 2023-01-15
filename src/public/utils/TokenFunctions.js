@@ -19,3 +19,8 @@ export const tokenExists = () => {
 export const getDecodedToken = () => {
   return jwtDecode(getToken(), { payload: true })
 }
+
+export const udpateToken = (token) => {
+  removeToken()
+  saveToken(token)
+}

@@ -39,7 +39,18 @@
     }
   },
   "settings":{
-    "title": "Configuraciónes"
+    "title": "Configuraciónes",
+    "headerSettings":{
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "button": "Cambiar Nombre",
+      "button2": "Guardar"
+    },
+    "footerSettings":{
+      "title": "Idioma",
+      "language": "Español",
+      "button": "Cambiar idioma"
+    }
   },
   "utils":{
     "edit": "Editar",

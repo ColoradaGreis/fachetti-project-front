@@ -1,6 +1,7 @@
 import { useFormik } from 'formik'
 import { Card, SerachAll, CustonBotton } from '@/private/components'
 import { formCategorySchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
+import { PrivateNameRoutes } from '../../../../../routes'
 
 export default function FormCreateCategori () {
   // Inicio Formik
@@ -40,7 +41,7 @@ export default function FormCreateCategori () {
       <div className='row mt-5'>
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <SerachAll route='/' />
+          <SerachAll route={PrivateNameRoutes.EDIT_CATEGORIES} />
         </div>
         <div className='col-6  pe-5'>
           <CustonBotton disabled={isSubmitting} />

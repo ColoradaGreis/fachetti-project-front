@@ -5,6 +5,7 @@ import flechas from './assets/flechas.png'
 import { Card, CustonBotton, SerachAll } from '@/private/components'
 import { formProductSchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
 import { useTranslation } from 'react-i18next'
+import { PrivateNameRoutes } from '@/routes'
 
 export default function FormCreateProduct () {
   const { t } = useTranslation('private')
@@ -28,7 +29,6 @@ export default function FormCreateProduct () {
     }
   })
   // Fin Formik
-  console.log(errors)
   return (
     <form className='row h-100 justify-content-center' onSubmit={handleSubmit}>
 
@@ -107,7 +107,7 @@ export default function FormCreateProduct () {
         {/* --------------------------Fin-Select------------------------ */}
         {/* --------------------------Search-Icon------------------------ */}
         <div className='col-6'>
-          <SerachAll route='/products' />
+          <SerachAll route={PrivateNameRoutes.EDIT_CATEGORIES} />
         </div>
       </div>
       <div className='row  pe-5'>
