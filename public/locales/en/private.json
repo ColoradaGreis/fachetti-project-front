@@ -18,7 +18,9 @@
     "title": "Category"
   },
   "publications":{
-    "title": "Publication"
+    "title": "Publications",
+    "create": "Create publication",
+    "edit": "Edit publication"
   },
   "consults":{
     "title": "Query consults",

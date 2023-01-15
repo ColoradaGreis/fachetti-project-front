@@ -1,7 +1,7 @@
 import { useLocation, useParams } from 'react-router-dom'
 import { Card } from '../../../public/components'
 import { PrivateNameRoutes } from '../../../routes'
-import { useGetAllCategories, useGetAllProducts } from '../../../hooks'
+import { useGetAllCategories, useGetAllProducts, useGetAllPublications } from '../../../hooks'
 
 const admin = `/${PrivateNameRoutes.PRIVATE}`
 
@@ -18,6 +18,7 @@ export default function ListCards () {
       <div className='row d-flex justify-content-center align-items-center gap-4'>
         {routes.isCategories && <RenderCategories />}
         {routes.isProducts && <RenderProducts />}
+        {routes.isPublications && <RenderPublications />}
       </div>
     </div>
   )
@@ -25,8 +26,6 @@ export default function ListCards () {
 
 export const RenderCategories = () => {
   const { data, loading } = useGetAllCategories(true)
-  console.log(data)
-
   if (loading) return <p>Loading...</p>
   return data.map((category) => (
     <div className='col-4' key={category.id}>
@@ -52,6 +51,21 @@ export const RenderProducts = () => {
         image={product.image}
         title={product.name}
         isBanned={product.isBanned}
+      />
+    </div>
+  ))
+}
+
+export const RenderPublications = () => {
+  const { data, loading } = useGetAllPublications(true)
+  if (loading) return <p>Loading...</p>
+  return data.map((publication) => (
+    <div className='col-4' key={publication.id}>
+      <Card
+        id={publication.id}
+        image={publication.image}
+        title={publication.title}
+        isBanned={publication.isBanned}
       />
     </div>
   ))

@@ -7,7 +7,6 @@ export const initialCategoryFormValues = async (edit, id) => {
 }
 
 export const initialProductFormValues = async (edit, id) => {
-  console.log(edit, id)
   if (!edit) {
     return {
       name: '',
@@ -17,12 +16,28 @@ export const initialProductFormValues = async (edit, id) => {
     }
   }
   const { data } = await urlApi.get(`products/${id}`)
-  console.log(data)
   return {
     name: data.name,
     description: data.description,
     image: data.image,
     categoryId: data.categoryId,
     categoryName: data.category
+  }
+}
+
+export const initialPublicationFormValues = async (edit, id) => {
+  console.log(edit, id)
+  if (!edit || !id) {
+    return {
+      title: '',
+      image: ''
+    }
+  }
+  const { data } = await urlApi.get(`publications/${id}`)
+  console.log(data)
+
+  return {
+    title: data.title,
+    image: data.image
   }
 }

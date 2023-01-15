@@ -37,13 +37,13 @@ export default function ButtonsEdit ({ isBanned, id }) {
         <img
           src={pencilIcon}
           alt='edit'
-          className='col-4 pointer'
+          className='col-4 pointer opacity'
           onClick={handlePut}
         />
         <img
           src={banned ? noBannedIcon : toBannedIcon}
           alt='banned'
-          className='col-4 pointer'
+          className='col-4 pointer opacity'
           onClick={handleBanned}
         />
       </div>

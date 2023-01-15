@@ -18,7 +18,9 @@
     "title": "Categoría"
   },
   "publications":{
-    "title": "Publicación"
+    "title": "Publicaciónes",
+    "create": "Crear publicación",
+    "edit": "Editar publicación"
   },
   "consults":{
     "title": "Tablero de consultas",
