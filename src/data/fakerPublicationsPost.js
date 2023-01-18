@@ -17,8 +17,9 @@ const fakerPublicationsPost = async cantidad => {
   const fakePublications = []
 
   const createFakerPublications = () => {
+    // Api tiene validado que el título no puede ser mayor a 30 caracteres, algunas veces faker lo supera
     return {
-      title: faker.lorem.sentence(5),
+      title: faker.lorem.sentence(4),
       image: faker.helpers.arrayElement(fakerPublicationsImages)
     }
   }

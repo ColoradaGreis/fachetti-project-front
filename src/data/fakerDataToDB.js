@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 import { urlApi } from '@/api'
 import { fakerCategoriesPost, fakerProductsPost, fakerPublicationsPost, fakerQuestionsPost, postAnUser } from './'
+// await postAnUser(user)
 
 const cantidad = {
   categories: 0,
   products: 0,
-  publications: 15,
+  publications: 25,
   questions: 0
 }
 
@@ -16,7 +18,6 @@ const user = {
 }
 
 const fakerDataToDB = async () => {
-  // await postAnUser(user)
   const getAllCategories = async () => {
     const response = await urlApi.get('/categories')
     if (typeof response.data === 'string') return []

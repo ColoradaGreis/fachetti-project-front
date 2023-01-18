@@ -24,7 +24,9 @@ export default function ListCards () {
 }
 
 export const RenderCategories = () => {
-  const { data, loading } = useGetAllCategories()
+  const { data, loading } = useGetAllCategories(true)
+  console.log(data)
+
   if (loading) return <p>Loading...</p>
   return data.map((category) => (
     <div className='col-4' key={category.id}>
@@ -41,7 +43,7 @@ export const RenderCategories = () => {
 
 export const RenderProducts = () => {
   const { categoryName } = useParams()
-  const { data, loading } = useGetAllProducts(categoryName)
+  const { data, loading } = useGetAllProducts(categoryName, true)
   if (loading) return <p>Loading...</p>
   return data.map((product) => (
     <div className='col-4' key={product.id}>

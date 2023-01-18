@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const baseURL = import.meta.env.VITE_API_URL
+
 export const urlApi = axios.create({
-  baseURL: 'https://fachettiprojectback-production.up.railway.app/'
+  baseURL
 })
 // export const urlApi = axios.create({
 //   baseURL: 'http://localhost:3002/',
@@ -9,6 +11,3 @@ export const urlApi = axios.create({
 //     authorization: tokenHeader
 //   }
 // })
-export const localhost = axios.create({
-  baseURL: 'https://localhost:3000/'
-})
