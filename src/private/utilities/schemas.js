@@ -18,7 +18,7 @@ export const formProductSchema = Yup.object().shape({
     .required(errorMesagges.required),
   description: Yup.string()
     .min(50, errorMesagges.min2)
-    .max(300, errorMesagges.max2)
+    .max(750, errorMesagges.max2)
     .required(errorMesagges.required),
   image: Yup.string()
     .url(errorMesagges.url)

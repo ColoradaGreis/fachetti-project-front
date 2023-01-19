@@ -18,7 +18,9 @@
     "title": "Category"
   },
   "publications":{
-    "title": "Publication"
+    "title": "Publications",
+    "create": "Create publication",
+    "edit": "Edit publication"
   },
   "consults":{
     "title": "Query consults",
@@ -39,7 +41,18 @@
     }
   },
   "settings":{
-    "title": "Settings"
+    "title": "Settings",
+    "headerSettings":{
+      "name": "Name",
+      "email": "Email",
+      "button": "Change name",
+      "button2": "Save"
+    },
+    "footerSettings":{
+      "title": "Lenguage",
+      "language": "English",
+      "button": "Change language"
+    }
   },
   "utils":{
     "edit": "Edit",
@@ -59,7 +72,7 @@
     "minLength": "Should have at least 2 characters",
     "minLength2": "Should have at least 50 characters",
     "maxLength": "Should have at most 50 characters",
-    "maxLength2": "Should have at most 300 characters",
+    "maxLength2": "Should have at most 750 characters",
     "minValue": "This field must be greater than {0}",
     "maxValue": "This field must be less than {0}",
     "pattern": "This field is not valid",

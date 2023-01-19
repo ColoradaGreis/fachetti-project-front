@@ -18,7 +18,9 @@
     "title": "Categoría"
   },
   "publications":{
-    "title": "Publicación"
+    "title": "Publicaciónes",
+    "create": "Crear publicación",
+    "edit": "Editar publicación"
   },
   "consults":{
     "title": "Tablero de consultas",
@@ -39,7 +41,18 @@
     }
   },
   "settings":{
-    "title": "Configuraciónes"
+    "title": "Configuraciónes",
+    "headerSettings":{
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "button": "Cambiar Nombre",
+      "button2": "Guardar"
+    },
+    "footerSettings":{
+      "title": "Idioma",
+      "language": "Español",
+      "button": "Cambiar idioma"
+    }
   },
   "utils":{
     "edit": "Editar",
@@ -59,7 +72,7 @@
     "minLength": "Debe tener al menos 2 caracteres",
     "minLength2": "Debe tener al menos 50 caracteres",
     "maxLength": "Debe tener como máximo 50 caracteres",
-    "maxLength2": "Debe tener como máximo 300 caracteres",
+    "maxLength2": "Debe tener como máximo 750 caracteres",
     "min": "Debe ser mayor o igual a {0}",
     "max": "Debe ser menor o igual a {0}",
     "email": "Debe ser un email válido",
