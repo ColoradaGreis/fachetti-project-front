@@ -1,15 +1,15 @@
-import React from 'react'
+import s from './style.module.css'
+
 import { useParams } from 'react-router-dom'
-import { useGetDetailProduct } from '../../../hooks'
-import Loading from '../Loading/Loading'
-import s from './DetailProduct.module.css'
-import { OtherProducts } from '.'
+import { useGetDetailProduct } from '@/hooks'
+
+import { Loading } from '../../components'
+import { OtherProducts } from './components'
 
 const DetailProduct = () => {
   const { id } = useParams()
   const { data, loading, error } = useGetDetailProduct(id)
-  console.log(id)
-  console.log(data)
+  // TODO: Modificar el alert a sweetAlert
 
   return (
     <div className='container-fluid justify-content-center m-5'>
@@ -19,7 +19,7 @@ const DetailProduct = () => {
         ? <Loading />
         : error
           ? alert(error) //eslint-disable-line
-          : <div key={data.id} className='container justify-content-center shadow-lg p-3 mb-5 rounded'>
+          : <section key={data.id} className='container justify-content-center shadow-lg p-3 mb-5 rounded'>
             <div className='row'>
               <div className='col-4  d-flex justify-content-center'>
 
@@ -35,18 +35,17 @@ const DetailProduct = () => {
 
             </div>
 
-            </div> //eslint-disable-line
+            </section> //eslint-disable-line
 
       }
-      <div>
+      <section>
         <div>
-
           <h1>OTROS PRODUCTOS</h1>
         </div>
         <div>
           <OtherProducts />
         </div>
-      </div>
+      </section>
 
     </div>
   )

@@ -1,10 +1,10 @@
-import React from 'react'
-import { ErrorMessage, Field, Form, Formik } from 'formik'
 import s from './Contact.module.css'
 import telefono from '@/assets/telefonoContact.png'
 import instagram from '@/assets/instagramContact.png'
 import mail from '@/assets/gmailContact.png'
 import facebook from '@/assets/facebookContact.png'
+
+import { ErrorMessage, Field, Form, Formik } from 'formik'
 
 const initialValues = {
   fullName: '',
