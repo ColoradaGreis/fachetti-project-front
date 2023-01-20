@@ -82,6 +82,7 @@ a{
   --background-color-body: #F9F9F9;
   --background-color-blue: #232851;
   --background-color-blue2: #124E78;
+  --background-color-blue3: #131734;
   --background-color-gray: #EDEDED;
   --background-color-green: #00FF75;
   --font-family-1: 'Gothan', sans-serif;
@@ -109,6 +110,9 @@ GLOBALES
 }
 .bkgBlue2{
   background-color: var(--background-color-blue2);
+}
+.bkgBlue3{
+  background-color: var(--background-color-blue3);
 }
 .bkgGreen{
   background-color: var(--background-color-green);

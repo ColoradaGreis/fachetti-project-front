@@ -27,5 +27,8 @@
   },
   "notFound":{
     "botton": "Volver al Inicio"
+  },
+  "home":{
+    "whoWeAre": "¿Quienes Somos?"
   }
 }

@@ -27,5 +27,8 @@
   "Publications":{
     "title": "News",
     "subTitle": "Our News"
+  },
+  "home":{
+    "whoWeAre": "¿Who We Are?"
   }
 }
