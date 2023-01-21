@@ -15,16 +15,16 @@ export default function Nav () {
   // Colocar aqui las nuevas rutas
   const routes = [
     { name: t('nav.home'), path: PublicNameRoutes.HOME },
-    { name: t('nav.clients'), path: PublicNameRoutes.CLIENTS },
+    // { name: t('nav.works'), path: `${PublicNameRoutes.HOME}#works` },
+    // { name: t('nav.clients'), path: PublicNameRoutes.CLIENTS },
     { name: t('nav.products'), path: PublicNameRoutes.CATEGORIES },
     { name: t('nav.news'), path: PublicNameRoutes.NEWS },
-    { name: t('nav.contact'), path: PublicNameRoutes.CONTACT },
-    { name: t('nav.works'), path: PublicNameRoutes.WORKS }
+    { name: t('nav.contact'), path: PublicNameRoutes.CONTACT }
   ]
 
   return (
     <>
-      <nav className={`navbar navbar-expand-lg navbar-light ${style.nav}`}>
+      <nav className={`navbar navbar-expand-lg navbar-light  ${style.nav}`}>
         <div className='container-fluid d-flex align-items-center'>
 
           <Navegador link='/'>

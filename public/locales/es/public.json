@@ -29,6 +29,10 @@
     "botton": "Volver al Inicio"
   },
   "home":{
-    "whoWeAre": "¿Quienes Somos?"
+    "whoWeAre": "¿Quienes Somos?",
+    "ourWorks": "Nuestras Obras",
+    "industrialKitchens": "Cocinas Industriales",
+    "whereFindUs": "Dónde encontrarnos",
+    "innovation": "Innovación"
   }
 }

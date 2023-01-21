@@ -1,0 +1,55 @@
+.card{
+  max-height: 300px;
+  overflow-y: hidden;
+}
+
+.text{
+ letter-spacing: 5px;
+ font-size: 1.4rem;
+}
+
+.textContainer{
+  background: linear-gradient(180deg, #F9F9F9 0%, #D1D2D3 100%)
+}
+
+.textWorks{
+  font-size: 0.7rem;
+}
+
+@media screen and (min-width: 500px) {
+ .text{
+  font-size: 2rem;
+ }
+ .textWorks{
+  font-size: 0.85rem;
+}
+}
+
+
+@media screen and (min-width: 800px) {
+  .text{
+   font-size: 3rem;
+  }
+  .textWorks{
+    font-size: 1rem;
+  }
+ }
+
+ @media screen and (min-width: 992px) {
+  .card{
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .textContainer{
+    position: absolute;
+    background: transparent;
+    transform: translate(-20%, 15%);
+  }
+  
+ }
+  
+ 
+@media screen and (min-width: 1100px) {
+  .text{
+   font-size: 4rem;
+  }
+ }

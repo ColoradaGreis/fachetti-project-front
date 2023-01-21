@@ -14,7 +14,7 @@ function App () {
   }, [])
 
   return (
-    <div className=' container-fluid ms-0 me-0 ps-0 pe-0 App '>
+    <div className=' container-fluid ms-0 me-0 ps-0 pe-0 App position-relative '>
       <SnackbarProvider maxSnack={3}>
         <SnackbarUtilitiesConfigurator />
         <AppRoutes />
