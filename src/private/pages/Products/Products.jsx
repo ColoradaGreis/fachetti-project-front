@@ -10,7 +10,6 @@ export default function Products () {
   const params = useParams()
   const { t } = useTranslation('private')
   let isProducts = true
-  const { pathname } = useLocation()
   const isEdit = pathname.includes('put')
   if (isEdit) isProducts = pathname.includes('products')
 

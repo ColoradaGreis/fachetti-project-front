@@ -19,18 +19,17 @@ const DetailProduct = () => {
         ? <Loading />
         : error
           ? alert(error) //eslint-disable-line
-          : <div key={data.id} className='container justify-content-center shadow-lg p-3 mb-5 rounded'>
-            <div className='row'>
-              <div className='col-4  d-flex justify-content-center'>
+          : <div key={data.id} className='justify-content-center shadow-lg p-3 mb-5 rounded w-100'>
+            <div className='row d-sm-flex justify-content-center align-items-center'>
+              <div className='col-sm-4  d-flex justify-content-center align-self-center'>
 
-                <img src={data.image} />
+                <img className='img-fluid' src={data.image} />
               </div>
-              <div className='col-6'>
+              <div className='col-sm-8'>
 
                 <h1 key={data.id} className={s.title}>{data.name}</h1>
                 <h3 className={s.h3}>{data.category}</h3>
-                <br />
-                <p>{data.description}</p>
+                <p className={s.text}>{data.description}</p>
               </div>
 
             </div>
