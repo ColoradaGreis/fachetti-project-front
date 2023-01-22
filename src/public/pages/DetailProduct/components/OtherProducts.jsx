@@ -1,13 +1,12 @@
-import React from 'react'
-// import { useSelector } from 'react-redux'
-import Card from '../Card/Card'
-import { useGetAllProducts } from '../../../hooks'
-// import Loading from '../Loading/Loading.jsx'
+import { Card } from '../../../components'
+import { useGetAllProducts } from '@/hooks'
 import { Link, useParams } from 'react-router-dom'
 
 export default function OtherProducts () {
   const { category, id } = useParams()
+
   const { data } = useGetAllProducts(category)
+
   const products = data.filter(e => e.id !== id)
 
   return (

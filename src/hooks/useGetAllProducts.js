@@ -3,9 +3,10 @@ import { urlApi } from '$Api'
 // import { useParams } from 'react-router'
 /**
  *
- * @param {*} string
+ * @param {string} category
+ * @param {boolean} banned
  * @returns [array, boolean, string]
- * @description Hook que obtiene todos los productos de una categoria
+ * @description Hook que obtiene todos los productos de una categoria if banned is true, get banned products
  * @example
  * const { data, loading, error } = useGetAllProducts('category')
  */

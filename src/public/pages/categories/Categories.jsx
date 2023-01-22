@@ -1,13 +1,13 @@
-import Card from '../Card/Card'
-import s from './Product.module.css'
-import { useGetAllCategories } from '../../../hooks'
-import Loading from '../Loading/Loading.jsx'
+import s from './style.module.css'
+import { useGetAllCategories } from '@/hooks'
+import { Loading, Card } from '../../components'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-export default function Products () {
+export default function Categories () {
   const { t } = useTranslation('public')
   const { data, loading, error } = useGetAllCategories()
+  // TODO: H1 solo debe estar una vez que sera en la landing Page, modificarlo a otra etiqueta
 
   return (
     <div>
@@ -36,26 +36,3 @@ export default function Products () {
     </div>
   )
 }
-
-// export default function Products () {
-//   const categories = useSelector(state => state.categories)
-
-//   return (
-//     <div>
-//       <h1 className={s.h1Products}>PRODUCTOS</h1>
-//       <h3 className={s.h3Products}>Nuestro productos</h3>
-//       {
-//         Array.isArray(categories) && categories.map(c => (
-//           <Navigate key={c.id} link={c.name}>
-//             <Card
-//               key={c.id}
-//               id={c.id}
-//               title={c.name}
-//               image={c.image}
-//             />
-//           </Navigate>
-//         ))
-//             }
-//     </div>
-//   )
-// }

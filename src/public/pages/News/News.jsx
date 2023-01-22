@@ -1,8 +1,8 @@
-import React from 'react'
-import { Card } from '../Card'
 import s from './News.module.css'
-import { useGetAllPublications } from '../../../hooks'
-import Loading from '../Loading/Loading.jsx'
+
+import { Card, Loading } from '../../components'
+
+import { useGetAllPublications } from '@/hooks'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -11,7 +11,8 @@ export default function News () {
   const { data, loading, error } = useGetAllPublications()
   const firstNews = data.slice(0, 3)
   const oneNew = firstNews.shift()
-  console.log(data)
+
+  // TODO: Modificar alert por sweetalert
 
   return (
     <div className='justify-content-center m-5 p-5'>
@@ -74,14 +75,3 @@ export default function News () {
     </div>
   )
 }
-
-// data.map(e =>
-//   <Link key={e.id} to={`/publications/${e.id}`}>
-//     <Card
-//       key={e.id}
-//       id={e.id}
-//       title={e.title}
-//       image={e.image}
-//     />
-//   </Link>
-// )

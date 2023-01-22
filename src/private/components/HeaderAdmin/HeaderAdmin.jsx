@@ -16,7 +16,7 @@ export default function HeaderAdmin () {
       <header className={`container-fluid mx-0 px-0 ${style.header}`}>
         <div className='row h-100 align-items-center'>
           <div className='col-2 offset-1'>
-            <p className='mb-0 fs-4'>{t('header.title')}</p>
+            <p className='mb-0 fs-5'>{t('header.title')}</p>
           </div>
           <div className='col offset-6 pointer' onClick={logOut}>
             <p className='mb-0 fs-6 font-italic'>{t('header.logOut')}<img src={Exit} alt='exit' className='ms-2' /></p>

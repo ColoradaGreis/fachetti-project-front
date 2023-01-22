@@ -12,7 +12,7 @@ import { ButtonsEdit } from './components'
 //       </div>
 //       <div className=' p-2 text-center mb-3'>
 //         <h2 className={s.name}>{title}</h2>
-export default function Card ({ id, image, title, isBanned, type }) {
+export default function Card ({ id, image, title, isBanned, type, route }) {
   const user = useUserContext() // si existe es porque esta en la rutas de admin
 
   return (
@@ -21,7 +21,7 @@ export default function Card ({ id, image, title, isBanned, type }) {
         <img src={image} alt='title' className={`img-fluid ${s.image} ${user && 'opacity-50 img-fluid'}`} />
         {user && <ButtonsEdit id={id} isBanned={isBanned} />}
       </div>
-      {/* {route
+      {route
         ? <Link to={route}>
           <div className=' p-2 text-center mb-3'>
             <h2 className={s.name}>{title}</h2>
@@ -29,10 +29,10 @@ export default function Card ({ id, image, title, isBanned, type }) {
         </Link>
         : <div className=' p-2 text-center mb-3'>
           <h2 className={s.name}>{title}</h2>
-        </div>} */}
-      <div className=' p-sm-2 text-center mb-sm-3'>
+        </div>}
+      {/* <div className=' p-2 text-center mb-3'>
         <h2 className={s.name}>{title}</h2>
-      </div>
+      </div> */}
     </div>
   )
 }

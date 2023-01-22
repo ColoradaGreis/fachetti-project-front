@@ -1,9 +1,17 @@
 import { useFormik } from 'formik'
 import { Card, CustonBotton, SerachAll } from '@/private/components'
-import { formPublicationsSchema, postForms, swalErrorOrSuccess } from '@/private/utilities'
+import { formPublicationsSchema, postForms, swalErrorOrSuccess, putForms } from '@/private/utilities'
 import { PrivateNameRoutes } from '../../../../../routes'
+import { useParams } from 'react-router'
+import { initialPublicationFormValues } from '../../../../utilities'
+import { useEffect } from 'react'
 
-export default function FormCreatePublication () {
+export default function FormCreatePublication ({ edit }) {
+  console.log(edit)
+  const getInitialValues = async () => {
+    return await initialPublicationFormValues(edit, id)
+  }
+  const { id } = useParams()
   // Inicio Formik
   const {values, handleChange, handleSubmit, setValues, handleBlur, touched, errors, isSubmitting} = useFormik({ // eslint-disable-line
     initialValues: {
@@ -12,15 +20,25 @@ export default function FormCreatePublication () {
     },
     validationSchema: formPublicationsSchema,
     onSubmit: async (values, { resetForm }) => {
-      const { message, ok } = await postForms('publications', values)
-      if (ok) {
-        resetForm()
-        swalErrorOrSuccess(`Publicación ${message}`, ok)
+      if (!edit) {
+        const { message, ok } = await postForms('publications', values)
+        if (ok) {
+          resetForm()
+          swalErrorOrSuccess(`Publicación ${message}`, ok)
+        }
+        swalErrorOrSuccess(message, ok)
+      } else if (edit) {
+        const { message, ok } = await putForms('publications', values, id)
+        if (ok) {
+          swalErrorOrSuccess(`Publicación ${message}`, ok)
+        }
+        swalErrorOrSuccess(message, ok)
       }
-      swalErrorOrSuccess(message, ok)
     }
 
   })
+  console.log(values)
+  useEffect(() => { getInitialValues().then(data => { setValues(() => data) }) }, [])
   return (
     <form className='row h-100 justify-content-center' onSubmit={handleSubmit}>
 

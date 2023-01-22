@@ -1,26 +1,24 @@
-import React from 'react'
-// import { useSelector } from 'react-redux'
-import Card from '../Card/Card'
-import s from './Product.module.css'
-import { useGetAllProducts } from '../../../hooks'
-import Loading from '../Loading/Loading.jsx'
+import { Card, Loading } from '../../components'
+import s from './style.module.css'
+import { useGetAllProducts } from '@/hooks'
 import { Link, useParams } from 'react-router-dom'
 
-export default function CategoryProducts () {
+export default function ProductsByCategory () {
   const { category } = useParams()
   const { data, loading, error } = useGetAllProducts(category)
+  // TODO: Modificar alert por sweetAlert2
 
   return (
     <div>
       <h1 className={s.h1Products}>{category}</h1>
-      {/* <h3 className={s.h3Products}>Nuestros productos</h3> */}
       <div className='d-flex flex-wrap mx-md-5 p-md-5 gap-sm-5 gap-4 justify-content-center'>
 
         {
         loading
           ? <Loading />
           : error
-            ? alert(error) //eslint-disable-line
+            // eslint-disable-next-line no-undef
+            ? alert(error)
             : data.map(e =>
               <Link key={e.id} to={`detail/${e.id}`}>
                 <Card
@@ -31,7 +29,6 @@ export default function CategoryProducts () {
                 />
               </Link>
             )
-
         }
       </div>
     </div>
