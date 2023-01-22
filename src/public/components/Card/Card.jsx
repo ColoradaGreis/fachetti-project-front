@@ -2,7 +2,7 @@
 import { useUserContext } from '../../../context'
 import s from './card.module.css'
 import { ButtonsEdit } from './components'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // export default function Card ({ id, image, title, type }) {
 //   return (
@@ -23,11 +23,11 @@ export default function Card ({ id, image, title, isBanned, type, route }) {
       </div>
       {route
         ? <Link to={route}>
-          <div className=' p-2 text-center mb-3'>
+          <div className=' p-sm-2 text-center mb-sm-3'>
             <h2 className={s.name}>{title}</h2>
           </div>
         </Link>
-        : <div className=' p-2 text-center mb-3'>
+        : <div className='p-sm-2 text-center mb-sm-3'>
           <h2 className={s.name}>{title}</h2>
         </div>}
       {/* <div className=' p-2 text-center mb-3'>
