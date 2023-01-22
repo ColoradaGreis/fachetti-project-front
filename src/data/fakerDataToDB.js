@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 import { urlApi } from '@/api'
 import { fakerCategoriesPost, fakerProductsPost, fakerPublicationsPost, fakerQuestionsPost, postAnUser } from './'
 // await postAnUser(user)

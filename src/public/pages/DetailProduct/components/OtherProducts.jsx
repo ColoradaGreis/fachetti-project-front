@@ -11,7 +11,7 @@ export default function OtherProducts () {
 
   return (
     <div className='w-100'>
-      <div className='d-flex mx-5 p-5 gap-5 overflow-auto'>
+      <div className='d-flex py-5 gap-5 overflow-auto'>
 
         {
           products.map(e =>
