@@ -48,7 +48,7 @@ export default function Footer () {
         <div className={`col d-flex flex-column justify-content-center align-items-center ${s.map} align-text-top`}>
           <h5 className={s.titleContacto}>UBICACION</h5>
           <p className={s.titleUbi}>Castañon 2952, C1437 CABA, Argentina</p>
-          <iframe title='map' width='330' height='270' src='https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Casta%C3%B1on%202952%2C%20C1437%20CABA+(Title)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed' frameBorder='0' scrolling='no' marginHeight='0' marginWidth='0' />
+          <iframe title='map' width='330' height='270' src='https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Casta%C3%B1on%202952%2C%20C1437%20CABA+(Title)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed' />
 
         </div>
       </div>
