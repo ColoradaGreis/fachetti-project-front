@@ -1,0 +1,91 @@
+.card{
+    display: flex;
+    color: black;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    background-size: auto;
+    width: 413px;
+    height: 526px;
+    /* margin: 25px 15px 0px 15px; */
+    box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
+    font-family: var(--font-family-1);
+}
+.name{
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.image{
+    display: flex;
+    height: 75%;
+    width: 90%;
+    object-fit:cover;
+    background-color: var(--background-color-1);
+    padding: 0;
+
+}
+.div{
+ height: 300px;
+}
+.cardTwo{
+    display: flex;
+    color: black;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    background-size: auto;
+    width: 410px;
+    height: 458px;
+    /* margin: 25px 15px 0px 15px; */
+    box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
+    font-family: var(--font-family-1);
+
+}
+.cardBig{
+        display: flex;
+    color: black;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    background-size: auto;
+    width: 874px;
+    height: 993px;
+    /* margin: 25px 15px 0px 15px; */
+    box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
+    font-family: var(--font-family-1);
+}
+@media (max-width: 480px) {
+    .card{
+     width: 131.4px;
+    height: 159.8px;
+    }
+    .name{
+        font-size: 15px;
+
+    }
+
+    
+}
+@media only screen and (min-width:480px) and (max-width: 865px) {
+    .card{
+        width: 213px;
+        height: 326px;
+    }
+    .name{
+        font-size: 15px;
+
+    }
+    
+}
+@media only screen and (min-width:866px) and (max-width: 1066px) {
+    .card{
+        width: 313px;
+        height: 426px;
+    }
+    
+}

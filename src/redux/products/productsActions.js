@@ -28,6 +28,7 @@ export const getCategories = () => {
   return async function (dispatch) {
     try {
       const response = await urlApi.get('categories')
+      console.log(response)
       return dispatch(getAllCategories(response.data))
     } catch (error) {
       console.log(error.message)

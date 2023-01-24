@@ -1,25 +1,28 @@
 import { useEffect, useState } from 'react'
-import { urlApi } from '../api/API'
+import { urlApi } from '$Api'
+import { swalErrorOrSuccess } from '../private/utilities'
+import { categoriesAdapter } from './adapters'
 
-export default function useGetAllCategories () {
+export default function useGetAllCategories (banned) {
   const [state, setState] = useState({
     data: [],
-    loading: false,
+    loading: true,
     error: null
   })
 
   const getCategories = async () => {
     try {
-      setState({ ...state, loading: true })
-      const api = await urlApi.get('/categories')
+      const api = await urlApi.get(`/categories${banned ? '/banned' : ''}`)
       if (typeof api.data === 'string') throw new Error(api.data)
+      const adapterData = categoriesAdapter(api.data)
 
       setState({
-        data: api.data,
+        data: adapterData,
         loading: false,
         error: null
       })
     } catch (error) {
+      swalErrorOrSuccess(error.message, false)
       setState({
         data: [],
         loading: false,

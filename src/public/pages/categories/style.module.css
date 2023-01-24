@@ -1,0 +1,23 @@
+.h1Products{
+    font-family: var(--font-family-2);
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: var(--font-color-title);
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.h3Products{
+    font-family: var(--font-family-2);
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-left: 20px;
+}
+@media (max-width: 480px) {
+
+    .h1Products{
+        font-size: 1.5rem;
+    }
+    .h3Products{
+        font-size: 0.875rem;
+    }
+}

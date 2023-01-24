@@ -1,0 +1,100 @@
+{
+  "header":{
+    "title": "PANEL DE CONTROL",
+    "logOut": "CERRAR SESIÓN"
+  },
+  "sidebar":{
+    "consults": "Consultas",
+    "products": "Productos",
+    "publications": "Publicaciones"
+  },
+  "products":{
+    "title": "Producto",
+    "placeHolder": "Escriba el texto de detalle...",
+    "selectTitle": "Seleccionar una categoría",
+    "details": "Texto de detalle:"
+  },
+  "categories":{
+    "title": "Categoría"
+  },
+  "publications":{
+    "title": "Publicaciónes",
+    "create": "Crear publicación",
+    "edit": "Editar publicación"
+  },
+  "consults":{
+    "title": "Tablero de consultas",
+    "accordion":{
+      "name": "Nombre",
+      "date": "Fecha/hora",
+      "status": "Estado",
+      "email": "Correo",
+      "phone": "Telefono",
+      "message": "Mensaje",
+      "answered": "Respondido",
+      "button": "Cargar más"
+    },
+    "messagesHeader":{
+      "noReaded": "Mensajes no leídos",
+      "readed": "Mensajes leídos",
+      "details": "Detalles"
+    }
+  },
+  "settings":{
+    "title": "Configuraciónes",
+    "headerSettings":{
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "button": "Cambiar Nombre",
+      "button2": "Guardar"
+    },
+    "footerSettings":{
+      "title": "Idioma",
+      "language": "Español",
+      "button": "Cambiar idioma"
+    }
+  },
+  "utils":{
+    "edit": "Editar",
+    "create": "Crear",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "cancel": "Cancelar",
+    "search": "Buscar",
+    "add": "Agregar",
+    "title": "Titulo",
+    "searchAll": "Ver todos",
+    "select": "Seleccionar"
+  },
+  "validation":{
+    "required": "Campo requerido",
+    "minLength": "Debe tener al menos 2 caracteres",
+    "minLength2": "Debe tener al menos 50 caracteres",
+    "maxLength": "Debe tener como máximo 50 caracteres",
+    "maxLength2": "Debe tener como máximo 750 caracteres",
+    "min": "Debe ser mayor o igual a {0}",
+    "max": "Debe ser menor o igual a {0}",
+    "email": "Debe ser un email válido",
+    "pattern": "Debe cumplir con el patrón {0}",
+    "number": "Debe ser un número válido",
+    "url": "Debe ser una url válida",
+    "date": "Debe ser una fecha válida",
+    "dateISO": "Debe ser una fecha válida",
+    "digits": "Debe ser un número válido",
+    "creditCard": "Debe ser un número de tarjeta válido",
+    "equalTo": "Debe ser igual al campo {0}",
+    "accept": "Debe ser un archivo válido",
+    "mask": "Debe cumplir con el patrón {0}",
+    "minWords": "Debe tener al menos {0} palabras",
+    "maxWords": "Debe tener como máximo {0} palabras",
+    "rangeWords": "Debe tener entre {0} y {1} palabras",
+    "rangeLength": "Debe tener entre {0} y {1} caracteres",
+    "range": "Debe estar entre {0} y {1}",
+    "minSelected": "Debe seleccionar al menos {0} opciones",
+    "maxSelected": "Debe seleccionar como máximo {0} opciones",
+    "notEqual": "Debe ser diferente a {0}",
+    "unique": "Debe ser único",
+    "image": "Debe ingresar una imagen"
+  }
+  }
