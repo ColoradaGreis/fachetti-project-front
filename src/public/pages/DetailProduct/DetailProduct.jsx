@@ -2,6 +2,7 @@ import s from './style.module.css'
 
 import { useParams } from 'react-router-dom'
 import { useGetDetailProduct } from '@/hooks'
+import { swallError } from '../../utils/sweetAlerts'
 
 import { Loading } from '../../components'
 import { OtherProducts } from './components'
@@ -9,7 +10,6 @@ import { OtherProducts } from './components'
 const DetailProduct = () => {
   const { id } = useParams()
   const { data, loading, error } = useGetDetailProduct(id)
-  // TODO: Modificar el alert a sweetAlert
 
   return (
     <div className='container-fluid justify-content-center my-5'>
@@ -18,7 +18,7 @@ const DetailProduct = () => {
       loading
         ? <Loading />
         : error
-          ? alert(error) //eslint-disable-line
+          ? swallError('Producto no encontrado') //eslint-disable-line
           : <section key={data.id} className='justify-content-center shadow-lg p-3 mb-5 rounded w-100'>
             <div className='row d-sm-flex justify-content-center align-items-center'>
               <div className='col-sm-4  d-flex justify-content-center align-self-center'>

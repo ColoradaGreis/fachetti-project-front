@@ -5,6 +5,7 @@ import { Card, Loading } from '../../components'
 import { useGetAllPublications } from '@/hooks'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { swallError } from '../../utils/sweetAlerts'
 
 export default function News () {
   const { t } = useTranslation('public')
@@ -23,7 +24,7 @@ export default function News () {
         loading
           ? <Loading />
           : error
-            ? alert(error) //eslint-disable-line
+            ? swallError('No se encontraron novedades') //eslint-disable-line
             : <div className='d-flex flex-wrap gap-5'>
               <div className=' d-flex flex-wrap gap-5 justify-content-between'>
                 <div>
