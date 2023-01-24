@@ -2,11 +2,11 @@ import { Card, Loading } from '../../components'
 import s from './style.module.css'
 import { useGetAllProducts } from '@/hooks'
 import { Link, useParams } from 'react-router-dom'
+import { swallError } from '../../utils/sweetAlerts'
 
 export default function ProductsByCategory () {
   const { category } = useParams()
   const { data, loading, error } = useGetAllProducts(category)
-  // TODO: Modificar alert por sweetAlert2
 
   return (
     <div>
@@ -18,7 +18,7 @@ export default function ProductsByCategory () {
           ? <Loading />
           : error
             // eslint-disable-next-line no-undef
-            ? alert(error)
+            ? swallError('Productos no encontrados')
             : data.map(e =>
               <Link key={e.id} to={`detail/${e.id}`}>
                 <Card

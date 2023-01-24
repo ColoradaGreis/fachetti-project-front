@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next'
 export default function Categories () {
   const { t } = useTranslation('public')
   const { data, loading, error } = useGetAllCategories()
-  // TODO: H1 solo debe estar una vez que sera en la landing Page, modificarlo a otra etiqueta
 
   return (
     <div>
