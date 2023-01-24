@@ -10,7 +10,7 @@ i18next
   .use(Languagedetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: 'es',
     // ... your i18next config
     backend: {
       backends: [

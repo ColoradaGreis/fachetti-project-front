@@ -47,7 +47,9 @@ export default function WhereFindUs () {
             </Card>
           </Col>
         </Row>
-        <iframe src='https://www.google.com/maps/d/embed?mid=1P7xEKdRW3NLRSyt7rkLEhlswGVqw8Zo&ehbc=2E312F' width='640' height='480' />
+        <div style={{ width: '100%', overflow: 'hidden', height: '300px' }}>
+          <iframe style={{ border: 0, marginTop: '-150px' }} src='https://www.google.com/maps/d/embed?mid=1P7xEKdRW3NLRSyt7rkLEhlswGVqw8Zo&ehbc=2E312F' width='100%' height='600' />
+        </div>
       </Container>
     </>
   )

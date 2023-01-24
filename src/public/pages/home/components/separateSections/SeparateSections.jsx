@@ -1,7 +1,14 @@
+import React from 'react'
 import style from './style.module.css'
 import { Container, Row, Col } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
-export default function SeparateSections ({ text, id }) {
+/**
+ * @param {string} text
+ * @param {string} id
+ * @returns {JSX.Element}
+ */
+function SeparateSections ({ text, id }) {
   return (
     <Container as='section' className={`${style.container} bkgBlue3`} fluid id={id}>
       <Row className='h-100 align-items-end px-sm-2 px-md-5 pb-md-2 '>
@@ -12,3 +19,15 @@ export default function SeparateSections ({ text, id }) {
     </Container>
   )
 }
+
+SeparateSections.propTypes = {
+  text: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired
+}
+
+SeparateSections.defaultProps = {
+  text: 'SeparateSections',
+  id: 'SeparateSections'
+}
+
+export default SeparateSections

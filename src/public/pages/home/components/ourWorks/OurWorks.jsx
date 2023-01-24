@@ -1,9 +1,10 @@
 import style from './style.module.css'
-
 import { SeparateSections } from '../'
 import { useTranslation } from 'react-i18next'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import { imagesExport } from './assets'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const colArrayOne = [
   'Mercado de Liniers', 'Es Ruiz la Pastelería', 'Mansión Funtime Baum', 'Parque Leloir', 'Verbena Tapería', 'Buenos Aires Verde', 'Italica Concretto', 'Los Petersen Eat Catering', 'Taco Box', 'Iga Good y Green Iose', 'Café Registrado', 'Restaurante Govinda', 'Mendoza Sheraton', 'Park Tower', 'Hotel Internacional'
@@ -55,6 +56,14 @@ export default function OurWorks () {
   )
 }
 
+/**
+ * @param {Object} images
+ * @param {string} images.image1200
+ * @param {string} images.image900
+ * @param {string} images.image400
+ * @param {string} text
+ * @returns {JSX.Element}
+ */
 export const PortalImage = ({ images, text }) => {
   return (
     <Col sm={12} className='position-relative'>
@@ -75,6 +84,28 @@ export const PortalImage = ({ images, text }) => {
   )
 }
 
+PortalImage.propTypes = {
+  images: PropTypes.shape({
+    image1200: PropTypes.string.isRequired,
+    image900: PropTypes.string.isRequired,
+    image400: PropTypes.string.isRequired
+  }).isRequired,
+  text: PropTypes.string.isRequired
+}
+
+PortalImage.defaultProps = {
+  images: {
+    image1200: 'https://via.placeholder.com/1200x400',
+    image900: 'https://via.placeholder.com/900x400',
+    image400: 'https://via.placeholder.com/400x400'
+  },
+  text: 'Default text'
+}
+
+/**
+ * @param {Array<string>} text
+ * @returns {JSX.Element}
+ */
 export const ColText = ({ text }) => {
   return (
     <Col sm={5} className='p-0'>
@@ -87,4 +118,11 @@ export const ColText = ({ text }) => {
       </ul>
     </Col>
   )
+}
+
+ColText.propTypes = {
+  text: PropTypes.arrayOf(PropTypes.string).isRequired
+}
+ColText.defaultProps = {
+  text: ['Default text']
 }
