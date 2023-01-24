@@ -1,0 +1,6 @@
+export * from './headerCarousel/assets/images'
+export * from './headerCarousel'
+export * from './ourWorks'
+export * from './separateSections'
+export * from './whereFindUs'
+export * from './whoWeSection'

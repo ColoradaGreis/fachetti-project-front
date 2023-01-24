@@ -27,5 +27,12 @@
   "Publications":{
     "title": "News",
     "subTitle": "Our News"
+  },
+  "home":{
+    "whoWeAre": "¿Who We Are?",
+    "ourWorks": "Our Works",
+    "industrialKitchens": "Industrial Kitchen",
+    "whereFindUs": "Where Find Us",
+    "innovation": "Innovation"
   }
 }

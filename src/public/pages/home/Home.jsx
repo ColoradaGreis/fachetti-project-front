@@ -1,5 +1,12 @@
+import { HeaderCarousel, WhoWeSection, OurWorks, WhereFindUs } from './components'
+
 export default function Home () {
   return (
-    <div>Home</div>
+    <>
+      <HeaderCarousel />
+      <WhoWeSection />
+      <OurWorks />
+      <WhereFindUs />
+    </>
   )
 }
