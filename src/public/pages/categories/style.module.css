@@ -1,16 +1,15 @@
 .h1Products{
     font-family: var(--font-family-2);
     font-weight: 800;
-    font-size: 2.2rem;
+    font-size: 64px;
     color: var(--font-color-title);
-    margin-top: 20px;
-    margin-left: 20px;
+    border-top: 30px;
 }
 .h3Products{
     font-family: var(--font-family-2);
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin-left: 20px;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: var(--font-color-title);
 }
 @media (max-width: 480px) {
 
