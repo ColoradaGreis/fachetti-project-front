@@ -38,8 +38,8 @@
     padding: 10px;
     justify-content: center;
     background-size: auto;
-    width: 410px;
-    height: 458px;
+    width: 310px;
+    height: 358px;
     /* margin: 25px 15px 0px 15px; */
     box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
     font-family: var(--font-family-1);
@@ -53,8 +53,8 @@
     padding: 10px;
     justify-content: center;
     background-size: auto;
-    width: 874px;
-    height: 993px;
+    width: 674px;
+    height: 793px;
     /* margin: 25px 15px 0px 15px; */
     box-shadow: rgba(11, 14, 16, 0.48) 8px 8px 16px 0px, rgba(255, 255, 255, 0.8) -2px -2px 16px 0px;
     font-family: var(--font-family-1);
@@ -66,6 +66,16 @@
     }
     .name{
         font-size: 12px;
+
+    }
+    .cardTwo{
+        width: 210px;
+        height: 258px;
+
+    }
+    .cardBig{
+        width: 374px;
+        height: 393px;
 
     }
 
@@ -80,6 +90,16 @@
         font-size: 15px;
 
     }
+    .cardTwo{
+        width: 210px;
+        height: 258px;
+
+    }
+    .cardBig{
+        width: 374px;
+        height: 393px;
+
+    }
     
 }
 @media only screen and (min-width:866px) and (max-width: 1066px) {
@@ -87,5 +107,41 @@
         width: 313px;
         height: 426px;
     }
-    
+    .cardTwo{
+        width: 210px;
+        height: 238px;
+    }
+    .cardBig{
+        width: 444px;
+        height: 500px;
+
+    }
+    .name{
+        font-size: 15px;
+
+    }
+}
+@media only screen and (min-width:1241px) and (max-width: 1425px) {
+
+    .cardTwo{
+        width: 300px;
+        height: 348px;
+    }
+    .cardBig{
+        width: 629px;
+        height: 748px;
+
+    }
+}
+@media only screen and (min-width:1066px) and (max-width: 1240px) {
+
+    .cardTwo{
+        width: 270px;
+        height: 338px;
+    }
+    .cardBig{
+        width: 566px;
+        height: 690px;
+
+    }
 }

@@ -13,20 +13,18 @@ export default function News () {
   const firstNews = data.slice(0, 3)
   const oneNew = firstNews.shift()
 
-  // TODO: Modificar alert por sweetalert
-
   return (
     <div className='justify-content-center m-5 p-5'>
       <h1 className={` ${s.h1Products}`}>{t('Publications.title')}</h1>
-      <div className='justify-content-center m-5 p-5'>
+      <div className='justify-content-center m-xxl-5 p-xl-5'>
 
         {
         loading
           ? <Loading />
           : error
             ? swallError('No se encontraron novedades') //eslint-disable-line
-            : <div className='d-flex flex-wrap gap-5'>
-              <div className=' d-flex flex-wrap gap-5 justify-content-between'>
+            : <div className='d-flex flex-wrap gap-xxl-5 gap-md-4 justify-content-center'>
+              <div className=' d-flex flex-wrap gap-xxl-5 gap-md-4 justify-content-between'>
                 <div>
                   <Card
                     key={oneNew.id}
@@ -36,9 +34,9 @@ export default function News () {
                     type='big'
                   />
                 </div>
-                <div className='d-flex flex-column gap-5 justify-content-between'>
+                <div className='d-flex flex-column justify-content-between my-xl-0'>
                   {
-                  firstNews.map(e => <Link className='gap-5' key={e.id} to={`/publications/${e.id}`}>
+                  firstNews.map(e => <Link key={e.id} to={`/publications/${e.id}`}>
                     <Card
                       key={e.id}
                       id={e.id}
@@ -52,7 +50,7 @@ export default function News () {
                 </div>
 
               </div>
-              <div className='d-flex flex-wrap gap-5 mx-2 justify-content-start'>
+              <div className='d-flex flex-wrap gap-xxl-5 gap-md-4 mx-xxl-2 justify-content-center'>
                 {
 
                data.map(e =>
