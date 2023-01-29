@@ -1,15 +1,8 @@
 .footerContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: var(--background-color-blue);
     color: var(--font-color-3);
     font-family: var(--font-family-1);
-    height: 400px;
-    width: 100vw;
-    padding: 50px;
-    position: relative;
-    bottom: 0;
+
 }
 .footer{
     display: flex;
@@ -33,6 +26,7 @@
     font-size: 10px;
     align-items: center;
     line-height: 19.14px;
+    margin: 0%;
  
 }
 .titleContacto{

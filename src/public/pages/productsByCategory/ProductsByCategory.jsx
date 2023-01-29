@@ -3,6 +3,7 @@ import s from './style.module.css'
 import { useGetAllProducts } from '@/hooks'
 import { Link, useParams } from 'react-router-dom'
 import { swallError } from '../../utils/sweetAlerts'
+import { Row, Col } from 'react-bootstrap'
 
 export default function ProductsByCategory () {
   const { category } = useParams()
@@ -10,7 +11,16 @@ export default function ProductsByCategory () {
 
   return (
     <div>
-      <h1 className={s.h1Products}>{category}</h1>
+      <div className={`${s.container} my-5 d-flex justify-content-center`}>
+        <Row className='h-100 align-items-center px-sm-2 px-md-5 pb-md-5 mx-md-5 '>
+          <Col>
+            <h1 className={`${s.h1Products} justify-content-center`}>{category}</h1>
+
+          </Col>
+
+        </Row>
+
+      </div>
       <div className='d-flex flex-wrap mx-md-5 p-md-5 gap-sm-5 gap-4 justify-content-center'>
 
         {

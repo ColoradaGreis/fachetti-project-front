@@ -1,10 +1,13 @@
 .h1Products{
     font-family: var(--font-family-2);
     font-weight: 800;
-    font-size: 2.2rem;
-    color: var(--font-color-title);
+    font-size: 64px;
+    color: var(--font-color-3);
     margin-top: 20px;
     margin-left: 20px;
+    padding: 20px;
+    text-transform: uppercase;
+
 }
 
 @media (max-width: 480px) {
@@ -12,4 +15,10 @@
     .h1Products{
         font-size: 2rem;
     }
+}
+.container{
+    background-color:var(--background-color-blue);
+    height: 250px;
+
+
 }

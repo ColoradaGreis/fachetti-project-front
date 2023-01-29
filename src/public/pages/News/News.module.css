@@ -10,9 +10,31 @@
     font-size: 64px;
     color: var(--font-color-title);
     border-top: 30px;
+    text-transform: uppercase;
 }
 .h3Products{
     font-family: var(--font-family-2);
     font-weight: 700;
     font-size: 1.6rem;
+}
+@media only screen and (min-width:480px) and (max-width: 865px) {
+    
+    .grid{
+        flex-direction: column;
+    }
+    .h1Products{
+        font-size: 30px;
+        padding: 20px;
+    }
+
+    
+}
+@media (max-width: 480px) {
+    .grid{
+        flex-direction: column;
+    }
+
+    .h1Products{
+        font-size: 30px;
+    }
 }
