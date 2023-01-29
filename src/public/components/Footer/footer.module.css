@@ -65,3 +65,7 @@
         gap: 10px;
     }
 }      
+.botonLang{
+    cursor: pointer;
+    width: 80px;
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './footer.module.css'
 import mail from '@/assets/EmailContact.png'
 import phone from '@/assets/PhoneContact.png'
@@ -7,8 +7,19 @@ import facebook from '@/assets/Facebook.png'
 import logo from '@/assets/LogoFooter.png'
 import wapp from '@/assets/wapp.png'
 import impulse from '@/assets/impulse.png'
+import ENG from '@/assets/ENG.png'
+import ESP from '@/assets/ESP.png'
+import i18n from 'i18next'
 
 export default function Footer () {
+  const [lang, setLang] = useState({
+    lang: false
+  })
+  function handleLanguageChange (lng) {
+    setLang(!lang)
+    i18n.changeLanguage(lng)
+  }
+
   return (
     <div className={`${s.footerContainer} d-flex flex-wrap`}>
       <div className={s.footer}>
@@ -43,9 +54,13 @@ export default function Footer () {
             <p className={s.titlePage}>PAGINA HECHA POR</p>
             <img width='150px' src={impulse} alt='impulse' />
           </div>
-          <div className='col mb-4'>
-            <p className={s.titlePage}>PAGINA HECHA POR</p>
-            <img width='150px' src={impulse} alt='impulse' />
+          <div className='col mb-4 d-flex'>
+            <p className={s.titlePage}>IDIOMA</p>
+            {
+              lang === false
+                ? <span onClick={() => handleLanguageChange('en')}><img className={s.botonLang} src={ENG} alt='english' /></span>
+                : <span onClick={() => handleLanguageChange('es')}><img className={s.botonLang} src={ESP} alt='español' /></span>
+            }
           </div>
         </div>
         <div className='col d-flex flex-column justify-content-center align-items-center'>
