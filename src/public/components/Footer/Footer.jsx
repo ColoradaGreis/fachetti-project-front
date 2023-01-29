@@ -6,12 +6,13 @@ import instagram from '@/assets/Instagram.png'
 import facebook from '@/assets/Facebook.png'
 import logo from '@/assets/LogoFooter.png'
 import wapp from '@/assets/wapp.png'
+import impulse from '@/assets/impulse.png'
 
 export default function Footer () {
   return (
-    <div className={s.footerContainer}>
+    <div className={`${s.footerContainer} d-flex flex-wrap`}>
       <div className={s.footer}>
-        <div className={`col ${s.contactoSection}`}>
+        <div className={`col m-3 ${s.contactoSection}`}>
           <h3 className={s.titleContacto}>CONTACTO</h3>
           <div className='row'>
             <div className='d-flex flex-row justify-content-center align-items-center gap-3 fs-5'>
@@ -38,8 +39,13 @@ export default function Footer () {
               <a href='https://www.facebook.com/fachettiEquipamientoGastronomico' target='_blank' rel='noreferrer'><img width='30px' height='30px' src={facebook} alt='facebook' /> </a>
             </div>
           </div>
-          <div className='col mt-3'>
-            <p className={s.titlePage}>PAGINA HECHA POR IMPULSE</p>
+          <div className='col mb-4'>
+            <p className={s.titlePage}>PAGINA HECHA POR</p>
+            <img width='150px' src={impulse} alt='impulse' />
+          </div>
+          <div className='col mb-4'>
+            <p className={s.titlePage}>PAGINA HECHA POR</p>
+            <img width='150px' src={impulse} alt='impulse' />
           </div>
         </div>
         <div className='col d-flex flex-column justify-content-center align-items-center'>
