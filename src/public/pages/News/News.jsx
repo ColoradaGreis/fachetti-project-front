@@ -23,8 +23,8 @@ export default function News () {
           ? <Loading />
           : error
             ? swallError('No se encontraron novedades') //eslint-disable-line
-            : <div className='d-flex flex-wrap gap-xxl-5 gap-md-4 justify-content-center'>
-              <div className=' d-flex flex-wrap gap-xxl-5 gap-md-4 justify-content-between'>
+            : <div className='d-flex flex-wrap gap-xxl-5 gap-4 justify-content-center'>
+              <div className={`${s.grid} d-flex flex-md-wrap gap-xxl-5 gap-3 justify-content-center`}>
                 <div>
                   <Card
                     key={oneNew.id}
@@ -34,7 +34,7 @@ export default function News () {
                     type='big'
                   />
                 </div>
-                <div className='d-flex flex-column justify-content-between my-xl-0'>
+                <div className='d-flex flex-lg-column justify-content-center gap-md-3 gap-2 my-0'>
                   {
                   firstNews.map(e => <Link key={e.id} to={`/publications/${e.id}`}>
                     <Card
@@ -50,7 +50,7 @@ export default function News () {
                 </div>
 
               </div>
-              <div className='d-flex flex-wrap gap-xxl-5 gap-md-4 mx-xxl-2 justify-content-center'>
+              <div className='d-flex flex-wrap gap-xxl-5 gap-md-4 gap-2 mx-xxl-2 justify-content-center m-0'>
                 {
 
                data.map(e =>

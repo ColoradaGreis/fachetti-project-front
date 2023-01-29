@@ -69,14 +69,12 @@
 
     }
     .cardTwo{
-        width: 210px;
-        height: 258px;
-
+        width: 131.4px;
+        height: 159.8px;
     }
     .cardBig{
-        width: 374px;
-        height: 393px;
-
+        width: 274px;
+        height: 315px;
     }
 
     
@@ -87,19 +85,18 @@
         height: 326px;
     }
     .name{
-        font-size: 15px;
+        font-size: 12px;
 
     }
     .cardTwo{
-        width: 210px;
-        height: 258px;
-
+        width: 140px;
+        height: 176px;
     }
     .cardBig{
-        width: 374px;
-        height: 393px;
-
+        width: 313px;
+        height: 386px;
     }
+
     
 }
 @media only screen and (min-width:866px) and (max-width: 1066px) {
@@ -108,18 +105,18 @@
         height: 426px;
     }
     .cardTwo{
-        width: 210px;
+        width: 208px;
         height: 238px;
     }
     .cardBig{
-        width: 444px;
+        width: 442px;
         height: 500px;
-
     }
     .name{
         font-size: 15px;
 
     }
+
 }
 @media only screen and (min-width:1241px) and (max-width: 1425px) {
 

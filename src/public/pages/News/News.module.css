@@ -16,3 +16,18 @@
     font-weight: 700;
     font-size: 1.6rem;
 }
+@media only screen and (min-width:480px) and (max-width: 865px) {
+    
+    .grid{
+        flex-direction: column;
+    }
+
+    
+}
+@media (max-width: 480px) {
+    .grid{
+        flex-direction: column;
+    }
+
+    
+}
