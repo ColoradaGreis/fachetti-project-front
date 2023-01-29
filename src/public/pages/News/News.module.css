@@ -10,6 +10,7 @@
     font-size: 64px;
     color: var(--font-color-title);
     border-top: 30px;
+    text-transform: uppercase;
 }
 .h3Products{
     font-family: var(--font-family-2);
@@ -21,6 +22,10 @@
     .grid{
         flex-direction: column;
     }
+    .h1Products{
+        font-size: 30px;
+        padding: 20px;
+    }
 
     
 }
@@ -29,5 +34,7 @@
         flex-direction: column;
     }
 
-    
+    .h1Products{
+        font-size: 30px;
+    }
 }

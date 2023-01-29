@@ -14,8 +14,10 @@ export default function News () {
   const oneNew = firstNews.shift()
 
   return (
-    <div className='justify-content-center m-5 p-5'>
-      <h1 className={` ${s.h1Products}`}>{t('Publications.title')}</h1>
+    <div className='justify-content-center m-sm-5 p-sm-5'>
+      <div className='p-5 m-5 justify-content-center'>
+        <h1 className={` ${s.h1Products} p-5 m-5`}>{t('Publications.title')}</h1>
+      </div>
       <div className='justify-content-center m-xxl-5 p-xl-5'>
 
         {
@@ -50,7 +52,7 @@ export default function News () {
                 </div>
 
               </div>
-              <div className='d-flex flex-wrap gap-xxl-5 gap-md-4 gap-2 mx-xxl-2 justify-content-center m-0'>
+              <div className={`${s.gridTwo} d-flex flex-wrap gap-xxl-5 gap-md-4 gap-3 mx-xxl-2 justify-content-center`}>
                 {
 
                data.map(e =>
