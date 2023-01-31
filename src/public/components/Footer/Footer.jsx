@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import s from './footer.module.css'
 import mail from '@/assets/EmailContact.png'
 import phone from '@/assets/PhoneContact.png'
@@ -19,6 +19,7 @@ export default function Footer () {
     setLang(!lang)
     i18n.changeLanguage(lng)
   }
+  useEffect(() => {}, [lang])
 
   return (
     <div className={`${s.footerContainer} d-lg-flex flex-wrap`}>
