@@ -14,10 +14,24 @@ const initialValues = {
 }
 const validateFields = values => {
   const errors = {}
-  if (!values.fullName) errors.fullName = 'Campo requerido'
-  if (!values.phone) errors.fullName = 'Campo requerido'
-  if (!values.email) errors.fullName = 'Campo requerido'
-  if (!values.message) errors.fullName = 'Campo requerido'
+  if (!values.fullName) {
+    errors.fullName = 'Requerido'
+  } else if (!/^[a-zA-Z]+$/i.test(values.fullName)) {
+    errors.fullName = 'No se aceptan números ni caracteres especiales'
+  }
+  if (!values.phone) {
+    errors.phone = 'Requerido'
+  } else if (!/^\d{10}$/i.test(values.phone)) {
+    errors.phone = 'Número de teléfono inválido, introduzca 10 dígitos con código de área sin el 15'
+  }
+  if (!values.email) {
+    errors.email = 'Requerido'
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+  ) {
+    errors.email = 'email no válido'
+  }
+  if (!values.message) errors.message = 'Campo requerido'
   return errors
 }
 const handleSubmit = (values, { setFieldError }) => {
@@ -51,7 +65,7 @@ export default function Contact () {
             <Form className={s.formContainer}>
               <div className={s.namePhone}>
                 <Field className={s.inputNamePhone} name='fullName' placeholder='Ingrese su nombre completo' />
-                <ErrorMessage name='fullname' component='small' />
+                <ErrorMessage name='fullName' component='small' />
                 <Field className={s.inputNamePhone} name='phone' placeholder='Ingrese su número de teléfono' />
                 <ErrorMessage name='phone' component='small' />
               </div>
