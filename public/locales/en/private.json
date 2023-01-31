@@ -71,8 +71,10 @@
     "required": "This field is required",
     "minLength": "Should have at least 2 characters",
     "minLength2": "Should have at least 50 characters",
+    "minLength3": "Should have at least 3 characters",
     "maxLength": "Should have at most 50 characters",
     "maxLength2": "Should have at most 750 characters",
+    "maxLength3": "Should have at most 30 characters",
     "minValue": "This field must be greater than {0}",
     "maxValue": "This field must be less than {0}",
     "pattern": "This field is not valid",
@@ -91,6 +93,7 @@
     "range": "This field must be between {0} and {1}",
     "max": "This field must be less than {0}",
     "min": "This field must be greater than {0}",
-    "image": "Should add an image"
+    "image": "Should add an image",
+    "phone": "Invalid phone number, must contain only numbers and/or plus signs (+) and/or parentheses"
   }
 }
