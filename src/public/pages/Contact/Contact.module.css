@@ -98,6 +98,11 @@
 .btn:hover{
     background-color: #16213ed2;
 }
+.error {
+  color: red;
+  margin-top: 0.20rem;
+  font-size: 0.875rem;
+}
 @media (max-width:768px) {
     .namePhone{
         display: flex;
@@ -137,4 +142,9 @@
         height: 50px;
         width: 50px;
     }
+    .error {
+    color: red;
+    margin-top: 0.15rem;
+    font-size: 0.775rem;
+}
 }
