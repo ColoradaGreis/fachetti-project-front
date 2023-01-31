@@ -27,7 +27,7 @@ const handleSubmit = async (values, { resetForm }) => {
   }
 }
 export default function Contact () {
-  const { t } = useTranslation('private')
+  const { t } = useTranslation('public')
 
   return (
     <div className={s.contactContainer}>
@@ -55,14 +55,14 @@ export default function Contact () {
           ({ isSubmitting, errors, isValid, touched }) => (
             <Form className={s.formContainer}>
               <div className={s.namePhone}>
-                <Field className={s.inputNamePhone} name='name' placeholder='Ingrese su nombre completo' />
+                <Field className={s.inputNamePhone} name='name' placeholder={t('validation.placeholderName')} />
                 {errors.name && touched.name && <div className={s.error}>{t(errors.name)}</div>}
-                <Field className={s.inputNamePhone} name='phone' placeholder='Ingrese su número de teléfono' />
+                <Field className={s.inputNamePhone} name='phone' placeholder={t('validation.placeholderPhone')} />
                 {errors.phone && touched.phone && <div className={s.error}>{t(errors.phone)}</div>}
               </div>
-              <Field className={s.input} name='email' placeholder='Ingrese su email' />
+              <Field className={s.input} name='email' placeholder={t('validation.placeholderEmail')} />
               {errors.email && touched.email && <div className={s.error}>{t(errors.email)}</div>}
-              <Field className={`pb-5 ${s.input}`} name='message' placeholder='Cuál es su consulta?' />
+              <Field className={`pb-5 ${s.input}`} name='message' placeholder={t('validation.placeholderMessage')} />
               {errors.message && touched.message && <div className={s.error}>{t(errors.message)}</div>}
               <button type='submit' className={s.btn} disabled={!isValid || isSubmitting}>Enviar</button>
             </Form>)

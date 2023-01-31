@@ -34,5 +34,17 @@
     "industrialKitchens": "Cocinas Industriales",
     "whereFindUs": "Dónde encontrarnos",
     "innovation": "Innovación"
+  },
+  "validation":{
+    "required": "Campo requerido",
+    "minLength": "Debe tener al menos 2 caracteres",
+    "minLength3": "Debe tener al menos 3 caracteres",
+    "maxLength3": "Debe tener al menos 30 caracteres",
+    "email": "Debe ser un email válido",
+    "phone": "Número de télefono inválido, debe contener solo números y/o signos de más (+) y/o paréntesis",
+    "placeholderName": "Ingrese su nombre completo",
+    "placeholderEmail": "Ingrese su email",
+    "placeholderPhone": "Ingrese su número de teléfono",
+    "placeholderMessage": "Cuál es su consulta?"
   }
 }

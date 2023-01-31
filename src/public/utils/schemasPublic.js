@@ -2,7 +2,7 @@ import * as Yup from 'yup'
 
 const errorMesagges = {
   required: 'validation.required',
-  min: 'validation.minLength3',
+  min: 'validation.minLength',
   min2: 'validation.minLength2',
   max: 'validation.maxLength3',
   max2: 'validation.maxLength2',

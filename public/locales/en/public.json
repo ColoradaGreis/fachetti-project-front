@@ -34,5 +34,17 @@
     "industrialKitchens": "Industrial Kitchen",
     "whereFindUs": "Where Find Us",
     "innovation": "Innovation"
+  },
+  "validation":{
+    "required": "This field is required",
+    "minLength": "Should have at least 2 characters",
+    "minLength3": "Should have at least 3 characters",
+    "maxLength3": "Should have at most 30 characters",
+    "email": "This field must be a valid email",
+    "phone": "Invalid phone number, must contain only numbers and/or plus signs (+) and/or parentheses",
+    "placeholderName": "Enter your full name",
+    "placeholderEmail": "Enter your email",
+    "placeholderPhone": "Enter your phone",
+    "placeholderMessage": "What's your consultation about?"
   }
 }

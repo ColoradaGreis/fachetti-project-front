@@ -95,7 +95,6 @@
     "maxSelected": "Debe seleccionar como máximo {0} opciones",
     "notEqual": "Debe ser diferente a {0}",
     "unique": "Debe ser único",
-    "image": "Debe ingresar una imagen",
-    "phone": "Número de télefono inválido, debe contener solo números y/o signos de más (+) y/o paréntesis"
+    "image": "Debe ingresar una imagen"
   }
   }
