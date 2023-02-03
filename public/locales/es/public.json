@@ -41,10 +41,12 @@
     "minLength3": "Debe tener al menos 3 caracteres",
     "maxLength3": "Debe tener al menos 30 caracteres",
     "email": "Debe ser un email válido",
-    "phone": "Número de télefono inválido, debe contener solo números y/o signos de más (+) y/o paréntesis",
+    "phone": "Por favor, ingrese un número de teléfono internacional válido en el formato +CCCNNNNNNNNNN",
     "placeholderName": "Ingrese su nombre completo",
     "placeholderEmail": "Ingrese su email",
     "placeholderPhone": "Ingrese su número de teléfono",
-    "placeholderMessage": "Cuál es su consulta?"
+    "placeholderMessage": "Cuál es su consulta?",
+    "html": "No se permiten etiquetas html",
+    "noSpecialCh": "No se permiten caracteres especiales"
   }
 }

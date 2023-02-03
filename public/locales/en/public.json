@@ -41,10 +41,12 @@
     "minLength3": "Should have at least 3 characters",
     "maxLength3": "Should have at most 30 characters",
     "email": "This field must be a valid email",
-    "phone": "Invalid phone number, must contain only numbers and/or plus signs (+) and/or parentheses",
+    "phone": "Please enter a valid international phone number in the format +CCCNNNNNNNNNN",
     "placeholderName": "Enter your full name",
     "placeholderEmail": "Enter your email",
     "placeholderPhone": "Enter your phone",
-    "placeholderMessage": "What's your consultation about?"
+    "placeholderMessage": "What's your consultation about?",
+    "html": "html tags are not allowed",
+    "noSpecialCh": "Special characters are not allowed"
   }
 }
