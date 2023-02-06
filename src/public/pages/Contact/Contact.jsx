@@ -12,7 +12,7 @@ import { Field, Form, Formik } from 'formik'
 
 const initialValues = {
   name: '',
-  phone: '',
+  phone: '+54',
   email: '',
   message: ''
 }
