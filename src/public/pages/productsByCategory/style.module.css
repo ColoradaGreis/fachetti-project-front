@@ -3,7 +3,7 @@
     font-weight: 800;
     font-size: 64px;
     color: var(--font-color-3);
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 20px;
     padding: 20px;
     text-transform: uppercase;
@@ -18,7 +18,7 @@
 }
 .container{
     background-color:var(--background-color-blue);
-    height: 250px;
+    height: 150px;
 
 
 }
