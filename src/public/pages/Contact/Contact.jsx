@@ -19,7 +19,8 @@ const initialValues = {
 }
 
 const handleSubmit = async (values, { resetForm }) => {
-  const { message, ok } = await postForms('questions', values)
+  const newValues = { ...values, phone: `${values.pais}${values.phone}` }
+  const { message, ok } = await postForms('questions', newValues)
   if (ok) {
     resetForm()
     swallError(`Consulta ${message}`, ok)
