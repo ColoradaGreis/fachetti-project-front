@@ -29,7 +29,7 @@ export default function Footer () {
           <div className='row'>
             <div className='d-flex flex-row justify-content-center align-items-center gap-3 fs-5'>
               <img width='30px' height='30px' src={mail} alt='mail' />
-              <a className='text-decoration-none white' href='mailto:administracion@fachetti.com.ar' target='_blank' rel='noreferrer'>administracion@fachetti.com.ar</a>
+              <a className='text-decoration-none white' href={import.meta.env.VITE_MAIL_URL} target='_blank' rel='noreferrer'>administracion@fachetti.com.ar</a>
             </div>
           </div>
           <div className='row'>
@@ -47,8 +47,8 @@ export default function Footer () {
           <div className='col mt-3'>
             <h5 className={s.titleContacto}>REDES SOCIALES</h5>
             <div className='d-flex justify-content-center align-items-center flex-row gap-3'>
-              <a href='https://www.instagram.com/fachetti.equipamiento/?hl=es' target='_blank' rel='noreferrer'> <img width='30px' height='30px' src={instagram} alt='instagram' /> </a>
-              <a href='https://www.facebook.com/fachettiEquipamientoGastronomico' target='_blank' rel='noreferrer'><img width='30px' height='30px' src={facebook} alt='facebook' /> </a>
+              <a href={import.meta.env.VITE_INSTAGRAM_URL} target='_blank' rel='noreferrer'> <img width='30px' height='30px' src={instagram} alt='instagram' /> </a>
+              <a href={import.meta.env.VITE_FACEBOOK_URL} target='_blank' rel='noreferrer'><img width='30px' height='30px' src={facebook} alt='facebook' /> </a>
             </div>
           </div>
           <div className='col mb-4'>

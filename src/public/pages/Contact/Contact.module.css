@@ -4,6 +4,8 @@
     margin-bottom: 50px;
     align-items: center;
     flex-direction: column;
+
+
 }
 .redesSociales{
     width: 100%;
@@ -20,10 +22,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+   
+    
 }
 .h1Concact{
     font-weight: 700;
     text-transform: uppercase;
+    font-family: var(--font-family-1);
+    
 }
 .titleContact{
     display: flex;
@@ -42,6 +48,7 @@
 .imagesRedes{
     height: 100px;
     width: 100px;
+
 }
 .formContainer{
     display: flex;
