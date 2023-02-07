@@ -41,7 +41,7 @@
     "minLength3": "Debe tener al menos 3 caracteres",
     "maxLength3": "Debe tener al menos 30 caracteres",
     "email": "Debe ser un email válido",
-    "phone": "Por favor, ingrese un número de teléfono internacional válido en el formato +CCCNNNNNNNNNN",
+    "phone": "Por favor, ingrese un número de teléfono de 10 dígitos con código de area sin el 15",
     "placeholderName": "Ingrese su nombre completo",
     "placeholderEmail": "Ingrese su email",
     "placeholderPhone": "Ingrese su número de teléfono",

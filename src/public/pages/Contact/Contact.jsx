@@ -8,12 +8,14 @@ import { formConsultSchema } from '../../utils/schemasPublic'
 import { useTranslation } from 'react-i18next'
 import { swallError } from '../../utils/sweetAlerts'
 import { Field, Form, Formik } from 'formik'
+import { areaCode } from '@/public/utils/areaCode'
 
 const initialValues = {
   name: '',
-  phone: '+54',
+  phone: '',
   email: '',
-  message: ''
+  message: '',
+  pais: '+54'
 }
 
 const handleSubmit = async (values, { resetForm }) => {
@@ -57,6 +59,7 @@ export default function Contact () {
         initialValues={initialValues}
         validationSchema={formConsultSchema}
         onSubmit={handleSubmit}
+
       >
         {
           ({ isSubmitting, errors, isValid, touched }) => (
@@ -64,6 +67,11 @@ export default function Contact () {
               <div className={s.namePhone}>
                 <Field className={s.inputNamePhone} name='name' placeholder={t('validation.placeholderName')} />
                 {errors.name && touched.name && <div className={s.error}>{t(errors.name)}</div>}
+                <Field className={s.areaCode} component='select' name='pais'>
+                  {
+                    areaCode.map((e, i) => <option key={i} value={e.code}> {e.name} ({e.code}) </option>)
+                  }
+                </Field>
                 <Field className={s.inputNamePhone} name='phone' placeholder={t('validation.placeholderPhone')} />
                 {errors.phone && touched.phone && <div className={s.error}>{t(errors.phone)}</div>}
               </div>

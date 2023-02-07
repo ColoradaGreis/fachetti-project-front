@@ -41,7 +41,7 @@
     "minLength3": "Should have at least 3 characters",
     "maxLength3": "Should have at most 30 characters",
     "email": "This field must be a valid email",
-    "phone": "Please enter a valid international phone number in the format +CCCNNNNNNNNNN",
+    "phone": "Please enter a 10 digit phone number",
     "placeholderName": "Enter your full name",
     "placeholderEmail": "Enter your email",
     "placeholderPhone": "Enter your phone",

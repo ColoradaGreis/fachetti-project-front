@@ -29,6 +29,7 @@
     font-weight: 700;
     text-transform: uppercase;
     font-family: var(--font-family-1);
+    color: var(--font-color-1);
     
 }
 .titleContact{
@@ -48,7 +49,11 @@
 .imagesRedes{
     height: 100px;
     width: 100px;
-
+   background-color: aliceblue;
+   border-radius: 300px;
+   border-color: #232851;
+    border-width: 2px;
+    background-size: cover;
 }
 .formContainer{
     display: flex;
@@ -65,7 +70,7 @@
     align-items: flex-start;
     justify-content: center;
     width: 60vw;
-    gap: 50px;
+    gap: 30px;
 }
 .inputNamePhone{
     width: 50%;
@@ -110,6 +115,24 @@
   margin-top: 0.20rem;
   font-size: 0.875rem;
 }
+.areaCode{
+    width: 50%;
+    background-color: var(--background-color-blue);
+    color: white;
+    padding: 17px 10px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    width:min-content;  
+    border: none;
+    outline: none;
+
+
+}
+.areaCode:hover{
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
 @media (max-width:768px) {
     .namePhone{
         display: flex;
@@ -121,7 +144,7 @@
         width: 80vw;
     }
     .inputNamePhone{
-        width: 100%;
+        width: 90%;
         padding: 5px;
         font-size: 16px;
         border-radius: 15px;
@@ -154,4 +177,10 @@
     margin-top: 0.15rem;
     font-size: 0.775rem;
 }
+    .areaCode{
+        width: 30%;
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 15px;
+    }
 }

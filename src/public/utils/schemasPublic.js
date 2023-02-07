@@ -35,7 +35,7 @@ export const formConsultSchema = Yup.object().shape({
     .required(errorMesagges.required)
     .noHTML(errorMesagges.html),
   phone: Yup.string().matches(
-    /^\+\d{1,3}\d{9,15}$/,
+    /^[0-9]+$/,
     errorMesagges.phone
-  )
+  ).max(10, errorMesagges.phone)
 })
