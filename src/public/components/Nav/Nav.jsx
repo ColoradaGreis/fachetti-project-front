@@ -8,9 +8,21 @@ import { PublicNameRoutes } from '@/routes/routes.name'
 import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
 import { Footer } from '../Footer'
+import ENG from '@/assets/ENG.png'
+import ESP from '@/assets/ESP.png'
+import i18n from 'i18next'
+import { useEffect, useState } from 'react'
 
 export default function Nav () {
   const { t } = useTranslation('public')
+  const [lang, setLang] = useState({
+    lang: false
+  })
+  function handleLanguageChange (lng) {
+    setLang(!lang)
+    i18n.changeLanguage(lng)
+  }
+  useEffect(() => {}, [lang])
 
   // Colocar aqui las nuevas rutas
   const routes = [
@@ -43,6 +55,13 @@ export default function Nav () {
                 </li>
               ))}
             </ul>
+            <div>
+              {
+              lang === false
+                ? <span onClick={() => handleLanguageChange('en')}><img className={style.botonLang} src={ENG} alt='english' /></span>
+                : <span onClick={() => handleLanguageChange('es')}><img className={style.botonLang} src={ESP} alt='español' /></span>
+              }
+            </div>
 
           </div>
         </div>
