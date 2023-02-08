@@ -45,15 +45,10 @@ export default function Footer () {
             </div>
           </div>
           <div className='col mt-3'>
-            <h5 className={s.titleContacto}>REDES SOCIALES</h5>
             <div className='d-flex justify-content-center align-items-center flex-row gap-3'>
               <a href={import.meta.env.VITE_INSTAGRAM_URL} target='_blank' rel='noreferrer'> <img width='30px' height='30px' src={instagram} alt='instagram' /> </a>
               <a href={import.meta.env.VITE_FACEBOOK_URL} target='_blank' rel='noreferrer'><img width='30px' height='30px' src={facebook} alt='facebook' /> </a>
             </div>
-          </div>
-          <div className='col mb-4'>
-            <p className={s.titlePage}>PAGINA HECHA POR</p>
-            <img width='150px' src={impulse} alt='impulse' />
           </div>
           <div className='col mb-4 d-flex'>
             <p className={s.titlePage}>IDIOMA</p>
@@ -71,7 +66,10 @@ export default function Footer () {
           <h5 className={s.titleContacto}>UBICACION</h5>
           <p className={s.titleUbi}>Castañon 2952, C1437 CABA, Argentina</p>
           <iframe title='map' width='330' height='270' src='https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Casta%C3%B1on%202952%2C%20C1437%20CABA+(Title)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed' />
-
+          <div className='col mb-4'>
+            <p className={s.titlePage}>PAGINA HECHA POR</p>
+            <img width='150px' src={impulse} alt='impulse' />
+          </div>
         </div>
       </div>
     </div>
