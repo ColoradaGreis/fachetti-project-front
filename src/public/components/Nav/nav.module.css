@@ -21,6 +21,10 @@
   font-size: 18px;
   margin-top: 2px;
 }
+.botonLang{
+  cursor: pointer;
+  width: 50px;
+}
 @media (max-width: 622px) {
   .imgLogo{
     width: 100%;
