@@ -8,6 +8,13 @@ export default function OtherProducts () {
   const { data } = useGetAllProducts(category)
 
   const products = data.filter(e => e.id !== id)
+  const scrollToTop = () => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
 
   return (
     <div className='w-100'>
@@ -15,7 +22,7 @@ export default function OtherProducts () {
 
         {
           products.map(e =>
-            <Link key={e.id} to={`/categories/${category}/detail/${e.id}`}>
+            <Link key={e.id} to={`/categories/${category}/detail/${e.id}`} onClick={scrollToTop}>
               <Card
                 key={e.id}
                 id={e.id}
